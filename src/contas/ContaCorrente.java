@@ -11,9 +11,10 @@ import pessoas.Cliente;
 
 public class ContaCorrente extends Conta {
 
-	private final double tarifaSaque = 0.1;
-	private final double tarifaDeposito = 0.1;
-	private final double tarifaTransferencia = 0.2;
+	private final static double TARIFA_SAQUE = 0.1;
+	private final static double TARIFA_DEPOSITO = 0.1;
+	private final static double TARIFA_TRANSFERENCIA = 0.2;
+	private double totalTributado;
 
 	public static Map<String, ContaCorrente> mapaCCorrente = new HashMap<>();
 
@@ -25,21 +26,29 @@ public class ContaCorrente extends Conta {
 			ContasEnum tipoDeConta) {
 		super(agencia, numConta, titular, cpf, saldoInicial, tipoDeConta);
 	}	
+	
+	public double getTotalTributado() {
+		return totalTributado;
+	}
+
+	public void setTotalTributado(double totalTributado) {
+		this.totalTributado = totalTributado;
+	}
 
 	@Override
 	public void sacar(double valor) {
-		this.saldo = super.saldo;
-		if(this.saldo < valor + tarifaSaque) {
+		if(this.saldo < valor + TARIFA_SAQUE) {
 			System.out.println("Saldo insuficiente");
 		}
 		else {
-			this.saldo -= valor + tarifaSaque;
+			this.saldo -= valor + TARIFA_SAQUE;
 		}
 	}
 	
 	@Override
 	public void depositar(double valor) {
-		saldo += valor - tarifaDeposito;
+		// verificar se o saldo que está fazendo deposito é maior que o tributo
+		saldo += valor - TARIFA_DEPOSITO;
 	}
 	
 
@@ -49,7 +58,7 @@ public class ContaCorrente extends Conta {
 	        System.out.println("Seu saldo é insuficiente!");
 	     }
 	     else {
-	         this.saldo -= (valor + tarifaTransferencia);
+	         this.saldo -= (valor + TARIFA_TRANSFERENCIA);
 	         contaDestino.saldo += valor;
 	         System.out.println("Seu saldo após transferência é de: " + this.saldo);
 	     }
@@ -74,5 +83,4 @@ public class ContaCorrente extends Conta {
 					+ ", Numero = " + getNumConta()
 					+ ", Saldo = " + getSaldo(); 
 	}
-
 }

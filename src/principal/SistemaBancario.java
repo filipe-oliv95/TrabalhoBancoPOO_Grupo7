@@ -1,7 +1,6 @@
 package principal;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,6 +9,7 @@ import contas.Conta;
 import contas.ContaCorrente;
 import contas.ContaPoupanca;
 import contas.enums.ContasEnum;
+
 import menus.Menu;
 import pessoas.Cliente;
 import pessoas.Diretor;
@@ -24,7 +24,9 @@ public class SistemaBancario {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
+		
+	
+		
 		// populando Agências (para utilizar na instanciação do Gerente, Clientes e
 		// Contas)
 		Agencia agencia1 = new Agencia("2885");
@@ -103,45 +105,42 @@ public class SistemaBancario {
 			// System.out.println(cs); // e imprimindo a lista de clientes só para verificar
 		}
 
-		List<Conta> contas = new ArrayList<>();
-		contas.add(new ContaPoupanca(agencia1, "658974", cliente1, "23156489785", 1500.0,
-				ContasEnum.valueOf("POUPANCA"), 0.5));
-		contas.add(new ContaCorrente(agencia2, "281564", cliente2, "86541233210", 5000.0,
-				ContasEnum.valueOf("CCORRENTE")));
-		contas.add(new ContaPoupanca(agencia3, "683145", cliente3, "98654712548", 7000.0,
-				ContasEnum.valueOf("POUPANCA"), 0.5));
-		contas.add(new ContaCorrente(agencia2, "112564", cliente4, "98756412365", 3500.0,
-				ContasEnum.valueOf("CCORRENTE")));
-		contas.add(new ContaCorrente(agencia1, "278561", cliente5, "56489723114", 2000.0,
-				ContasEnum.valueOf("CCORRENTE")));
-		contas.add(new ContaCorrente(agencia3, "681245", cliente6, "54623456875", 2500.0,
-				ContasEnum.valueOf("CCORRENTE")));
-		contas.add(new ContaCorrente(agencia2, "286545", cliente7, "56321452632", 2500.0,
-				ContasEnum.valueOf("CCORRENTE")));
-		contas.add(new ContaCorrente(agencia1, "634545", cliente8, "85641236589", 2900.0,
-				ContasEnum.valueOf("CCORRENTE")));
-		contas.add(new ContaCorrente(agencia3, "696545", cliente9, "08498754632", 2800.0,
-				ContasEnum.valueOf("CCORRENTE")));
-		contas.add(new ContaCorrente(agencia2, "287645", cliente10, "25698741525", 2500.0,
-				ContasEnum.valueOf("CCORRENTE")));
-		contas.add(new ContaCorrente(agencia1, "647645", cliente11, "95648123564", 2900.0,
-				ContasEnum.valueOf("CCORRENTE")));
-		
-		
-		
-		
-		
-		ContaCorrente conta1 = new ContaCorrente(agencia2, "286545", cliente7, "56321452632", 2500.0,
-				ContasEnum.valueOf("CCORRENTE"));
-		ContaCorrente conta2 = new ContaCorrente(agencia2, "287645", cliente10, "25698741525", 2500.0,
-				ContasEnum.valueOf("CCORRENTE"));
-		ContaPoupanca conta3 = new ContaPoupanca(agencia1, "658974", cliente1, "23156489785", 1500.0,
+		// instanciando Contas para a LIsta de Contas
+		ContaPoupanca conta1 = new ContaPoupanca(agencia1, "658974", cliente1, "23156489785", 1500.0,
 				ContasEnum.valueOf("POUPANCA"), 0.5);
-		
-			
-	
-		
-		Menu.imprimirMenuCliente(conta3);
+		ContaCorrente conta2 = new ContaCorrente(agencia2, "281564", cliente2, "86541233210", 5000.0,
+				ContasEnum.valueOf("CCORRENTE"));
+		ContaPoupanca conta3 = new ContaPoupanca(agencia3, "683145", cliente3, "98654712548", 7000.0,
+				ContasEnum.valueOf("POUPANCA"), 0.5);
+		ContaCorrente conta4 = new ContaCorrente(agencia2, "112564", cliente4, "98756412365", 3500.0,
+				ContasEnum.valueOf("CCORRENTE"));
+		ContaCorrente conta5 = new ContaCorrente(agencia1, "278561", cliente5, "56489723114", 2000.0,
+				ContasEnum.valueOf("CCORRENTE"));
+		ContaCorrente conta6 = new ContaCorrente(agencia3, "681245", cliente6, "54623456875", 2500.0,
+				ContasEnum.valueOf("CCORRENTE"));
+		ContaCorrente conta7 = new ContaCorrente(agencia2, "286545", cliente7, "56321452632", 2500.0,
+				ContasEnum.valueOf("CCORRENTE"));
+		ContaCorrente conta8 = new ContaCorrente(agencia1, "634545", cliente8, "85641236589", 2900.0,
+				ContasEnum.valueOf("CCORRENTE"));
+		ContaCorrente conta9 = new ContaCorrente(agencia3, "696545", cliente9, "08498754632", 2800.0,
+				ContasEnum.valueOf("CCORRENTE"));
+		ContaCorrente conta10 = new ContaCorrente(agencia2, "287645", cliente10, "25698741525", 2500.0,
+				ContasEnum.valueOf("CCORRENTE"));
+		ContaCorrente conta11 = new ContaCorrente(agencia1, "647645", cliente11, "95648123564", 2900.0,
+				ContasEnum.valueOf("CCORRENTE"));
+				
+		List<Conta> contas = new ArrayList<>();
+		contas.add(conta1);
+		contas.add(conta2);
+		contas.add(conta3);
+		contas.add(conta4);
+		contas.add(conta5);
+		contas.add(conta6);
+		contas.add(conta7);
+		contas.add(conta8);
+		contas.add(conta9);
+		contas.add(conta10);
+		contas.add(conta11);	
 		
 		//METODO DEPOSITAR
 //		System.out.println("saldo: " + conta1.getSaldo());
@@ -157,11 +156,7 @@ public class SistemaBancario {
 //		System.out.println("saldo: " + conta1.getSaldo());
 //		conta1.transferir(conta2, 1000);
 //		System.out.println("saldo: " + conta1.getSaldo());
-//		System.out.println("saldo: " + conta2.getSaldo());
-		
-		
-		
-		
+//		System.out.println("saldo: " + conta2.getSaldo());				
 		
 		System.out.println();
 		for (Conta co : contas) {
@@ -169,7 +164,10 @@ public class SistemaBancario {
 //			 System.out.println(co);
 		}
 		
-		System.out.println(Conta.mapaDeContas.get("56321452632"));
+		// IMPRIMIR MENU CLIENTE E TRANSFERIR
+//		System.out.println(Conta.mapaDeContas.get("56321452632"));
+//		Menu.imprimirMenuCliente(conta3);
+//		System.out.println();
 
 		// teste do Objeto Cliente dentro de Conta
 //		ContaCorrente contaTeste = new ContaCorrente(agencia3, "278561", cliente5, "56489723114", 1200.0,
@@ -247,17 +245,21 @@ public class SistemaBancario {
 						opcao = sc.nextInt();
 
 						switch (opcao) {
-						case 1: System.out.println("MENU CLIENTE para FUNCIONARIO"); //menuCLIENTE()
+						case 1: System.out.println("MENU CLIENTE para FUNCIONARIO"); 
+								Menu.imprimirMenuCliente(conta);
 							break;
 						case 2:
 							if (funcionario.getTipoDeUsuario() == UsuariosEnum.PRESIDENTE) {
 								System.out.println("Presidente");
+								//menu presidente
 							} 
 							else if (funcionario.getTipoDeUsuario() == UsuariosEnum.DIRETOR) {
 								System.out.println("Diretor");
+								// menu diretor
 							} 
 							else if (funcionario.getTipoDeUsuario() == UsuariosEnum.GERENTE) {
 								System.out.println("Gerente");
+								// menu gerente
 							}
 							break;
 						default:
@@ -271,7 +273,7 @@ public class SistemaBancario {
 			if (conta != null && usuario != null) {
 				if (usuario.getSenha() == senha) {
 					System.out.println("Cliente");
-					//Menu.imprimirMenuCliente();
+					Menu.imprimirMenuCliente(conta);
 //					MenuCliente 
 					
 					
