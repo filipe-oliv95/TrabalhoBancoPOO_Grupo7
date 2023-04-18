@@ -18,6 +18,7 @@ import pessoas.Gerente;
 import pessoas.Presidente;
 import pessoas.Usuario;
 import pessoas.enums.UsuariosEnum;
+import relatorios.Relatorio;
 
 public class SistemaBancario {
 
@@ -33,6 +34,7 @@ public class SistemaBancario {
 		Agencia agencia2 = new Agencia("0080");
 		Agencia agencia3 = new Agencia("5086");
 
+		
 		// criando Lista de Agências
 		List<Agencia> agencias = new ArrayList<>();
 		agencias.add(agencia1);
@@ -50,6 +52,8 @@ public class SistemaBancario {
 		Gerente gerente2 = new Gerente("Renata", "25698741525", 7777, UsuariosEnum.valueOf("GERENTE"), agencia2);
 		Gerente gerente3 = new Gerente("Marilia", "95648123564", 8888, UsuariosEnum.valueOf("GERENTE"), agencia3);
 
+		
+		
 		List<Gerente> gerentes = new ArrayList<>();
 		gerentes.add(gerente1);
 		gerentes.add(gerente2);
@@ -161,7 +165,7 @@ public class SistemaBancario {
 		System.out.println();
 		for (Conta co : contas) {
 			Conta.mapaDeContas.put(co.getCpf(), co); // adicionando no Map de Contas
-//			 System.out.println(co);
+//			System.out.println(co);
 		}
 		
 		// IMPRIMIR MENU CLIENTE E TRANSFERIR
@@ -169,10 +173,10 @@ public class SistemaBancario {
 //		Menu.imprimirMenuCliente(conta3);
 //		System.out.println();
 
-		// teste do Objeto Cliente dentro de Conta
-//		ContaCorrente contaTeste = new ContaCorrente(agencia3, "278561", cliente5, "56489723114", 1200.0,
-//				ContasEnum.valueOf("CCORRENTE"), 5.0, 1500.0);
-//		System.out.println("Pegando Objeto Cliente dentro de Conta => " + contaTeste.getTitular().getNome());
+//		 teste do Objeto Cliente dentro de Conta
+		ContaCorrente contaTeste = new ContaCorrente(agencia3, "278561", cliente5, "56489723114", 1200.0,
+				ContasEnum.valueOf("CCORRENTE"));
+		System.out.println("Pegando Objeto Cliente dentro de Conta => " + contaTeste.getTitular().getNome());
 
 		System.out.println();
 		// criando Lista de usuarios para adicionar no Map
@@ -235,6 +239,7 @@ public class SistemaBancario {
 			conta = Conta.mapaDeContas.get(cpf);
 			usuario = Usuario.mapaDeUsuarios.get(cpf);
 			funcionario = Funcionario.mapaDeFuncionarios.get(cpf);
+			
 			int opcao = 0;
 
 			if (conta != null && funcionario != null) {
@@ -244,11 +249,11 @@ public class SistemaBancario {
 						System.out.println("Deseja entrar na conta de Cliente [1] ou Funcionario [2]");
 						opcao = sc.nextInt();
 
-						switch (opcao) {
+						switch (opcao) { // MENU CLIENTE PARA FUNCIONARIO
 						case 1: System.out.println("MENU CLIENTE para FUNCIONARIO"); 
 								Menu.imprimirMenuCliente(conta);
 							break;
-						case 2:
+						case 2: // MENU DO FUNCIONÁRIO
 							if (funcionario.getTipoDeUsuario() == UsuariosEnum.PRESIDENTE) {
 								System.out.println("Presidente");
 								//menu presidente
@@ -260,6 +265,14 @@ public class SistemaBancario {
 							else if (funcionario.getTipoDeUsuario() == UsuariosEnum.GERENTE) {
 								System.out.println("Gerente");
 								// menu gerente
+								//opção 1
+								Relatorio.imprimirSaldo(conta);
+								//opção 2
+								
+								//opção 3
+								
+								//opção 4
+								Relatorio.numDeContasNaAgencia(contas, cpf);
 							}
 							break;
 						default:
@@ -267,10 +280,10 @@ public class SistemaBancario {
 							// retornar função
 							break;
 						}
-					} while (opcao < 1 || opcao > 2);
+					} while (opcao < 1 || opcao > 2); //PENSAR EM UMA OUTRO SOLUÇÃO
 				}
 			}
-			if (conta != null && usuario != null) {
+			else if (conta != null && usuario != null) {
 				if (usuario.getSenha() == senha) {
 					System.out.println("Cliente");
 					Menu.imprimirMenuCliente(conta);
