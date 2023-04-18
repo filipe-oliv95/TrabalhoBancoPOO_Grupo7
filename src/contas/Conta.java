@@ -26,12 +26,12 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 
 	}
 		
-	public Conta(Agencia agencia, String numConta, Cliente titular, String cpf, double saldoInicial, ContasEnum tipoDeConta) {
+	public Conta(Agencia agencia, String numConta, Cliente titular, String cpf, double saldo, ContasEnum tipoDeConta) {
 		this.agencia = agencia;
 		this.numConta = numConta;
 		this.titular = titular;
 		this.cpf = cpf;
-		depositar(saldoInicial);
+		this.saldo = saldo;
 		this.tipoDeConta = tipoDeConta;
 	}
 	
@@ -99,13 +99,8 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 	     else {
 	         this.saldo -= valor;
 	         contaDestino.saldo += valor;
-	         System.out.println("Seu saldo após transferência é de: " + this.saldo);
 	     }
 	}
-	
-//	public void consultaSaldo() {  COLOCAR NO RELATORIO CLIENTE e GERENTE
-//		System.out.printf("R$ %.2f%n", this.saldo);
-//	}	
 	
 	@Override
 	public int compareTo(Conta c) {

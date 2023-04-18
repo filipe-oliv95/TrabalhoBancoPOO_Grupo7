@@ -11,8 +11,9 @@ import pessoas.Cliente;
 
 public class ContaCorrente extends Conta {
 
-	private Double tarifa;
-	private Double limite;
+	private final double tarifaSaque = 0.1;
+	private final double tarifaDeposito = 0.1;
+	private final double tarifaTransferencia = 0.2;
 
 	public static Map<String, ContaCorrente> mapaCCorrente = new HashMap<>();
 
@@ -21,53 +22,34 @@ public class ContaCorrente extends Conta {
 	}
 
 	public ContaCorrente(Agencia agencia, String numConta, Cliente titular, String cpf, double saldoInicial,
-			ContasEnum tipoDeConta, Double tarifa, Double limite) {
+			ContasEnum tipoDeConta) {
 		super(agencia, numConta, titular, cpf, saldoInicial, tipoDeConta);
-		this.tarifa = tarifa;
-		this.limite = limite;
-	}	
-
-	public double getTarifa() {
-		return tarifa;
-	}
-
-	public void setTarifa(Double tarifa) {
-		this.tarifa = tarifa;
-	}
-
-	public double getLimite() {
-		return limite;
-	}
-
-	public void setLimite(Double limite) {
-		this.limite = limite;
 	}	
 
 	@Override
 	public void sacar(double valor) {
-		this.saldo = super.saldo + limite;
-		if(this.saldo < valor + tarifa) {
+		this.saldo = super.saldo;
+		if(this.saldo < valor + tarifaSaque) {
 			System.out.println("Saldo insuficiente");
 		}
 		else {
-			this.saldo -= valor + tarifa;
+			this.saldo -= valor + tarifaSaque;
 		}
 	}
 	
 	@Override
 	public void depositar(double valor) {
-		saldo += saldo + valor; // alterar
+		saldo += valor - tarifaDeposito;
 	}
 	
 
 	@Override
 	public void transferir (Conta contaDestino, double valor) {
-		this.saldo = super.saldo + limite; 
 		if(this.saldo < valor) {
 	        System.out.println("Seu saldo é insuficiente!");
 	     }
 	     else {
-	         this.saldo -= valor;
+	         this.saldo -= (valor + tarifaTransferencia);
 	         contaDestino.saldo += valor;
 	         System.out.println("Seu saldo após transferência é de: " + this.saldo);
 	     }
@@ -81,19 +63,16 @@ public class ContaCorrente extends Conta {
 		System.out.println("Titular: " + this.getTitular());
 		System.out.println("Número da conta: " + getNumConta());
 		System.out.println("Saldo: " + this.getSaldo());
-		System.out.println("Limite: " + this.limite);
 		System.out.println("Data: " + sdf.format(date));
 	}
 
 	@Override
-	public String toString() {
+	public String toString() { //ALTERAR
 		return "Tipo de conta = " + getTipoDeConta() 
 					+ ", Agencia = " + getAgencia() 
 					+ ", Titular = " + getTitular() 
 					+ ", Numero = " + getNumConta()
-					+ ", Saldo = " + getSaldo() 
-					+ ", Tarifa = " + tarifa 
-					+ ", Limite = " + limite;
+					+ ", Saldo = " + getSaldo(); 
 	}
 
 }
