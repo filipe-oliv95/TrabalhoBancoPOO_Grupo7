@@ -1,9 +1,12 @@
 package contas;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import agencias.Agencia;
 import contas.enums.ContasEnum;
@@ -24,7 +27,7 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 	
 	public Conta() {
 
-	}
+	}	
 		
 	public Conta(Agencia agencia, String numConta, Cliente titular, String cpf, double saldo, ContasEnum tipoDeConta) {
 		this.agencia = agencia;
@@ -104,15 +107,37 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 	
 	@Override
 	public int compareTo(Conta c) {
-		if (this.getTitular().compareTo(c.getTitular()) > 0) { // compara pelo nome
-			return -1; 
-		}
-		if (this.getTitular().compareTo(c.getTitular()) < 0) {
-			return 1;
-		} 
-		return 0;
+		return this.titular.compareTo(c.getTitular()); 
 	}
 	
+		
+//	public int compareTo(Conta c) {
+//		if (this.getTitular().compareTo(c.getTitular()) > 0) { // compara pelo nome
+//			return -1; 
+//		}
+//		if (this.getTitular().compareTo(c.getTitular()) < 0) {
+//			return 1;
+//		} 
+//		return 0;
+//	}	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(cpf, titular);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Conta other = (Conta) obj;
+		return Objects.equals(cpf, other.cpf) && Objects.equals(titular, other.titular);
+	}
+
 	@Override
 	public void imprimeExtrato() {
 		System.out.println("### Extrato da Conta " + tipoDeConta + " ###");

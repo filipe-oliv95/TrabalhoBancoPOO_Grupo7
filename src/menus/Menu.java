@@ -82,7 +82,8 @@ public class Menu {
 			case 2:	
 				Relatorio.tributacaoCC((ContaCorrente) conta);
 				break;
-			case 3:
+			case 3: 
+				Relatorio.simularRendimentoPoupanca();
 				break;
 			case 4:
 				break;

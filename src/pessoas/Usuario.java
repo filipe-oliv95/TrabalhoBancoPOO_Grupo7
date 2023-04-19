@@ -56,7 +56,11 @@ public abstract class Usuario {
 	public void setTipoDeUsuario(UsuariosEnum tipoDeUsuario) {
 		this.tipoDeUsuario = tipoDeUsuario;
 	}
-
+	
+	public int compareTo(Cliente titular) {
+		return this.getNome().compareTo(titular.getNome());
+	}
+	
 	@Override
 	public String toString() {
 		return "Nome=" + nome + ", cpf=" + cpf 

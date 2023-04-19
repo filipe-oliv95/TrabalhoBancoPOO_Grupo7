@@ -1,9 +1,13 @@
 package relatorios;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.TreeSet;
 
 import contas.Conta;
 import contas.ContaCorrente;
+import contas.ContaPoupanca;
 import pessoas.Gerente;
 
 public class Relatorio {
@@ -32,13 +36,23 @@ public class Relatorio {
 		 System.out.println("Total de tarifas cobradas em transferências: R$" + tarifaTotalTransferencia);
 		 double somaTarifas = tarifaTotalSaque + tarifaTotalDeposito + tarifaTotalTransferencia;
 		 System.out.println("Soma de todas as tarifas: R$" + somaTarifas);
+		 
+		 // ESCRITOR AQUI
 	}
 
-	public void rendimentoPoup() { // RELATORIO CLIENTE e GERENTE
+	public static void simularRendimentoPoupanca() { // RELATORIO CLIENTE e GERENTE
+		Scanner sc = new Scanner(System.in);
 		// Relatório de Rendimento da poupança, simulação do valor de rendimento da
-		// poupança no prazo
-		// valor dinheiro (double) e qtd de dias (inteiro) = rendimento no prazo
-		// informado
+		System.out.println("Qual valor deseja simular? ");
+		double valor = sc.nextDouble();
+		System.out.println("Quantos dias deseja saber o rendimento? ");
+		int dias = sc.nextInt();
+		
+		double rendimento = valor * dias * ContaPoupanca.getTaxaRendimento();
+		System.out.printf("O rendimento para o prazo informado: %.2f%n", rendimento);
+		System.out.printf("Valor final ficaria: %.2f", valor + rendimento);
+		
+		// ESCRITOR AQUI
 	}
 
 	public static void numDeContasNaAgencia(List<Conta> contas, String cpf) { // RELATORIO GERENTE
@@ -57,8 +71,10 @@ public class Relatorio {
 
 	}
 
-	public void informacoesClientes() { // RELATORIO DIRETOR
+	public static void informacoesClientes() { // RELATORIO DIRETOR
 		// Nome, CPF, Agencia de todos clientes do Sistema (em ordem alfabética)
+						
+	
 	}
 
 	private double totalCapital = 0;

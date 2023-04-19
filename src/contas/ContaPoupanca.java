@@ -9,7 +9,7 @@ import pessoas.Cliente;
 
 public class ContaPoupanca extends Conta {
     
-    private double rendimento;
+    private static final double TAXA_RENDIMENTO = 0.002; 
     
     public static Map<String, ContaPoupanca> mapaContasPoupanca = new HashMap<>();
     
@@ -18,20 +18,16 @@ public class ContaPoupanca extends Conta {
     }
 
     public ContaPoupanca(Agencia agencia, String numConta, Cliente titular, String cpf, double saldoInicial,
-            ContasEnum tipoDeConta, double rendimento) {
+            ContasEnum tipoDeConta) {
         super(agencia, numConta, titular, cpf, saldoInicial, tipoDeConta);
-        this.rendimento = rendimento;
-    }    
-
-    public double getRendimento() {
-        return rendimento;
     }
-
-    public void setRendimento(double rendimento) {
-        this.rendimento = rendimento;
-    }
+ 
     
-    @Override
+    public static double getTaxaRendimento() {
+		return TAXA_RENDIMENTO;
+	}
+
+	@Override
     public void depositar(double valor) {
         saldo += valor;
     }
@@ -43,6 +39,6 @@ public class ContaPoupanca extends Conta {
                 + ", Titular = "    + getTitular()
                 + ", Numero = " + getNumConta() 
                 + ", Saldo = " + getSaldo()
-                + ", rendimento = " + rendimento;
+                + ", rendimento = " + TAXA_RENDIMENTO;
     }
 }

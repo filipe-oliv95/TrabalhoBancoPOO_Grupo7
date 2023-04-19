@@ -24,8 +24,7 @@ public class SistemaBancario {
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
-		
+		Scanner sc = new Scanner(System.in);	
 	
 		
 		// populando Agências (para utilizar na instanciação do Gerente, Clientes e
@@ -111,11 +110,11 @@ public class SistemaBancario {
 
 		// instanciando Contas para a LIsta de Contas
 		ContaPoupanca conta1 = new ContaPoupanca(agencia1, "658974", cliente1, "23156489785", 1500.0,
-				ContasEnum.valueOf("POUPANCA"), 0.5);
+				ContasEnum.valueOf("POUPANCA"));
 		ContaCorrente conta2 = new ContaCorrente(agencia2, "281564", cliente2, "86541233210", 5000.0,
 				ContasEnum.valueOf("CCORRENTE"));
 		ContaPoupanca conta3 = new ContaPoupanca(agencia3, "683145", cliente3, "98654712548", 7000.0,
-				ContasEnum.valueOf("POUPANCA"), 0.5);
+				ContasEnum.valueOf("POUPANCA"));
 		ContaCorrente conta4 = new ContaCorrente(agencia2, "112564", cliente4, "98756412365", 3500.0,
 				ContasEnum.valueOf("CCORRENTE"));
 		ContaCorrente conta5 = new ContaCorrente(agencia1, "278561", cliente5, "56489723114", 2000.0,
@@ -168,6 +167,7 @@ public class SistemaBancario {
 //			System.out.println(co);
 		}
 		
+
 		// IMPRIMIR MENU CLIENTE E TRANSFERIR
 //		System.out.println(Conta.mapaDeContas.get("56321452632"));
 //		Menu.imprimirMenuCliente(conta3);
@@ -256,23 +256,15 @@ public class SistemaBancario {
 						case 2: // MENU DO FUNCIONÁRIO
 							if (funcionario.getTipoDeUsuario() == UsuariosEnum.PRESIDENTE) {
 								System.out.println("Presidente");
-								//menu presidente
+								// menu
 							} 
 							else if (funcionario.getTipoDeUsuario() == UsuariosEnum.DIRETOR) {
 								System.out.println("Diretor");
-								// menu diretor
+								//Relatorio.informacoesClientes(contas);
 							} 
 							else if (funcionario.getTipoDeUsuario() == UsuariosEnum.GERENTE) {
 								System.out.println("Gerente");
-								// menu gerente
-								//opção 1
-								Relatorio.imprimirSaldo(conta);
-								//opção 2
-								
-								//opção 3
-								
-								//opção 4
-								Relatorio.numDeContasNaAgencia(contas, cpf);
+								Relatorio.numDeContasNaAgencia(contas, cpf); // pegou List<Conta>
 							}
 							break;
 						default:
