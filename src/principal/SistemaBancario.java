@@ -254,25 +254,25 @@ public class SistemaBancario {
 								Menu.imprimirMenuCliente(conta);
 							break;
 						case 2: // MENU DO FUNCIONÁRIO
-							if (funcionario.getTipoDeUsuario() == UsuariosEnum.PRESIDENTE) {
+							switch(usuario.getTipoDeUsuario()) {
+							case PRESIDENTE:
 								System.out.println("Presidente");
-								// menu
-							} 
-							else if (funcionario.getTipoDeUsuario() == UsuariosEnum.DIRETOR) {
+								break;
+							case DIRETOR:
 								System.out.println("Diretor");
-								//Relatorio.informacoesClientes(contas);
-							} 
-							else if (funcionario.getTipoDeUsuario() == UsuariosEnum.GERENTE) {
+								Relatorio.informacoesClientes(contas);
+								break;
+							case GERENTE:
 								System.out.println("Gerente");
 								Relatorio.numDeContasNaAgencia(contas, cpf); // pegou List<Conta>
-							}
-							break;
-						default:
+								break;
+							default:
 							System.out.println("DADOS INCORRETOS, aperte Enter e digite novamente \n");
 							// retornar função
 							break;
+							}
 						}
-					} while (opcao < 1 || opcao > 2); //PENSAR EM UMA OUTRO SOLUÇÃO
+					} while (!(opcao == 0)); //PENSAR EM UMA OUTRO SOLUÇÃO
 				}
 			}
 			else if (conta != null && usuario != null) {
@@ -292,29 +292,3 @@ public class SistemaBancario {
 		sc.close();
 	}
 }
-
-
-
-//// testando busca dos tipos de contas pelo Enum
-//System.out.println("\nTeste filtrar poupanças por Enum");
-//for (Conta c1 : contas) {
-//	if (c1.getTipoDeConta() == ContasEnum.POUPANCA) {
-//		// System.out.println(c1);
-//		System.out.println(c1.getTitular() + " - " + c1.getTipoDeConta() + " - "
-//				+ ContasEnum.POUPANCA.getIdConta() + " - " + ContasEnum.POUPANCA.getTipoConta());
-//	}
-//}
-
-//
-//		Relatorio relat = new Relatorio();
-//		
-//		System.out.println();
-//		cpoup.imprimeExtrato(); // testando extrato da poupança anterior
-//				
-//		System.out.println();
-//		ContaCorrente cc = new ContaCorrente(23, 2, "Eduardo", "CORRENTE", 2000.0, 5.0, 1500.0);
-//		System.out.println(cc);
-//		cc.transferir(cpoup, 1000.0);
-//		System.out.println("Saldo da poupança " + cpoup.getTitular() + " após transferência " + cpoup.getSaldo() + "\n");
-//	}	
-//}

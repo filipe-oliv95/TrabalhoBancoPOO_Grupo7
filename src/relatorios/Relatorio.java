@@ -71,7 +71,7 @@ public class Relatorio {
 
 	}
 
-	public static void informacoesClientes() { // RELATORIO DIRETOR
+	public static void informacoesClientes(List<Conta> contas) { // RELATORIO DIRETOR
 		// Nome, CPF, Agencia de todos clientes do Sistema (em ordem alfabética)
 						
 	
