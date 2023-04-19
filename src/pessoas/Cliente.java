@@ -13,8 +13,8 @@ public class Cliente extends Usuario {
 		
 	}
 
-	public Cliente(String nome, String cpf, Integer senha, UsuariosEnum tipoDeUsuario) {
-		super(nome, cpf, senha, tipoDeUsuario);
+	public Cliente(UsuariosEnum tipoDeUsuario, String nome, String cpf, Integer senha) {
+		super(tipoDeUsuario, nome, cpf, senha);
 	}
 
 	public static String imprimeCPF(String CPF) {

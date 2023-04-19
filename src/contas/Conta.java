@@ -25,13 +25,13 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta>{
 
 	}
 
-	public Conta(Agencia agencia, String numConta, Cliente titular, String cpf, double saldo, ContasEnum tipoDeConta) {
+	public Conta(ContasEnum tipoDeConta, Agencia agencia, String numConta, Cliente titular, String cpf, double saldo) {
+		this.tipoDeConta = tipoDeConta;
 		this.agencia = agencia;
 		this.numConta = numConta;
 		this.titular = titular;
 		this.cpf = cpf;
 		this.saldo = saldo;
-		this.tipoDeConta = tipoDeConta;
 	}
 
 	public Agencia getAgencia() {

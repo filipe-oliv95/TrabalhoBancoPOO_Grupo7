@@ -24,9 +24,8 @@ public class ContaCorrente extends Conta {
 		super();
 	}
 
-	public ContaCorrente(Agencia agencia, String numConta, Cliente titular, String cpf, double saldoInicial,
-			ContasEnum tipoDeConta) {
-		super(agencia, numConta, titular, cpf, saldoInicial, tipoDeConta);
+	public ContaCorrente(ContasEnum tipoDeConta, Agencia agencia, String numConta, Cliente titular, String cpf, double saldoInicial) {
+		super(tipoDeConta, agencia, numConta, titular, cpf, saldoInicial);
 	}	
 	
 	public static double getTARIFA_SAQUE() {

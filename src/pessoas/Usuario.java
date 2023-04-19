@@ -24,11 +24,11 @@ public abstract class Usuario {
 		this.cpf = cpf;
 	}
 	
-	public Usuario(String nome, String cpf, Integer senha, UsuariosEnum tipoDeUsuario) {
+	public Usuario(UsuariosEnum tipoDeUsuario, String nome, String cpf, Integer senha) {
+		this.tipoDeUsuario = tipoDeUsuario;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.senha = senha;
-		this.tipoDeUsuario = tipoDeUsuario;
 	}
 
 	public String getNome() {

@@ -13,8 +13,8 @@ public class Diretor extends Funcionario {
 		super();
 	}
 	
-	public Diretor(String nome, String cpf, Integer senha, UsuariosEnum tipoDeUsuario) {
-		super(nome, cpf, senha, tipoDeUsuario);
+	public Diretor(UsuariosEnum tipoDeUsuario, String nome, String cpf, Integer senha) {
+		super(tipoDeUsuario, nome, cpf, senha);
 	}
 
 	@Override

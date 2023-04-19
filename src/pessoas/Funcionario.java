@@ -13,8 +13,8 @@ public abstract class Funcionario extends Usuario {
 		
 	}		
 		
-	public Funcionario(String nome, String cpf, Integer senha, UsuariosEnum tipoDeUsuario) {
-		super(nome, cpf, senha, tipoDeUsuario);
+	public Funcionario(UsuariosEnum tipoDeUsuario, String nome, String cpf, Integer senha) {
+		super(tipoDeUsuario, nome, cpf, senha);
 	}
 	
 	public static String imprimeCPF(String CPF) {

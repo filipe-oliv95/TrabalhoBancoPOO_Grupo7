@@ -13,8 +13,8 @@ public class Presidente extends Funcionario {
 		super();
 	}
 
-	public Presidente(String nome, String cpf, Integer senha, UsuariosEnum tipoDeUsuario) {
-		super(nome, cpf, senha, tipoDeUsuario);
+	public Presidente(UsuariosEnum tipoDeUsuario, String nome, String cpf, Integer senha) {
+		super(tipoDeUsuario, nome, cpf, senha);
 	}
 
 	

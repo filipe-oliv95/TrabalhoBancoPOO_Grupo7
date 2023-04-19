@@ -19,9 +19,8 @@ public class ContaPoupanca extends Conta {
         super();
     }
        
-	public ContaPoupanca(Agencia agencia, String numConta, Cliente titular, String cpf, double saldoInicial,
-            ContasEnum tipoDeConta) {
-        super(agencia, numConta, titular, cpf, saldoInicial, tipoDeConta);
+	public ContaPoupanca(ContasEnum tipoDeConta, Agencia agencia, String numConta, Cliente titular, String cpf, double saldoInicial) {
+        super(tipoDeConta, agencia, numConta, titular, cpf, saldoInicial);
     }
  
     
