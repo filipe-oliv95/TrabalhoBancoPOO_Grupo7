@@ -18,6 +18,12 @@ public abstract class Usuario {
 		super();
 	}
 
+	public Usuario(String nome, String cpf) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+	}
+	
 	public Usuario(String nome, String cpf, Integer senha, UsuariosEnum tipoDeUsuario) {
 		this.nome = nome;
 		this.cpf = cpf;
@@ -55,11 +61,7 @@ public abstract class Usuario {
 
 	public void setTipoDeUsuario(UsuariosEnum tipoDeUsuario) {
 		this.tipoDeUsuario = tipoDeUsuario;
-	}
-	
-	public int compareTo(Cliente titular) {
-		return this.getNome().compareTo(titular.getNome());
-	}
+	}	
 	
 	@Override
 	public String toString() {

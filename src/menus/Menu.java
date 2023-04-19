@@ -85,8 +85,7 @@ public class Menu {
 			case 3: 
 				Relatorio.simularRendimentoPoupanca();
 				break;
-			case 4:
-				break;
+			case 4: System.out.println("DESAFIO");
 			default:
 				break;
 			}

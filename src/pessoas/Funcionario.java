@@ -24,8 +24,7 @@ public abstract class Funcionario extends Usuario {
 
 	@Override
 	public String toString() {
-		return "[nome = " + getNome() 
-				+ ", cpf = " + imprimeCPF(getCpf())
+		return getNome() + ", cpf = " + imprimeCPF(getCpf())
 				+ ", Cargo = " + getTipoDeUsuario();
 	}
 }

@@ -1,6 +1,7 @@
 package principal;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ import contas.Conta;
 import contas.ContaCorrente;
 import contas.ContaPoupanca;
 import contas.enums.ContasEnum;
-
+import io.LeitorEscritor;
 import menus.Menu;
 import pessoas.Cliente;
 import pessoas.Diretor;
@@ -22,11 +23,14 @@ import relatorios.Relatorio;
 
 public class SistemaBancario {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 
 		Scanner sc = new Scanner(System.in);	
 	
-		
+		System.out.println("TESTANDO LEITURA");
+		LeitorEscritor.leitura(".\\registrodedados.txt"); 
+	
+				
 		// populando Agências (para utilizar na instanciação do Gerente, Clientes e
 		// Contas)
 		Agencia agencia1 = new Agencia("2885");
@@ -42,14 +46,15 @@ public class SistemaBancario {
 
 		// adicionando as agencias no MAP de Agencias
 		for (Agencia ag : agencias) {
+			//System.out.println(agencias);
 			Agencia.mapaDeAgencias.put(ag.getNumAgencia(), ag);
-			// System.out.println(ag); // lista de agências salva
+			//System.out.println(ag); // lista de agências salva
 		}
 
 		// populando Gerentes
-		Gerente gerente1 = new Gerente("Eduardo", "08498754632", 6666, UsuariosEnum.valueOf("GERENTE"), agencia1);
-		Gerente gerente2 = new Gerente("Renata", "25698741525", 7777, UsuariosEnum.valueOf("GERENTE"), agencia2);
-		Gerente gerente3 = new Gerente("Marilia", "95648123564", 8888, UsuariosEnum.valueOf("GERENTE"), agencia3);
+		Gerente gerente1 = new Gerente("Noah da Mota", "82811814515", 6666, UsuariosEnum.valueOf("GERENTE"), agencia1);
+		Gerente gerente2 = new Gerente("Bruna Barros", "56016670120", 7777, UsuariosEnum.valueOf("GERENTE"), agencia2);
+		Gerente gerente3 = new Gerente("Cristiane Monteiro", "12794354701", 8888, UsuariosEnum.valueOf("GERENTE"), agencia3);
 
 		
 		
@@ -65,8 +70,8 @@ public class SistemaBancario {
 		}
 
 		// populando Diretores
-		Diretor diretor1 = new Diretor("Gustavo", "56321452632", 9999, UsuariosEnum.valueOf("DIRETOR"));
-		Diretor diretor2 = new Diretor("Clara", "85641236589", 1010, UsuariosEnum.valueOf("DIRETOR"));
+		Diretor diretor1 = new Diretor("Anthony Melo", "87259439521", 9999, UsuariosEnum.valueOf("DIRETOR"));
+		Diretor diretor2 = new Diretor("Emily Monteiro", "01078232334", 1010, UsuariosEnum.valueOf("DIRETOR"));
 
 		List<Diretor> diretores = new ArrayList<>();
 		diretores.add(diretor1);
@@ -79,20 +84,21 @@ public class SistemaBancario {
 
 		// criando o Presidente
 		System.out.println();
-		Presidente presidente = new Presidente("Miguel", "54623456875", 1212, UsuariosEnum.valueOf("PRESIDENTE"));
+		Presidente presidente = new Presidente("Vinicius da Silva", "80466528906", 1212, UsuariosEnum.valueOf("PRESIDENTE"));
 
 		// instanciando clientes para popular a Lista de Clientes e a Lista de Contas
-		Cliente cliente1 = new Cliente("Fernanda", "23156489785", 1111, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente2 = new Cliente("Filipe", "86541233210", 2222, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente3 = new Cliente("Paulo", "98654712548", 3333, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente4 = new Cliente("Jullian", "98756412365", 4444, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente5 = new Cliente("Adriana", "56489723114", 5555, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente6 = new Cliente("Miguel", "54623456875", 1212, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente7 = new Cliente("Gustavo", "56321452632", 9999, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente8 = new Cliente("Clara", "85641236589", 1010, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente9 = new Cliente("Eduardo", "08498754632", 6666, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente10 = new Cliente("Renata", "25698741525", 7777, UsuariosEnum.valueOf("CLIENTE"));
-		Cliente cliente11 = new Cliente ("Marilia", "95648123564", 8888, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente1 = new Cliente("Fernanda Meirelles", "23156489785", 1111, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente2 = new Cliente("Filipe Oliveira", "86541233210", 2222, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente3 = new Cliente("Paulo Vicente", "98654712548", 3333, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente4 = new Cliente("Jullian Cardoso", "98756412365", 4444, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente5 = new Cliente("Adriana Neves", "56489723114", 5555, UsuariosEnum.valueOf("CLIENTE"));		
+		Cliente cliente6 = new Cliente("Vinicius da Silva", "80466528906", 1212, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente7 = new Cliente("Anthony Melo", "87259439521", 9999, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente8 = new Cliente("Emily Monteiro", "01078232334", 1010, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente9 = new Cliente("Noah da Mota", "82811814515", 6666, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente10 = new Cliente("Bruna Barros", "56016670120", 7777, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente11 = new Cliente("Cristiane Monteiro", "12794354701", 8888, UsuariosEnum.valueOf("CLIENTE"));
+		Cliente cliente12 = new Cliente("Luan Cailleaux", "56432145896", 1313, UsuariosEnum.valueOf("CLIENTE"));
 
 		// criando lista com classe Cliente e menos atributos
 		List<Cliente> clientes = new ArrayList<>();
@@ -102,7 +108,13 @@ public class SistemaBancario {
 		clientes.add(cliente4);
 		clientes.add(cliente5);
 		clientes.add(cliente6);
-
+		clientes.add(cliente7);
+		clientes.add(cliente8);
+		clientes.add(cliente9);
+		clientes.add(cliente10);
+		clientes.add(cliente11);
+		clientes.add(cliente12);
+		
 		for (Cliente cs : clientes) {
 			Cliente.mapaDeClientes.put(cs.getCpf(), cs); // adicionando os dados no Map de Cliente
 			// System.out.println(cs); // e imprimindo a lista de clientes só para verificar
@@ -119,18 +131,20 @@ public class SistemaBancario {
 				ContasEnum.valueOf("CCORRENTE"));
 		ContaCorrente conta5 = new ContaCorrente(agencia1, "278561", cliente5, "56489723114", 2000.0,
 				ContasEnum.valueOf("CCORRENTE"));
-		ContaCorrente conta6 = new ContaCorrente(agencia3, "681245", cliente6, "54623456875", 2500.0,
+		ContaCorrente conta6 = new ContaCorrente(agencia3, "681245", cliente6, "80466528906", 2500.0,
 				ContasEnum.valueOf("CCORRENTE"));
-		ContaCorrente conta7 = new ContaCorrente(agencia2, "286545", cliente7, "56321452632", 2500.0,
+		ContaCorrente conta7 = new ContaCorrente(agencia2, "286545", cliente7, "87259439521", 2500.0,
 				ContasEnum.valueOf("CCORRENTE"));
-		ContaCorrente conta8 = new ContaCorrente(agencia1, "634545", cliente8, "85641236589", 2900.0,
+		ContaCorrente conta8 = new ContaCorrente(agencia1, "634545", cliente8, "01078232334", 2900.0,
 				ContasEnum.valueOf("CCORRENTE"));
-		ContaCorrente conta9 = new ContaCorrente(agencia3, "696545", cliente9, "08498754632", 2800.0,
+		ContaCorrente conta9 = new ContaCorrente(agencia3, "696545", cliente9, "82811814515", 2800.0,
 				ContasEnum.valueOf("CCORRENTE"));
-		ContaCorrente conta10 = new ContaCorrente(agencia2, "287645", cliente10, "25698741525", 2500.0,
+		ContaCorrente conta10 = new ContaCorrente(agencia2, "287645", cliente10, "56016670120", 2500.0,
 				ContasEnum.valueOf("CCORRENTE"));
-		ContaCorrente conta11 = new ContaCorrente(agencia1, "647645", cliente11, "95648123564", 2900.0,
+		ContaCorrente conta11 = new ContaCorrente(agencia1, "647645", cliente11, "12794354701", 2900.0,
 				ContasEnum.valueOf("CCORRENTE"));
+		ContaPoupanca conta12 = new ContaPoupanca(agencia3, "621564", cliente12, "56432145896", 1700.0,
+				ContasEnum.valueOf("POUPANCA"));
 				
 		List<Conta> contas = new ArrayList<>();
 		contas.add(conta1);
@@ -143,7 +157,21 @@ public class SistemaBancario {
 		contas.add(conta8);
 		contas.add(conta9);
 		contas.add(conta10);
-		contas.add(conta11);	
+		contas.add(conta11);
+		
+		System.out.println();
+		for (Conta co : contas) {
+			Conta.mapaDeContas.put(co.getCpf(), co); // adicionando no Map de Contas
+//			System.out.println(co);
+		}
+		
+		Collections.sort(contas);
+		for (Conta conta : contas) {
+			System.out.printf("NOME: %s\t AGÊNCIA: %s\n",
+					conta.getTitular(), conta.getAgencia());
+		}
+		
+		
 		
 		//METODO DEPOSITAR
 //		System.out.println("saldo: " + conta1.getSaldo());
@@ -160,13 +188,6 @@ public class SistemaBancario {
 //		conta1.transferir(conta2, 1000);
 //		System.out.println("saldo: " + conta1.getSaldo());
 //		System.out.println("saldo: " + conta2.getSaldo());				
-		
-		System.out.println();
-		for (Conta co : contas) {
-			Conta.mapaDeContas.put(co.getCpf(), co); // adicionando no Map de Contas
-//			System.out.println(co);
-		}
-		
 
 		// IMPRIMIR MENU CLIENTE E TRANSFERIR
 //		System.out.println(Conta.mapaDeContas.get("56321452632"));
@@ -174,6 +195,7 @@ public class SistemaBancario {
 //		System.out.println();
 
 //		 teste do Objeto Cliente dentro de Conta
+		System.out.println();
 		ContaCorrente contaTeste = new ContaCorrente(agencia3, "278561", cliente5, "56489723114", 1200.0,
 				ContasEnum.valueOf("CCORRENTE"));
 		System.out.println("Pegando Objeto Cliente dentro de Conta => " + contaTeste.getTitular().getNome());
@@ -181,6 +203,7 @@ public class SistemaBancario {
 		System.out.println();
 		// criando Lista de usuarios para adicionar no Map
 		List<Usuario> usuarios = new ArrayList<>();
+		usuarios.add(cliente12);
 		usuarios.add(cliente11);
 		usuarios.add(cliente10);
 		usuarios.add(cliente9);
@@ -201,9 +224,9 @@ public class SistemaBancario {
 
 		for (Usuario usu : usuarios) {
 			Usuario.mapaDeUsuarios.put(usu.getCpf(), usu);
-			// System.out.println(u);
+		//	 System.out.println(usu);
 		}
-		System.out.println("Dados do MAPA USUARIOS => " + Usuario.mapaDeUsuarios.get("54623456875"));
+		System.out.println("Dados do MAPA USUARIOS => " + Usuario.mapaDeUsuarios.get("01078232334"));
 		System.out.println("Dados do MAPA USUARIOS => " + Usuario.mapaDeUsuarios.get("23156489785"));
 
 		// criando mapa de Funcionarios
@@ -216,10 +239,9 @@ public class SistemaBancario {
 		funcionarios.add(gerente3);
 		for (Funcionario func : funcionarios) {
 			Funcionario.mapaDeFuncionarios.put(func.getCpf(), func);
-			// System.out.println(func);
+//			 System.out.println(func);
 		}
-		System.out
-				.println("Pegando dados do Mapa Funcionários =>  " + Funcionario.mapaDeFuncionarios.get("56321452632"));
+		System.out.println("Testando Mapa Funcionários =>  " + Funcionario.mapaDeFuncionarios.get("80466528906"));
 
 		Conta conta;
 		Usuario usuario;
@@ -256,15 +278,30 @@ public class SistemaBancario {
 						case 2: // MENU DO FUNCIONÁRIO
 							switch(usuario.getTipoDeUsuario()) {
 							case PRESIDENTE:
-								System.out.println("Presidente");
+								System.out.println("Deseja verificar o capital total? ");
+								
 								break;
 							case DIRETOR:
-								System.out.println("Diretor");
-								Relatorio.informacoesClientes(contas);
+								System.out.println("Deseja consultar informações dos clientes do banco? S/N ");
+								char op = sc.next().charAt(0);
+								
+									if(op == 'S' || op == 's') {
+										Relatorio.informacoesClientes(contas);
+									}
+									else {
+										Menu.imprimirMenuCliente(conta);
+									}								
 								break;
 							case GERENTE:
-								System.out.println("Gerente");
-								Relatorio.numDeContasNaAgencia(contas, cpf); // pegou List<Conta>
+								System.out.println("Deseja consultar a lista de contas em sua agência ? S/N ");
+								op = sc.next().charAt(0);
+								
+									if(op == 'S' || op == 's') {
+										Relatorio.numDeContasNaAgencia(contas, cpf); // pegou List<Conta>
+									}
+									else {
+										Menu.imprimirMenuCliente(conta);
+									}		
 								break;
 							default:
 							System.out.println("DADOS INCORRETOS, aperte Enter e digite novamente \n");
@@ -278,15 +315,12 @@ public class SistemaBancario {
 			else if (conta != null && usuario != null) {
 				if (usuario.getSenha() == senha) {
 					System.out.println("Cliente");
-					Menu.imprimirMenuCliente(conta);
-//					MenuCliente 
-					
-					
-				} else {
+					Menu.imprimirMenuCliente(conta); 					
+				} 
+				else {
 					System.out.println("DADOS INCORRETOS, aperte Enter e digite novamente \n");
 				}
 			}
-
 		} while (conta == null || usuario == null || usuario.getSenha() != senha);
 
 		sc.close();

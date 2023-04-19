@@ -1,5 +1,7 @@
 package contas;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,7 +70,6 @@ public class ContaCorrente extends Conta {
 		saldo += valor - TARIFA_DEPOSITO;
 		totalDepositos ++;
 	}
-	
 
 	@Override
 	public void transferir (Conta contaDestino, double valor) {
@@ -83,21 +84,20 @@ public class ContaCorrente extends Conta {
 	     }
 	}	
 
-//	@Override
-//	public void imprimeExtrato() {
-//		System.out.println("### Extrato da Conta Corrente ###");
-//		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/aaaa HH:mm:ss");
-//		Date date = new Date();
-//		System.out.println("Titular: " + this.getTitular());
-//		System.out.println("Número da conta: " + getNumConta());
-//		System.out.println("Saldo: " + this.getSaldo());
-//		System.out.println("Data: " + sdf.format(date));
-//	}
+	@Override
+	public void imprimeExtrato() {
+		System.out.println("### Extrato da Conta Corrente ###");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/aaaa HH:mm:ss");
+		Date date = new Date();
+		System.out.println("Titular: " + this.getTitular());
+		System.out.println("Número da conta: " + getNumConta());
+		System.out.println("Saldo: " + this.getSaldo());
+		System.out.println("Data: " + sdf.format(date));
+	}
 
 	@Override
 	public String toString() { //ALTERAR
-		return "Tipo de conta = " + getTipoDeConta() 
-					+ ", Agencia = " + getAgencia() 
+		return "Agencia = " + getAgencia() 
 					+ ", Titular = " + getTitular() 
 					+ ", Numero = " + getNumConta()
 					+ ", Saldo = " + getSaldo(); 
