@@ -45,9 +45,9 @@ public class SistemaBancario {
 //			System.out.println(c);
 //		}
 		
-
+		Cliente cliente;
 		Conta conta;
-		Usuario usuario;
+		//Usuario usuario;
 		Funcionario funcionario;
 		int senha = 0;
 		do {
@@ -61,8 +61,9 @@ public class SistemaBancario {
 			sc.nextLine();
 			System.out.println("================================");
 
+			cliente = mapaDeClientes.get(cpf);
 			conta = mapaDeContas.get(cpf);
-			usuario = mapaDeUsuarios.get(cpf);
+		//	usuario = mapaDeUsuarios.get(cpf);
 			funcionario = mapaDeFuncionarios.get(cpf);
 			List<Conta> listaContas = new ArrayList<>(mapaDeContas.values());
 			
@@ -138,8 +139,8 @@ public class SistemaBancario {
 					} while (!(opcao == 0)); //PENSAR EM UMA OUTRO SOLUÇÃO
 				}
 			}
-			else if (conta != null && usuario != null) {
-				if (usuario.getSenha() == senha) {
+			else if (conta != null && cliente != null) {
+				if (cliente.getSenha() == senha) {
 					System.out.println("Cliente");
 					Menu.imprimirMenuCliente(conta); 					
 				} 
@@ -147,7 +148,7 @@ public class SistemaBancario {
 					System.out.println("DADOS INCORRETOS, aperte Enter e digite novamente \n");
 				}
 			}
-		} while (conta == null || usuario == null || usuario.getSenha() != senha || funcionario.getSenha() != senha);
+		} while (conta == null || cliente == null || cliente.getSenha() != senha || funcionario.getSenha() != senha);
 
 		sc.close();
 	}
