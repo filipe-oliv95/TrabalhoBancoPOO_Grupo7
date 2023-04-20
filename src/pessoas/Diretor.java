@@ -1,14 +1,9 @@
 package pessoas;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import pessoas.enums.UsuariosEnum;
 
 public class Diretor extends Funcionario {
 
-	public static Map<String, Diretor> mapaDeDiretores = new HashMap<>();
-		
 	public Diretor() {
 		super();
 	}

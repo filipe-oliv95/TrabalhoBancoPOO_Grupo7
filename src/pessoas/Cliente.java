@@ -1,14 +1,9 @@
 package pessoas;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import pessoas.enums.UsuariosEnum;
 
 public class Cliente extends Usuario {
 
-	public static Map<String, Cliente> mapaDeClientes = new HashMap<>();
-	
 	public Cliente () {
 		
 	}

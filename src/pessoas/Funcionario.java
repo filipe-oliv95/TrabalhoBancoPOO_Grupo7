@@ -1,14 +1,9 @@
 package pessoas;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import pessoas.enums.UsuariosEnum;
 
 public abstract class Funcionario extends Usuario {
 
-	public static Map<String, Funcionario> mapaDeFuncionarios = new HashMap<>(); 
-	
 	public Funcionario() {
 		
 	}		

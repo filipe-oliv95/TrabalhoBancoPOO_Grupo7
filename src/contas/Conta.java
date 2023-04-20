@@ -1,7 +1,5 @@
 package contas;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 import agencias.Agencia;
@@ -19,8 +17,6 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta>{
 	protected double saldo; // deixei tipo primitivo pois dá para ver os erros (senão dá nulo)
 	private ContasEnum tipoDeConta;
 
-	public static Map<String, Conta> mapaDeContas = new HashMap<>();
-	
 	public Conta() {
 
 	}

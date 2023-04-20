@@ -2,8 +2,6 @@ package contas;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import agencias.Agencia;
 import contas.enums.ContasEnum;
@@ -12,8 +10,6 @@ import pessoas.Cliente;
 public class ContaPoupanca extends Conta {
     
     private static final double TAXA_RENDIMENTO_MES = 0.5; 
-    
-    public static Map<String, ContaPoupanca> mapaContasPoupanca = new HashMap<>();
     
     public ContaPoupanca() {
         super();

@@ -1,8 +1,5 @@
 package pessoas;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import pessoas.enums.UsuariosEnum;
 
 public abstract class Usuario {
@@ -11,8 +8,6 @@ public abstract class Usuario {
 	private String cpf;
 	private Integer senha;
 	private UsuariosEnum tipoDeUsuario;
-	
-	public static Map<String, Usuario> mapaDeUsuarios = new HashMap<>();
 	
 	public Usuario() {
 		super();

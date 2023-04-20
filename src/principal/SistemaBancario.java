@@ -1,28 +1,48 @@
 package principal;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
+import agencias.Agencia;
 import contas.Conta;
 import io.Leitor;
 import menus.Menu;
+import pessoas.Cliente;
+import pessoas.Diretor;
 import pessoas.Funcionario;
+import pessoas.Gerente;
+import pessoas.Presidente;
 import pessoas.Usuario;
 import relatorios.Relatorio;
 
 public class SistemaBancario {
 
+	public static Map<String, Agencia> mapaDeAgencias = new HashMap<>();
+	public static Map<String, Gerente> mapaDeGerentes = new HashMap<>();
+	public static Map<String, Diretor> mapaDeDiretores = new HashMap<>();
+	public static Map<String, Funcionario> mapaDeFuncionarios = new HashMap<>();
+	public static Map<String, Cliente> mapaDeClientes = new HashMap<>();
+	public static Map<String, Conta> mapaDeContas = new HashMap<>();
+	public static Map<String, Usuario> mapaDeUsuarios = new HashMap<>();
+	public static Map<String, Presidente> mapaDePresidente = new HashMap<>();
+	
 	public static void main(String[] args)  {
 
 		Scanner sc = new Scanner(System.in);	
 	
+		Leitor.leitura(".\\database\\registrodedados.txt"); 
+		
+		
+//		for (Conta c : contas) {
+//			System.out.println(c);
+//		}
+		
 		System.out.println("TESTANDO LEITURA");
-		Leitor.leitura(".\\registrodedados.txt"); 
-	
-				List<Conta> contas = new ArrayList<>();
 				
-		System.out.println("Testando Mapa Funcionários =>  " + Funcionario.mapaDeFuncionarios.get("80466528906"));
+		System.out.println("Testando Mapa Funcionários =>  " + mapaDeClientes.get("56489723114"));
 
 		Conta conta;
 		Usuario usuario;
@@ -39,10 +59,11 @@ public class SistemaBancario {
 			sc.nextLine();
 			System.out.println("================================");
 
-			conta = Conta.mapaDeContas.get(cpf);
-			usuario = Usuario.mapaDeUsuarios.get(cpf);
-			funcionario = Funcionario.mapaDeFuncionarios.get(cpf);
-			
+			conta = mapaDeContas.get(cpf);
+			usuario = mapaDeUsuarios.get(cpf);
+			funcionario = mapaDeFuncionarios.get(cpf);
+			List<Conta> listaContas = new ArrayList<>();
+//			List<Conta> contas = new ArrayList<>();
 			int opcao = 0;
 
 			if (conta != null && funcionario != null) {
@@ -67,7 +88,7 @@ public class SistemaBancario {
 								char op = sc.next().charAt(0);
 								
 									if(op == 'S' || op == 's') {
-										Relatorio.informacoesClientes(contas);
+										Relatorio.informacoesClientes(listaContas);
 									}
 									else {
 										Menu.imprimirMenuCliente(conta);
@@ -78,7 +99,7 @@ public class SistemaBancario {
 								op = sc.next().charAt(0);
 								
 									if(op == 'S' || op == 's') {
-										Relatorio.numDeContasNaAgencia(contas, cpf); // pegou List<Conta>
+										Relatorio.numDeContasNaAgencia(cpf); // pegou List<Conta>
 									}
 									else {
 										Menu.imprimirMenuCliente(conta);

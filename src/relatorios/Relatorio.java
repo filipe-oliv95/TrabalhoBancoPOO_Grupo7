@@ -10,6 +10,7 @@ import contas.Conta;
 import contas.ContaCorrente;
 import contas.ContaPoupanca;
 import pessoas.Gerente;
+import principal.SistemaBancario;
 
 public class Relatorio {
 
@@ -62,13 +63,13 @@ public class Relatorio {
 		 // LeitorEscritor.escritura();
 	}
 
-	public static void numDeContasNaAgencia(List<Conta> contas, String cpf) { // RELATORIO GERENTE
+	public static void numDeContasNaAgencia(String cpf) { // RELATORIO GERENTE
 		
-		Gerente gerente = Gerente.mapaDeGerentes.get(cpf);
+		Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf);
 		int totalContas = 0;
-		for (String cpf2 : Conta.mapaDeContas.keySet()) {
-			if (Conta.mapaDeContas.get(cpf2).getAgencia() == gerente.getAgencia()) { //conta do gerente
-				System.out.println(Conta.mapaDeContas.get(cpf2));
+		for (String cpf2 : SistemaBancario.mapaDeContas.keySet()) {
+			if (SistemaBancario.mapaDeContas.get(cpf2).getAgencia() == gerente.getAgencia()) { //conta do gerente
+				System.out.println(SistemaBancario.mapaDeContas.get(cpf2));
 				totalContas++;
 			}
 		}

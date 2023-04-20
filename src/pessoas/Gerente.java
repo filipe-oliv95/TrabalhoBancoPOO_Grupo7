@@ -1,16 +1,11 @@
 package pessoas;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import agencias.Agencia;
 import pessoas.enums.UsuariosEnum;
 
 public class Gerente extends Funcionario {
 
     private Agencia agencia;
-    
-    public static Map<String, Gerente> mapaDeGerentes = new HashMap<>();
     
     public Gerente() {
         super();

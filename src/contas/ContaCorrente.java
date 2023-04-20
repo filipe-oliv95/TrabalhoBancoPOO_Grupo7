@@ -2,8 +2,6 @@ package contas;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import agencias.Agencia;
 import contas.enums.ContasEnum;
@@ -17,8 +15,6 @@ public class ContaCorrente extends Conta {
 	private static double totalSaques;
 	private static double totalDepositos;
 	private static double totalTransferencias;
-
-	public static Map<String, ContaCorrente> mapaCCorrente = new HashMap<>();
 
 	public ContaCorrente() {
 		super();

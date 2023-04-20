@@ -1,13 +1,8 @@
 package agencias;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Agencia {
 
     private String numAgencia;
-    
-    public static Map<String, Agencia> mapaDeAgencias = new HashMap<>();
     
     public Agencia() {
         

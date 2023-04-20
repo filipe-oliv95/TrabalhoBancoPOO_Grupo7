@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import contas.Conta;
 import contas.ContaCorrente;
+import principal.SistemaBancario;
 import relatorios.Relatorio;
 
 public class Menu {
@@ -41,7 +42,7 @@ public class Menu {
 			System.out.println("Qual o CPF do destinatário?");
 			String cpf = sc.nextLine();
 
-			Conta contaDestino = Conta.mapaDeContas.get(cpf);
+			Conta contaDestino = SistemaBancario.mapaDeContas.get(cpf);
 			System.out.println("\nQuem é o titular da conta (Objeto Cliente dentro de Conta) => "
 					+ contaDestino.getTitular().getNome());
 			System.out.println(contaDestino + "\n");
