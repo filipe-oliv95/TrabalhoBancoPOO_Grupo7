@@ -64,17 +64,10 @@ public class Relatorio {
 	}
 
 	public static void numDeContasNaAgencia(String cpf) {
-		System.out.println("ENTROU no relatorio de agencias");
 		int totalContas = 0;
 		Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf); 
-		System.out.println(SistemaBancario.mapaDeGerentes.get(cpf));
 			for (String cpfConta : SistemaBancario.mapaDeContas.keySet()) {
-//				System.out.println(SistemaBancario.mapaDeContas.keySet());
-//				System.out.println(SistemaBancario.mapaDeContas.get(cpfConta).getAgencia().getNumAgencia() == gerente.getAgencia().getNumAgencia());
-//				System.out.println(SistemaBancario.mapaDeContas.get(cpfConta).getAgencia().getNumAgencia());
-//				System.out.println(gerente.getAgencia().getNumAgencia());
-//				System.out.println();
-				if (SistemaBancario.mapaDeContas.get(cpfConta).getAgencia().getNumAgencia() == gerente.getAgencia().getNumAgencia()) {
+				if (SistemaBancario.mapaDeContas.get(cpfConta).getAgencia().getNumAgencia().equals(gerente.getAgencia().getNumAgencia())) {
 					System.out.println(SistemaBancario.mapaDeContas.get(cpfConta));
 					totalContas++;
 				}

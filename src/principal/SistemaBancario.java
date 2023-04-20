@@ -1,8 +1,6 @@
 package principal;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -16,7 +14,6 @@ import pessoas.Funcionario;
 import pessoas.Gerente;
 import pessoas.Presidente;
 import pessoas.Usuario;
-import relatorios.Relatorio;
 
 public class SistemaBancario {
 

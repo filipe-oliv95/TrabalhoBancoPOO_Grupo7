@@ -42,7 +42,7 @@ public class ContaPoupanca extends Conta {
     
     @Override
     public String toString() {
-        return  ", Agencia = " + getAgencia() 
+        return  "Agencia = " + getAgencia() 
                 + ", Titular = "    + getTitular()
                 + ", Numero = " + getNumConta() 
                 + ", Saldo = " + getSaldo();

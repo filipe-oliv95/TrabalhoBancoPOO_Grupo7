@@ -9,7 +9,6 @@ import contas.Conta;
 import contas.ContaCorrente;
 import pessoas.Cliente;
 import pessoas.Funcionario;
-import pessoas.enums.UsuariosEnum;
 import principal.SistemaBancario;
 import relatorios.Relatorio;
 
@@ -82,7 +81,7 @@ public class Menu {
 					System.out.println("Escolha entre as opções abaixo:");
 					System.out.println("[1] Consulta de contas da agência " + conta.getAgencia().getNumAgencia());
 					System.out.println("[2] Retornar ao menu anterior");
-
+					opcao = sc.nextInt();
 					switch (opcao) {
 					case 1:
 						Relatorio.numDeContasNaAgencia(cpf);
