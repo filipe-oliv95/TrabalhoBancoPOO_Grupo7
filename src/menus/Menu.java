@@ -67,7 +67,7 @@ public class Menu {
 			System.out.println("[1] Entrar como cliente");
 			System.out.println("[2] Entrar como " + funcionario.getTipoDeUsuario().getTipoPessoa());
 			System.out.println("[3] Logout");
-			opcao = sc.nextInt();
+		opcao = sc.nextInt();
 
 			switch (opcao) { // MENU CLIENTE PARA FUNCIONARIO
 
@@ -169,12 +169,15 @@ public class Menu {
 			double valor = sc.nextDouble();
 			conta.sacar(valor);
 			System.out.println("SAQUE REALIZADO COM SUCESSO, saldo: " + conta.getSaldo()); // TESTE
+			menuCliente(conta, cliente);
 			break;
 		case 2:
 			System.out.println("Quanto você deseja depositar?");
 			valor = sc.nextDouble();
 			conta.depositar(valor);
 			System.out.printf("Novo saldo: %.2f", conta.getSaldo());
+			System.out.println();
+			menuCliente(conta, cliente);
 			break;
 		case 3:
 			System.out.println("Qual o valor da transferencia?");
@@ -191,9 +194,12 @@ public class Menu {
 			System.out.printf("Saldo destino antes de receber: %.2f%n", contaDestino.getSaldo());
 			conta.transferir(contaDestino, valor);
 			System.out.printf("Novo saldo: %.2f%n", contaDestino.getSaldo());
+			System.out.println();
+			menuCliente(conta, cliente);
 			break;
 		case 4:
 			conta.imprimeExtrato();
+			menuCliente(conta, cliente);
 			break;
 		case 5:
 			menuRelatorio(conta);
