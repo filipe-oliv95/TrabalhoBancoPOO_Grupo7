@@ -79,12 +79,14 @@ public class Menu {
 				case GERENTE:
 					System.out.println();
 					System.out.println("Escolha entre as opções abaixo:");
-					System.out.println("[1] Consulta de contas da agência " + conta.getAgencia().getNumAgencia());
+					System.out.println("[1] Consulta de contas da agência ");
 					System.out.println("[2] Retornar ao menu anterior");
 					opcao = sc.nextInt();
 					switch (opcao) {
-					case 1:
+					//ADICIONAR TRY CATCH
+					case 1: 
 						Relatorio.numDeContasNaAgencia(cpf);
+						menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 						break;
 					case 2:
 						menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
@@ -95,51 +97,43 @@ public class Menu {
 				case DIRETOR:
 					System.out.println();
 					System.out.println("Escolha entre as opções abaixo:");
-					System.out.println("[1] Consulta de contas por agência");
-					System.out.println("[2] Relatório de informações dos clientes do banco");
+					System.out.println("[1] Relatório de informações dos clientes do banco");
+					System.out.println("[2] Retornar ao menu anterior");
+					opcao = sc.nextInt();
+					switch (opcao) {
+					//ADICIONAR TRY CATCH
+					case 1:
+						Relatorio.informacoesClientes(listaContas);
+						menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
+						break;
+					case 2:
+						menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
+						break;
+					}
+					break;
+					
+				case PRESIDENTE:
+					System.out.println();
+					System.out.println("Escolha entre as opções abaixo:");
+					System.out.println("[1] Relatório de informações dos clientes do banco");
+					System.out.println("[2] Relatório valor total armazenado");
 					System.out.println("[3] Retornar ao menu anterior");
 					opcao = sc.nextInt();
 					switch (opcao) {
 					case 1:
-						Relatorio.numDeContasNaAgencia(cpf);
+						Relatorio.informacoesClientes(listaContas);
+						menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 						break;
 					case 2:
-						Relatorio.informacoesClientes(listaContas);
+						Relatorio.valorTotalCapitalBanco(listaContas);
+						menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 						break;
 					case 3:
 						menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 						break;
-					default:
-						Menu.menuCliente(conta, cliente);
-						break;
 					}
 					break;
-				case PRESIDENTE:
-					System.out.println();
-					System.out.println("Escolha entre as opções abaixo:");
-					System.out.println("[1] Consulta de contas por agência");
-					System.out.println("[2] Relatório de informações dos clientes do banco");
-					System.out.println("[3] Relatório valor total armazenado");
-					System.out.println("[4] Retornar ao menu anterior");
-					opcao = sc.nextInt();
-					switch (opcao) {
-					case 1:
-						Relatorio.numDeContasNaAgencia(cpf);
-						break;
-					case 2:
-						Relatorio.informacoesClientes(listaContas);
-						break;
-					case 3:
-						System.out.println("CRIAR RELATORIO DO CAPITAL ARMAZENADO");
-						break;
-					case 4:
-						menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
-						break;
-					default:
-						Menu.menuCliente(conta, cliente);
-						break;
-					}
-					break;
+					
 				default:
 					break;
 				}

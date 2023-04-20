@@ -24,6 +24,17 @@ public class ContaCorrente extends Conta {
 		super(tipoDeConta, agencia, numConta, titular, cpf, saldoInicial);
 	}	
 	
+	public static double getTotalTarifas() {
+		double totalTarifaDeposito = TARIFA_DEPOSITO * totalDepositos;
+		double totalTarifaSaque = TARIFA_SAQUE * totalSaques;
+		double totalTarifaTransferencia = TARIFA_TRANSFERENCIA * totalTransferencias;
+		return totalTarifaDeposito + totalTarifaSaque + totalTarifaTransferencia;
+	}
+	
+	public static double getTotalDepositos() {
+		return totalDepositos;
+	}
+
 	public static double getTARIFA_SAQUE() {
 		return TARIFA_SAQUE;
 	}
@@ -32,7 +43,7 @@ public class ContaCorrente extends Conta {
 		return totalSaques;
 	}
 
-	public static double getTotalDepositos() {
+	public static double Transferencia() {
 		return totalDepositos;
 	}
 

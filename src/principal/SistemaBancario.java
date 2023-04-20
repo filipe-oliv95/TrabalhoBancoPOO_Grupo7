@@ -17,33 +17,33 @@ import pessoas.Usuario;
 
 public class SistemaBancario {
 
-	public static Map<String, Agencia> mapaDeAgencias = new HashMap<>();
-	public static Map<String, Gerente> mapaDeGerentes = new HashMap<>();
-	public static Map<String, Diretor> mapaDeDiretores = new HashMap<>();
-	public static Map<String, Funcionario> mapaDeFuncionarios = new HashMap<>();
-	public static Map<String, Cliente> mapaDeClientes = new HashMap<>();
-	public static Map<String, Conta> mapaDeContas = new HashMap<>();
-	public static Map<String, Usuario> mapaDeUsuarios = new HashMap<>();
-	public static Map<String, Presidente> mapaDePresidente = new HashMap<>();
+    public static Map<String, Agencia> mapaDeAgencias = new HashMap<>();
+    public static Map<String, Gerente> mapaDeGerentes = new HashMap<>();
+    public static Map<String, Diretor> mapaDeDiretores = new HashMap<>();
+    public static Map<String, Funcionario> mapaDeFuncionarios = new HashMap<>();
+    public static Map<String, Cliente> mapaDeClientes = new HashMap<>();
+    public static Map<String, Conta> mapaDeContas = new HashMap<>();
+    public static Map<String, Usuario> mapaDeUsuarios = new HashMap<>();
+    public static Map<String, Presidente> mapaDePresidente = new HashMap<>();
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-		Leitor.leitura(".\\database\\registrodedados.txt");
+        Leitor.leitura(".\\database\\registrodedados.txt");
 
 
-		System.out.println("Testando Mapa Funcionários =>  " + mapaDeClientes.get("56489723114"));
-		System.out.println(mapaDeFuncionarios.get("80466528906"));
+        System.out.println("Testando Mapa Funcionários =>  " + mapaDeClientes.get("56489723114"));
+        System.out.println(mapaDeFuncionarios.get("80466528906"));
 
-//		List<Conta> listaContas = new ArrayList<>(mapaDeContas.values());
-//		for (Conta c : listaContas) {
-//			System.out.println(c);
-//		}
+//        List<Conta> listaContas = new ArrayList<>(mapaDeContas.values());
+//        for (Conta c : listaContas) {
+//            System.out.println(c);
+//        }
 
-		Menu.menuInicial();
-		
-		
-		sc.close();
-	}
+        Menu.menuInicial();
+        
+        
+        sc.close();
+    }
 }

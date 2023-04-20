@@ -19,33 +19,34 @@ public class Relatorio {
 		Date date = new Date();
 		System.out.println("####### Saldo na conta ########");
 		System.out.println("Tipo de conta: " + conta.getTipoDeConta());
-		System.out.println("Número da conta: " + conta.getNumConta ());
-		System.out.println("Saldo: " + String.format("R$ %.2f", conta.getSaldo()));	
+		System.out.println("Número da conta: " + conta.getNumConta());
+		System.out.println("Saldo: " + String.format("R$ %.2f", conta.getSaldo()));
 		System.out.println("Data: " + sdf.format(date));
-		
+
 		// LeitorEscritor.escritura()
 	}
 
 	public static void tributacaoCC(ContaCorrente conta) {
-		 System.out.println("Valor de tarifa cobrado no saque: R$" + ContaCorrente.getTARIFA_SAQUE());
-		 System.out.println("Total de saques: " + ContaCorrente.getTotalSaques());
-		 System.out.println("Valor de tarifa cobrado no depósito: R$" + ContaCorrente.getTarifaDeposito());
-		 System.out.println("Total de depósitos: " + ContaCorrente.getTotalDepositos());
-		 System.out.println("Valor de tarifa cobrado na tranferência: R$" + ContaCorrente.getTarifaTransferencia());
-		 System.out.println("Total de transferências: " + ContaCorrente.getTotalTransferencias());
-		 System.out.println();
-		 
-		 double tarifaTotalSaque = ContaCorrente.getTotalSaques() * ContaCorrente.getTARIFA_SAQUE();
-		 double tarifaTotalDeposito = ContaCorrente.getTotalDepositos() * ContaCorrente.getTarifaDeposito();
-		 double tarifaTotalTransferencia = ContaCorrente.getTotalTransferencias() * ContaCorrente.getTarifaTransferencia();
-		 
-		 System.out.println("Total de tarifas cobradas em saques: R$" + tarifaTotalSaque);
-		 System.out.println("Total de tarifas cobradas em depósitos: R$" + tarifaTotalDeposito);
-		 System.out.println("Total de tarifas cobradas em transferências: R$" + tarifaTotalTransferencia);
-		 double somaTarifas = tarifaTotalSaque + tarifaTotalDeposito + tarifaTotalTransferencia;
-		 System.out.println("Soma de todas as tarifas: R$" + somaTarifas);
-		 
-		 // LeitorEscritor.escritura();
+		System.out.println("Valor de tarifa cobrado no saque: R$" + ContaCorrente.getTARIFA_SAQUE());
+		System.out.println("Total de saques: " + ContaCorrente.getTotalSaques());
+		System.out.println("Valor de tarifa cobrado no depósito: R$" + ContaCorrente.getTarifaDeposito());
+		System.out.println("Total de depósitos: " + ContaCorrente.getTotalDepositos());
+		System.out.println("Valor de tarifa cobrado na tranferência: R$" + ContaCorrente.getTarifaTransferencia());
+		System.out.println("Total de transferências: " + ContaCorrente.getTotalTransferencias());
+		System.out.println();
+
+		double tarifaTotalSaque = ContaCorrente.getTotalSaques() * ContaCorrente.getTARIFA_SAQUE();
+		double tarifaTotalDeposito = ContaCorrente.getTotalDepositos() * ContaCorrente.getTarifaDeposito();
+		double tarifaTotalTransferencia = ContaCorrente.getTotalTransferencias()
+				* ContaCorrente.getTarifaTransferencia();
+
+		System.out.println("Total de tarifas cobradas em saques: R$" + tarifaTotalSaque);
+		System.out.println("Total de tarifas cobradas em depósitos: R$" + tarifaTotalDeposito);
+		System.out.println("Total de tarifas cobradas em transferências: R$" + tarifaTotalTransferencia);
+		double somaTarifas = tarifaTotalSaque + tarifaTotalDeposito + tarifaTotalTransferencia;
+		System.out.println("Soma de todas as tarifas: R$" + somaTarifas);
+
+		// LeitorEscritor.escritura();
 	}
 
 	public static void simularRendimentoPoupanca() {
@@ -55,48 +56,53 @@ public class Relatorio {
 		double valor = sc.nextDouble();
 		System.out.println("Quantos dias deseja saber o rendimento? ");
 		int dias = sc.nextInt();
-		
+
 		double rendimento = valor * ((ContaPoupanca.getTaxaRendimento() / 30) * dias);
 		System.out.printf("O rendimento para o prazo informado: %.2f%n", rendimento);
 		System.out.printf("Valor final ficaria: %.2f", valor + rendimento);
-		
-		 // LeitorEscritor.escritura();
+
+		// LeitorEscritor.escritura();
 	}
 
 	public static void numDeContasNaAgencia(String cpf) {
-		int totalContas = 0;
-		Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf); 
-			for (String cpfConta : SistemaBancario.mapaDeContas.keySet()) {
-				if (SistemaBancario.mapaDeContas.get(cpfConta).getAgencia().getNumAgencia().equals(gerente.getAgencia().getNumAgencia())) {
-					System.out.println(SistemaBancario.mapaDeContas.get(cpfConta));
-					totalContas++;
-				}
-			}
-			System.out.println("Total de contas na agência " + gerente.getAgencia() + ": " + totalContas);
-
-//			if(gerente.getCpf().equals(cpf)){
-
-//		}
-//		else if(diretor.getCpf().equals(cpf) || presidente.getCpf().equals(cpf)) {
-//			
-//			for (String numAgencia : SistemaBancario.mapaDeAgencias.keySet()) {
-//				if (numAgencia == )
-//				System.out.println(SistemaBancario.mapaDeContas.get(cpf));
-//				totalContas++;
-//			}
-//		}
-		
-		// LeitorEscritor.escritura...
+        int totalContas = 0;
+        Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf);
+        if(gerente.getCpf().equals(cpf)){ 
+            for (String cpfConta : SistemaBancario.mapaDeContas.keySet()) {
+                if (SistemaBancario.mapaDeContas.get(cpfConta).getAgencia().getNumAgencia().equals(gerente.getAgencia().getNumAgencia())) {
+                    System.out.println(SistemaBancario.mapaDeContas.get(cpfConta));
+                    totalContas++;
+                }
+            }
+            System.out.println("Total de contas na agência " + gerente.getAgencia() + ": " + totalContas);
+        }
 	}
+	
+	
+	public static void valorTotalCapitalBanco(List<Conta> listaContas) { // PRESIDENTE
+		
+		double capitalBancoSaldo = 0;
+		for(Conta lista : listaContas) {
+			capitalBancoSaldo += lista.getSaldo();
+		}
+		System.out.printf("Total em saldo: R$ %.2f%n", capitalBancoSaldo);
+		System.out.printf("Total de tarifas: R$ %.2f%n",  ContaCorrente.getTotalTarifas());
+		
+		double capitalBancoTotal = capitalBancoSaldo + ContaCorrente.getTotalTarifas();
+		System.out.printf("Total em saldo + tarifas: R$ %.2f%n", capitalBancoTotal);
+	}
+	
+
+
+	// LeitorEscritor.escritura...
 
 	public static void informacoesClientes(List<Conta> contas) { // RELATORIO DIRETOR
-		Collections.sort(contas); 	// ordenou a lista usando o Comparable no Contas
-		for (Conta conta : contas) {		 
-			System.out.printf("NOME: %s\t AGÊNCIA: %s\n",
-					conta.getTitular(), conta.getAgencia());
+		Collections.sort(contas); // ordenou a lista usando o Comparable no Contas
+		for (Conta conta : contas) {
+			System.out.printf("NOME: %s\t AGÊNCIA: %s\n", conta.getTitular(), conta.getAgencia());
 		}
-		
-		// LeitorEscritor.escritura		
+
+		// LeitorEscritor.escritura
 	}
 
 	private double totalCapital = 0;
