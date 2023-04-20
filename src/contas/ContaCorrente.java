@@ -83,7 +83,7 @@ public class ContaCorrente extends Conta {
 	@Override
 	public void imprimeExtrato() {
 		System.out.println("### Extrato da Conta Corrente ###");
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/aaaa HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
 		System.out.println("Titular: " + this.getTitular());
 		System.out.println("Número da conta: " + getNumConta());
