@@ -56,6 +56,7 @@ public class ContaCorrente extends Conta {
 		else {
 			this.saldo -= valor + TARIFA_SAQUE;
 			totalSaques ++;
+			System.out.println("TOTAL DE SAQUES ATE O MOMENTO: " + totalSaques);
 		}
 	}
 	

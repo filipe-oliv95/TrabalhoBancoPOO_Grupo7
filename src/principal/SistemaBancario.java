@@ -34,15 +34,17 @@ public class SistemaBancario {
 		Scanner sc = new Scanner(System.in);	
 	
 		Leitor.leitura(".\\database\\registrodedados.txt"); 
-		
-		
-//		for (Conta c : contas) {
-//			System.out.println(c);
-//		}
-		
+	
 		System.out.println("TESTANDO LEITURA");
 				
 		System.out.println("Testando Mapa Funcionários =>  " + mapaDeClientes.get("56489723114"));
+		System.out.println(mapaDeFuncionarios.get("80466528906"));
+		
+//		List<Conta> listaContas = new ArrayList<>(mapaDeContas.values());
+//		for (Conta c : listaContas) {
+//			System.out.println(c);
+//		}
+		
 
 		Conta conta;
 		Usuario usuario;
@@ -62,10 +64,9 @@ public class SistemaBancario {
 			conta = mapaDeContas.get(cpf);
 			usuario = mapaDeUsuarios.get(cpf);
 			funcionario = mapaDeFuncionarios.get(cpf);
-			List<Conta> listaContas = new ArrayList<>();
-//			List<Conta> contas = new ArrayList<>();
+			List<Conta> listaContas = new ArrayList<>(mapaDeContas.values());
+			
 			int opcao = 0;
-
 			if (conta != null && funcionario != null) {
 				if (funcionario.getSenha() == senha) {
 					System.out.println("Olá " + funcionario.getTipoDeUsuario());
@@ -77,26 +78,11 @@ public class SistemaBancario {
 						case 1: System.out.println("MENU CLIENTE para FUNCIONARIO"); 
 								Menu.imprimirMenuCliente(conta);
 							break;
-						case 2: // MENU DO FUNCIONÁRIO
-							switch(usuario.getTipoDeUsuario()) {
-							case PRESIDENTE:
-								System.out.println("Deseja verificar o capital total? ");
-								
-								break;
-							case DIRETOR:
-								System.out.println("Deseja consultar informações dos clientes do banco? S/N ");
-								char op = sc.next().charAt(0);
-								
-									if(op == 'S' || op == 's') {
-										Relatorio.informacoesClientes(listaContas);
-									}
-									else {
-										Menu.imprimirMenuCliente(conta);
-									}								
-								break;
+						case 2: // MENU DO FUNCIONÁRIO							
+							switch(funcionario.getTipoDeUsuario()) {
 							case GERENTE:
 								System.out.println("Deseja consultar a lista de contas em sua agência ? S/N ");
-								op = sc.next().charAt(0);
+								char op = sc.next().charAt(0);
 								
 									if(op == 'S' || op == 's') {
 										Relatorio.numDeContasNaAgencia(cpf); // pegou List<Conta>
@@ -105,6 +91,44 @@ public class SistemaBancario {
 										Menu.imprimirMenuCliente(conta);
 									}		
 								break;
+							case DIRETOR:
+								System.out.println("[1] Consulta de contas por agência");
+								System.out.println("[2] Relatório de informações dos clientes do banco");
+								opcao = sc.nextInt();
+								
+								opcao = 0; 
+								switch (opcao) {
+								case 1:
+									Relatorio.numDeContasNaAgencia(cpf);
+									break;
+								case 2: 
+										Relatorio.informacoesClientes(listaContas);
+									break;
+								default:
+										Menu.imprimirMenuCliente(conta);	
+									break;
+								}
+							case PRESIDENTE:
+								System.out.println("[1] Consulta de contas por agência");
+								System.out.println("[2] Relatório de informações dos clientes do banco");
+								System.out.println("[3] Relatório valor total armazenado");
+								opcao = sc.nextInt();
+								
+								opcao = 0; 
+								switch (opcao) {
+								case 1:
+									Relatorio.numDeContasNaAgencia(cpf);
+									break;
+								case 2: 
+										Relatorio.informacoesClientes(listaContas);
+									break;
+								case 3:
+										System.out.println("CRIAR RELATORIO DO CAPITAL ARMAZENADO");
+								default:
+										Menu.imprimirMenuCliente(conta);	
+									break;
+								}
+								
 							default:
 							System.out.println("DADOS INCORRETOS, aperte Enter e digite novamente \n");
 							// retornar função
@@ -123,7 +147,7 @@ public class SistemaBancario {
 					System.out.println("DADOS INCORRETOS, aperte Enter e digite novamente \n");
 				}
 			}
-		} while (conta == null || usuario == null || usuario.getSenha() != senha);
+		} while (conta == null || usuario == null || usuario.getSenha() != senha || funcionario.getSenha() != senha);
 
 		sc.close();
 	}

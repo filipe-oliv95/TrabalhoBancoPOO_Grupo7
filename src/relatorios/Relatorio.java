@@ -18,9 +18,9 @@ public class Relatorio {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/aaaa HH:mm:ss");
 		Date date = new Date();
 		System.out.println("####### Saldo na conta ########");
-		System.out.println("Tipo de conta: " + conta.getTipoDeConta().toString());
+		System.out.println("Tipo de conta: " + conta.getTipoDeConta());
 		System.out.println("Número da conta: " + conta.getNumConta ());
-		System.out.println("Saldo: " + String.format("R$ %.2f%n", conta.getSaldo()));	
+		System.out.println("Saldo: " + String.format("R$ %.2f", conta.getSaldo()));	
 		System.out.println("Data: " + sdf.format(date));
 		
 		// LeitorEscritor.escritura()
@@ -48,7 +48,7 @@ public class Relatorio {
 		 // LeitorEscritor.escritura();
 	}
 
-	public static void simularRendimentoPoupanca() { // RELATORIO CLIENTE e GERENTE
+	public static void simularRendimentoPoupanca() {
 		Scanner sc = new Scanner(System.in);
 		// Relatório de Rendimento da poupança, simulação do valor de rendimento da
 		System.out.println("Qual valor deseja simular? ");
@@ -63,17 +63,30 @@ public class Relatorio {
 		 // LeitorEscritor.escritura();
 	}
 
-	public static void numDeContasNaAgencia(String cpf) { // RELATORIO GERENTE
-		
-		Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf);
+	public static void numDeContasNaAgencia(String cpf) {
+		System.out.println("ENTROU no relatorio de agencias");
 		int totalContas = 0;
-		for (String cpf2 : SistemaBancario.mapaDeContas.keySet()) {
-			if (SistemaBancario.mapaDeContas.get(cpf2).getAgencia() == gerente.getAgencia()) { //conta do gerente
-				System.out.println(SistemaBancario.mapaDeContas.get(cpf2));
-				totalContas++;
+		Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf); 
+		
+			for (String cpfConta : SistemaBancario.mapaDeContas.keySet()) {
+				if (SistemaBancario.mapaDeContas.get(cpfConta).getAgencia() == gerente.getAgencia()) {
+					System.out.println(SistemaBancario.mapaDeContas.get(cpfConta));
+					totalContas++;
+				}
 			}
-		}
-		System.out.println("Total de contas na agência " + gerente.getAgencia() + ": " + totalContas);
+			System.out.println("Total de contas na agência " + gerente.getAgencia() + ": " + totalContas);
+
+//			if(gerente.getCpf().equals(cpf)){
+
+//		}
+//		else if(diretor.getCpf().equals(cpf) || presidente.getCpf().equals(cpf)) {
+//			
+//			for (String numAgencia : SistemaBancario.mapaDeAgencias.keySet()) {
+//				if (numAgencia == )
+//				System.out.println(SistemaBancario.mapaDeContas.get(cpf));
+//				totalContas++;
+//			}
+//		}
 		
 		// LeitorEscritor.escritura...
 	}

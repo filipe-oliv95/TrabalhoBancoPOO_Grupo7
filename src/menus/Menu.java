@@ -28,6 +28,7 @@ public class Menu {
 			System.out.print("Insira o valor do saque: ");
 			double valor = sc.nextDouble();
 			conta.sacar(valor);
+			System.out.println("SAQUE REALIZADO COM SUCESSO, saldo: " + conta.getSaldo()); // TESTE
 			break;
 		case 2:
 			System.out.println("Quanto você deseja depositar?");
@@ -93,5 +94,5 @@ public class Menu {
 		}while(opcao < 1 || opcao > 4);
 		
 		sc.close();
-	}
+	}	
 }
