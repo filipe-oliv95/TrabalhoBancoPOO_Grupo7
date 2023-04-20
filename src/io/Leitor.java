@@ -81,10 +81,10 @@ public class Leitor {
 
 					} 
 					
-					else if (vetor[0].equalsIgnoreCase(ContasEnum.CCORRENTE.name())) {
+					else if (vetor[0].equalsIgnoreCase(ContasEnum.CORRENTE.name())) {
 						Cliente cliente = new Cliente(UsuariosEnum.CLIENTE, vetor[4], vetor[5],
 								Integer.parseInt(vetor[6]));
-						ContaCorrente contas = new ContaCorrente(ContasEnum.CCORRENTE, new Agencia(vetor[1]), vetor[2],
+						ContaCorrente contas = new ContaCorrente(ContasEnum.CORRENTE, new Agencia(vetor[1]), vetor[2],
 								cliente, vetor[7], Double.parseDouble(vetor[8]));
 						SistemaBancario.mapaDeContas.put(vetor[5], contas);
 					}

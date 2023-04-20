@@ -105,10 +105,4 @@ public class Relatorio {
 		// LeitorEscritor.escritura
 	}
 
-	private double totalCapital = 0;
-
-	public void imprimirCapital() { // RELATORIO PRESIDENTE
-		// Relatório com o valor total do capital armazenado no banco
-	} // somatório dos SALDOs das contas e somatório das tarifas
-
 }
