@@ -6,8 +6,10 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import contas.Conta;
+import contas.ContaCorrente;
 
 public class Escritor {
 
@@ -146,6 +148,97 @@ public class Escritor {
 
 	}
 
+	public static void extratoConta() {
+
+	}
+
+	public static void comprovanteSaldo(Conta conta) {
+
+		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
+		String arquivo = conta.getCpf() + "_" + conta.getAgencia() + "_" + hojeFormatado + "_comprovanteSaldo";
+
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
+
+			String linha = "*************** SALDO ***************";
+			bw.append(linha + "\n");
+
+			linha = "Tipo: " + conta.getTipoDeConta();
+			bw.append(linha + "\n");
+
+			linha = "Agencia: " + conta.getAgencia();
+			bw.append(linha + "\n");
+
+			linha = "Conta: " + conta.getNumConta();
+			bw.append(linha + "\n");
+
+			linha = "Saldo: R$" + conta.getSaldo();
+			bw.append(linha + "\n");
+
+			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+			linha = "Operação realizada em: " + date;
+			bw.append(linha + "\n");
+
+			linha = "*************** FIM ***************";
+			bw.append(linha + "\n");
+
+		} catch (IOException e) {
+			System.out.println("Erro: " + e.getMessage());
+		} finally {
+
+		}
+
+	}
+
+	//CRIAR 1 RELATORIO PARA O CLIENTE E 1 PARA O GERENTE/PRESIDENTE/DIRETOR
+	public static void relatorioTributacaoCC(ContaCorrente conta) {
+		
+		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
+		String arquivo = conta.getCpf() + "_" + conta.getAgencia() + "_" + hojeFormatado + "relatorioTributacaoCC";
+
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
+		
+		String linha = "*************** TOTAL DE TRIBUTAÇÕES ***************";
+		bw.append(linha + "\n\n");
+
+		linha = "Total recebido em transações = R$" + conta.getTotalTarifas();
+		bw.append(linha + "\n");
+
+		linha = "Taxa para saque = R$0,10";
+		bw.append(linha + "\n");
+
+		
+		// ATUALIZAR
+		linha = "Total de saques realizados = " ;
+		bw.append(linha + "\n\n");
+
+		linha = "Taxa para deposito = R$0,10";
+		bw.append(linha + "\n");
+
+		linha = "Total de depósitos realizados = " ;
+		bw.append(linha + "\n\n");
+
+		linha = "Taxa para tranferência = R$0,20";
+		bw.append(linha + "\n");
+
+		linha = "Total de tranferências realizadas = " ;
+		bw.append(linha + "\n\n");
+
+		String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+		
+		linha = "Operações realizada em: " + date;
+		bw.append(linha + "\n");
+
+		linha = "****************************************************";
+		bw.append(linha + "\n\n");
+		
+		} catch (IOException e) {
+			System.out.println("Erro: " + e.getMessage());
+		} finally {
+
+		}
+		
+	}
+	
 	public static void relatorioContasPorAgencia() { // GERENTE
 
 	}
@@ -154,8 +247,35 @@ public class Escritor {
 
 	}
 
-	public static void relatorioCapitalBanco() { // PRESIDENTE
+	public static void relatorioCapitalBanco(List<Conta> listaConta, double saldo) { // PRESIDENTE
 
+		
+		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
+		String arquivo =  "_" + hojeFormatado + "relatorioCapitalBanco";
+
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
+				
+				String linha = "************************* TOTAL DE CAPITAL ARMAZENADO *************************";
+				bw.append(linha + "\n\n");
+
+				linha = "Capital total armazenado no banco: R$" ;
+				bw.append(linha + "\n");
+
+				String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+				
+				linha = "Operação realizada em: " + date;
+				bw.append(linha + "\n");
+
+				linha = "*******************************************************************************";
+				bw.append(linha + "\n\n");
+		
+		} catch (IOException e) {
+			System.out.println("Erro: " + e.getMessage());
+		} finally {
+
+		}
+		
+		
 	}
 
 }

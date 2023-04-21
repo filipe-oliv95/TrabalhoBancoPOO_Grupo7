@@ -1,0 +1,88 @@
+*************** TRANSFERÊNCIA ***************
+
+*********** DADOS DO REMETENTE **********
+CPF: 98756412365
+Agência : 0080
+Conta: 112564
+********** DADOS DO DESTINATÁRIO ***********
+CPF: 82811814515
+Agência: 5086
+Conta: 696545
+***********************************************
+Valor: R$300.0
+Operação realizada em: 20/04/2023 21:35:06
+*************** FIM DA TRANSFERÊNCIA ***************
+*************** TRANSFERÊNCIA ***************
+
+*********** DADOS DO REMETENTE **********
+CPF: 98756412365
+Agência : 0080
+Conta: 112564
+********** DADOS DO DESTINATÁRIO ***********
+CPF: 82811814515
+Agência: 5086
+Conta: 696545
+***********************************************
+Valor: R$500.0
+Operação realizada em: 20/04/2023 21:35:36
+*************** FIM DA TRANSFERÊNCIA ***************
+*************** TRANSFERÊNCIA ***************
+*********** DADOS DO REMETENTE **********
+CPF: 98756412365
+Agência : 0080
+Conta: 112564
+********** DADOS DO DESTINATÁRIO ***********
+CPF: 82811814515
+Agência: 5086
+Conta: 696545
+***********************************************
+Valor: R$500.0
+Operação realizada em: 20/04/2023 21:36:06
+*************** FIM DA TRANSFERÊNCIA ***************
+
+
+*************** TRANSFERÊNCIA ***************
+
+*********** DADOS DO REMETENTE **********
+CPF: 98756412365
+Agência : 0080
+Conta: 112564
+********** DADOS DO DESTINATÁRIO ***********
+CPF: 82811814515
+Agência: 5086
+Conta: 696545
+***********************************************
+Valor: R$500.0
+Operação realizada em: 20/04/2023 21:36:33
+*************** FIM DA TRANSFERÊNCIA ***************
+
+
+*************** TRANSFERÊNCIA ***************
+
+*********** DADOS DO REMETENTE **********
+CPF: 98756412365
+Agência : 0080
+Conta: 112564
+********** DADOS DO DESTINATÁRIO ***********
+CPF: 82811814515
+Agência: 5086
+Conta: 696545
+***********************************************
+Valor: R$500.0
+Operação realizada em: 20/04/2023 21:37:00
+*********** FIM DA TRANSFERÊNCIA ************
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+CPF: 98756412365
+Agência : 0080
+Conta: 112564
+********** DADOS DO DESTINATÁRIO ************
+CPF: 82811814515
+Agência: 5086
+Conta: 696545
+*********************************************
+Valor: R$500.0
+Operação realizada em: 20/04/2023 21:38:04
+*********** FIM DA TRANSFERÊNCIA ************

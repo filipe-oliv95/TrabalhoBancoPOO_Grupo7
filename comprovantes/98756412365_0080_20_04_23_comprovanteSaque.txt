@@ -1,0 +1,64 @@
+*************** SAQUE ***************
+CPF: 98756412365
+Agencia: 0080
+Conta: 112564
+Valor: R$100.0
+Operação realizada em: 20/04/2023 21:16:26
+*************** FIM DO SAQUE ***************
+
+*************** SAQUE ***************
+CPF: 98756412365
+Agencia: 0080
+Conta: 112564
+Valor: R$100.0
+Operação realizada em: 20/04/2023 21:17:30
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 98756412365
+Agencia: 0080
+Conta: 112564
+Valor do saque: R$100.0
+Operação realizada em: 20/04/2023 21:18:40
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 98756412365
+Agencia: 0080
+Conta: 112564
+Valor do saque: R$100.0
+Operação realizada em: 20/04/2023 21:22:35
+************ FIM DO SAQUE ************
+
+*************** DEPÓSITO ***************
+CPF: 98756412365
+Ag�ncia: 0080
+Conta: 112564
+Valor: R$100.0
+Opera��o realizada em: 20/04/2023 21:22:35
+*************** FIM DO DEPÓSITO ***************
+
+*************** DEPÓSITO ***************
+CPF: 98756412365
+Ag�ncia: 0080
+Conta: 112564
+Valor: R$100.0
+Opera��o realizada em: 20/04/2023 21:22:54
+*************** FIM DO DEPÓSITO ***************
+
+*************** SAQUE ***************
+CPF: 98756412365
+Agencia: 0080
+Conta: 112564
+Valor do saque: R$100.0
+Operação realizada em: 20/04/2023 21:22:54
+************ FIM DO SAQUE ************
+
+*************** DEPÓSITO ***************
+CPF: 98756412365
+Ag�ncia: 0080
+Conta: 112564
+Valor: R$100.0
+Opera��o realizada em: 20/04/2023 21:23:34
+*************** FIM DO DEPÓSITO ***************
+

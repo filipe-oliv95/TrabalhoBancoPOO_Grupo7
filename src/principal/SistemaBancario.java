@@ -1,6 +1,8 @@
 package principal;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -14,6 +16,7 @@ import pessoas.Funcionario;
 import pessoas.Gerente;
 import pessoas.Presidente;
 import pessoas.Usuario;
+import relatorios.Relatorio;
 
 public class SistemaBancario {
 
@@ -31,7 +34,10 @@ public class SistemaBancario {
         Scanner sc = new Scanner(System.in);
 
         Leitor.leitura(".\\database\\registrodedados.txt");
-
+        
+        List<Conta> listaContas = new ArrayList<>(SistemaBancario.mapaDeContas.values());
+        
+        Relatorio.valorTotalCapitalBanco(listaContas);
 
         System.out.println("Testando Mapa Funcionários =>  " + mapaDeClientes.get("56489723114"));
         System.out.println(mapaDeFuncionarios.get("80466528906"));

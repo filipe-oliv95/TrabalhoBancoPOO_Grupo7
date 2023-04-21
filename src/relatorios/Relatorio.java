@@ -9,6 +9,7 @@ import java.util.Scanner;
 import contas.Conta;
 import contas.ContaCorrente;
 import contas.ContaPoupanca;
+import io.Escritor;
 import pessoas.Gerente;
 import principal.SistemaBancario;
 
@@ -90,6 +91,8 @@ public class Relatorio {
 		
 		double capitalBancoTotal = capitalBancoSaldo + ContaCorrente.getTotalTarifas();
 		System.out.printf("Total em saldo + tarifas: R$ %.2f%n", capitalBancoTotal);
+		// ADICIONAR O ESCRITOR
+		Escritor.relatorioCapitalBanco(listaContas, capitalBancoTotal);
 	}
 
 	// LeitorEscritor.escritura...
