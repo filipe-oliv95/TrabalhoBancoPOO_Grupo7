@@ -1,0 +1,8 @@
+*************** SAQUE ***************
+CPF: 98756412365
+Agencia: 0080
+Conta: 112564
+Valor do saque: R$-50.0
+Operação realizada em: 21/04/2023 13:38:39
+************ FIM DO SAQUE ************
+

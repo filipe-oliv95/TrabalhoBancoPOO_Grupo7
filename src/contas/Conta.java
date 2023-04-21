@@ -1,14 +1,12 @@
 package contas;
 
-import java.util.Objects;
-
 import agencias.Agencia;
 import contas.enums.ContasEnum;
 import extratos.Extrato;
 import operacoes.Operacao;
 import pessoas.Cliente;
 
-public abstract class Conta implements Extrato, Operacao, Comparable<Conta>{
+public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 
 	private Agencia agencia;
 	private String numConta;
@@ -75,52 +73,44 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta>{
 	}
 
 	public void depositar(double valor) {
-		saldo += valor;
+		if (valor > 0) {
+			saldo += valor;
+		} else {
+			System.out.println("Insira um valor válido.");
+		}
 	}
 
 	public void sacar(double valor) {
 		if (this.saldo < valor) {
 			System.out.println("Saldo insuficiente");
+		} else if (valor < 0) {
+			System.out.println("Insira um valor válido.");
 		} else {
 			this.saldo -= valor;
+			System.out.println("Saque realizado com sucesso.");
 		}
 	}
 
 	public void transferir(Conta contaDestino, double valor) {
 		if (this.saldo < valor) {
 			System.out.println("Seu saldo é insuficiente!");
+		} else if (valor < 0) {
+			System.out.println("Insira um valor válido.");
 		} else {
 			this.saldo -= valor;
 			contaDestino.saldo += valor;
 		}
 	}
-	
+
 	@Override
 	public int compareTo(Conta cont) {
 		if (this.getTitular().compareTo(cont.getTitular()) > 0) { // comparou pelo nome
-			return -1; 
+			return -1;
 		}
 		if (this.getTitular().compareTo(cont.getTitular()) < 0) {
 			return 1;
 		}
 		return 0;
-	}
-
-    @Override
-	public int hashCode() {
-		return Objects.hash(cpf, titular);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Conta other = (Conta) obj;
-		return Objects.equals(cpf, other.cpf) && Objects.equals(titular, other.titular);
 	}
 
 	public abstract void imprimeExtrato();

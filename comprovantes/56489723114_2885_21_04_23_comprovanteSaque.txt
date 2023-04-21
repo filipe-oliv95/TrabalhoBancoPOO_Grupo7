@@ -1,0 +1,8 @@
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$10.0
+Operação realizada em: 21/04/2023 14:12:44
+************ FIM DO SAQUE ************
+

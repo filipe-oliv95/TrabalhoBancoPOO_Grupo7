@@ -21,10 +21,11 @@ public class ContaCorrente extends Conta {
 		super();
 	}
 
-	public ContaCorrente(ContasEnum tipoDeConta, Agencia agencia, String numConta, Cliente titular, String cpf, double saldoInicial) {
+	public ContaCorrente(ContasEnum tipoDeConta, Agencia agencia, String numConta, Cliente titular, String cpf,
+			double saldoInicial) {
 		super(tipoDeConta, agencia, numConta, titular, cpf, saldoInicial);
-	}	
-	
+	}
+
 	public static double getTotalSaques() {
 		return totalSaques;
 	}
@@ -36,7 +37,7 @@ public class ContaCorrente extends Conta {
 	public static double getTotalTransferencias() {
 		return totalTransferencias;
 	}
-	
+
 	public static double getTarifaSaque() {
 		return TARIFA_SAQUE;
 	}
@@ -59,52 +60,57 @@ public class ContaCorrente extends Conta {
 
 	@Override
 	public void sacar(double valor) {
-		if(this.saldo < valor + TARIFA_SAQUE) {
+		if (this.saldo < valor + TARIFA_SAQUE) {
 			System.out.println("Saldo insuficiente");
-		}
-		else {
+		} else if (valor < 0) {
+			System.out.println("Insira um valor válido.");
+		} else {
 			this.saldo -= valor + TARIFA_SAQUE;
-			totalSaques ++;
-		//	System.out.println("Seu saldo agora e : $" + saldo);
+			totalSaques++;
+			System.out.println("Saque realizado com sucesso.");
 		}
-	}
-	
-	@Override
-	public void depositar(double valor) {
-		// VERIFICAR se o saldo que está fazendo deposito é maior que o tributo?
-		saldo += valor - TARIFA_DEPOSITO;
-		totalDepositos ++;
 	}
 
 	@Override
-	public void transferir (Conta contaDestino, double valor) {
-		if(this.saldo < valor) {
-	        System.out.println("Seu saldo é insuficiente!");
-	     }
-	     else {
-	         this.saldo -= (valor + TARIFA_TRANSFERENCIA);
-	         contaDestino.saldo += valor;
-	         System.out.println("Seu saldo após transferência é de: " + this.saldo);
-	         totalTransferencias ++;
-	     }
-	}	
+	public void depositar(double valor) {
+		if (valor > 0) {
+			saldo += valor - TARIFA_DEPOSITO;
+			totalDepositos++;
+		} else {
+			System.out.println("Valor inválido");
+		}
+	}
+
+	@Override
+	public void transferir(Conta contaDestino, double valor) {
+
+		if (this.saldo < valor) {
+			System.out.println("Seu saldo é insuficiente!");
+		} else if (valor < 0) {
+			System.out.println("Insira um valor válido.");
+		} else {
+			this.saldo -= (valor + TARIFA_TRANSFERENCIA);
+			contaDestino.saldo += valor;
+			totalTransferencias++;
+		}
+	}
 
 	@Override
 	public void imprimeExtrato() {
-		System.out.println("### Extrato da Conta Corrente ###");
+		System.out.println();
+		System.out.println("******** Extrato da Conta Corrente ********");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
-		System.out.println("Titular: " + this.getTitular());
+		System.out.println("Titular: " + this.getTitular().getNome());
+		System.out.println("CPF: " + this.getTitular().getCpf());
 		System.out.println("Número da conta: " + getNumConta());
-		System.out.println("Saldo: " + this.getSaldo());
+		System.out.printf("Saldo: R$ %.2f%n", this.getSaldo());
 		System.out.println("Data: " + sdf.format(date));
 	}
 
 	@Override
-	public String toString() { //ALTERAR
-		return "Agencia = " + getAgencia() 
-					+ ", Titular = " + getTitular() 
-					+ ", Numero = " + getNumConta()
-					+ ", Saldo = " + getSaldo(); 
+	public String toString() { // ALTERAR
+		return "Agencia = " + getAgencia() + ", Titular = " + getTitular() + ", Numero = " + getNumConta()
+				+ ", Saldo = " + getSaldo();
 	}
 }

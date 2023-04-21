@@ -17,24 +17,32 @@ import principal.SistemaBancario;
 public class Relatorio {
 
 	public static void imprimirSaldo(Conta conta) { // RELATORIO CLIENTE e GERENTE
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/aaaa HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
-		System.out.println("####### Saldo na conta ########");
-		System.out.println("Tipo de conta: " + conta.getTipoDeConta());
+		System.out.println();
+		System.out.println("******** Saldo na Conta ********");
+		System.out.println("Tipo de conta: " + conta.getTipoDeConta().name());
 		System.out.println("Número da conta: " + conta.getNumConta());
 		System.out.println("Saldo: " + String.format("R$ %.2f", conta.getSaldo()));
 		System.out.println("Data: " + sdf.format(date));
+		System.out.println("********************************");
 
 		Escritor.comprovanteSaldo(conta);
 	}
 
-	public static void tributacaoCC(ContaCorrente conta) {
-		System.out.println("Valor de tarifa cobrado no saque: R$" + ContaCorrente.getTarifaSaque());
+	public static void tributacaoCC(Conta conta) {
+		System.out.println();
+		System.out.println("****** Relatório de tributação ******");
+		System.out.println();
+		System.out.println("Valor de tarifa cobrado no saque: R$ " + ContaCorrente.getTarifaSaque());
 		System.out.println("Total de saques: " + ContaCorrente.getTotalSaques());
-		System.out.println("Valor de tarifa cobrado no depósito: R$" + ContaCorrente.getTarifaDeposito());
+		System.out.println();
+		System.out.println("Valor de tarifa cobrado no depósito: R$ " + ContaCorrente.getTarifaDeposito());
 		System.out.println("Total de depósitos: " + ContaCorrente.getTotalDepositos());
-		System.out.println("Valor de tarifa cobrado na tranferência: R$" + ContaCorrente.getTarifaTransferencia());
+		System.out.println();
+		System.out.println("Valor de tarifa cobrado na tranferência: R$ " + ContaCorrente.getTarifaTransferencia());
 		System.out.println("Total de transferências: " + ContaCorrente.getTotalTransferencias());
+		System.out.println("**************************************");
 		System.out.println();
 
 		double tarifaTotalSaque = ContaCorrente.getTotalSaques() * ContaCorrente.getTarifaSaque();
@@ -47,30 +55,33 @@ public class Relatorio {
 		System.out.println("Total de tarifas cobradas em transferências: R$" + tarifaTotalTransferencia);
 		double somaTarifas = tarifaTotalSaque + tarifaTotalDeposito + tarifaTotalTransferencia;
 		System.out.println("Soma de todas as tarifas: R$" + somaTarifas);
-
-		Escritor.relatorioTributacaoCC(conta); // VAI DEIXAR ASSIM OU MODIFICAR OS DADOS ACIMA?
+//		Escritor.relatorioTributacaoCC(conta); // VAI DEIXAR ASSIM OU MODIFICAR OS DADOS ACIMA?
 	}
 
 	public static void simularRendimentoPoupanca() {
-		Scanner sc = new Scanner(System.in);
-		// Relatório de Rendimento da poupança, simulação do valor de rendimento da
-		System.out.println("Qual valor deseja simular? ");
-		double valor = sc.nextDouble();
-		System.out.println("Quantos dias deseja saber o rendimento? ");
-		int dias = sc.nextInt();
-
-		double rendimento = valor * ((ContaPoupanca.getTaxaRendimento() / 30) * dias);
-		System.out.printf("O rendimento para o prazo informado: %.2f%n", rendimento);
-		System.out.printf("Valor final ficaria: %.2f", valor + rendimento);
-
-		// LeitorEscritor.escritura();
-		sc.close();
+		
+			Scanner sc = new Scanner(System.in);
+			// Relatório de Rendimento da poupança, simulação do valor de rendimento da
+			System.out.println("****** Simulação de Rendimento da Poupança ******");
+			System.out.print("Qual valor deseja simular: R$ ");
+			double valor = sc.nextDouble();
+			System.out.printf("Quantos dias deseja saber o rendimento: ");
+			int dias = sc.nextInt();
+			
+			double rendimento = valor * ((ContaPoupanca.getTaxaRendimento() / 30) * dias);
+			System.out.printf("O rendimento para o prazo informado: %.2f%n", rendimento);
+			System.out.printf("Valor final ficaria: %.2f", valor + rendimento);
+			System.out.println("**************************************************");
+			System.out.println();
+			// LeitorEscritor.escritura();
+			sc.close();
+		
 	}
 
 	public static void numDeContasNaAgencia(Conta conta,  String cpf) throws IOException {
         int totalContas = 0;
         Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf);
-        
+    	System.out.println("****** Contas na agência do Gerente ******");
         try {
         	if(gerente.getCpf().equals(cpf)){ 
 	           for (String cpfConta : SistemaBancario.mapaDeContas.keySet()) {
@@ -80,6 +91,8 @@ public class Relatorio {
 	                }
 	            }
 	            System.out.println("Total de contas na agência : " + totalContas);
+	        	System.out.println("*********************************");
+	            System.out.println();
 	            Escritor.relatorioContasPorAgencia(conta);	         
         	}
         }
@@ -92,16 +105,19 @@ public class Relatorio {
       }
 	
 	public static void informacoesClientes(List<Conta> contas) { // RELATORIO DIRETOR
+		System.out.println("***** Informações dos Clientes *****");
 		Collections.sort(contas); // ordenou a lista usando o Comparable no Contas
 		for (Conta conta : contas) {
 			System.out.printf("NOME: %s\t AGÊNCIA: %s\n", conta.getTitular(), conta.getAgencia());
 		}
-
+		System.out.println("**************************************************");
+		System.out.println();
 		// ESCRITOR
 	}	
 	
 	public static void valorTotalCapitalBanco(List<Conta> listaContas) { // PRESIDENTE
 		
+		System.out.println("******* Consulta do Capital do Banco *******");
 		double capitalBancoSaldo = 0;
 		for(Conta lista : listaContas) {
 			capitalBancoSaldo += lista.getSaldo();
@@ -111,7 +127,10 @@ public class Relatorio {
 		
 		double capitalBancoTotal = capitalBancoSaldo + ContaCorrente.getTotalTarifas();
 		System.out.printf("Total em saldo + tarifas: R$ %.2f%n", capitalBancoTotal);
+		System.out.println("**************************************************");
+		System.out.println();
 		// ADICIONAR O ESCRITOR
 		Escritor.relatorioCapitalBanco(listaContas, capitalBancoTotal);
 	}
+	
 }

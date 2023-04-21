@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 
 import contas.Conta;
@@ -107,6 +106,9 @@ public class Escritor {
 			linha = "************ DADOS DO REMETENTE *************";
 			bw.append(linha + "\n");
 
+			linha = "Nome: " + conta.getTitular().getNome();
+			bw.append(linha + "\n");
+			
 			linha = "CPF: " + conta.getCpf();
 			bw.append(linha + "\n");
 
@@ -119,6 +121,9 @@ public class Escritor {
 			linha = "********** DADOS DO DESTINATÁRIO ************";
 			bw.append(linha + "\n");
 
+			linha = "Nome: " + contaDestino.getTitular().getNome();
+			bw.append(linha + "\n");
+			
 			linha = "CPF: " + contaDestino.getCpf();
 			bw.append(linha + "\n");
 

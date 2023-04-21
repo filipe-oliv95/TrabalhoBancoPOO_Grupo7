@@ -1,0 +1,40 @@
+*************** SAQUE ***************
+CPF: 01078232334
+Agencia: 2885
+Conta: 634545
+Valor do saque: R$15000.0
+Operação realizada em: 21/04/2023 13:52:22
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 01078232334
+Agencia: 2885
+Conta: 634545
+Valor do saque: R$300.0
+Operação realizada em: 21/04/2023 13:52:43
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 01078232334
+Agencia: 2885
+Conta: 634545
+Valor do saque: R$-50.0
+Operação realizada em: 21/04/2023 13:54:25
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 01078232334
+Agencia: 2885
+Conta: 634545
+Valor do saque: R$-50.0
+Operação realizada em: 21/04/2023 13:54:49
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 01078232334
+Agencia: 2885
+Conta: 634545
+Valor do saque: R$10000.0
+Operação realizada em: 21/04/2023 13:55:11
+************ FIM DO SAQUE ************
+

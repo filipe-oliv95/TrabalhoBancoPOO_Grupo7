@@ -1,0 +1,32 @@
+***************** DEPÓSITO *****************
+CPF: 01078232334
+Agência: 2885
+Conta: 634545
+Valor: R$-50.0
+Operação realizada em: 21/04/2023 13:54:32
+************* FIM DO DEPÓSITO **************
+
+***************** DEPÓSITO *****************
+CPF: 01078232334
+Agência: 2885
+Conta: 634545
+Valor: R$-50.0
+Operação realizada em: 21/04/2023 13:55:15
+************* FIM DO DEPÓSITO **************
+
+***************** DEPÓSITO *****************
+CPF: 01078232334
+Agência: 2885
+Conta: 634545
+Valor: R$10000.0
+Operação realizada em: 21/04/2023 13:55:25
+************* FIM DO DEPÓSITO **************
+
+***************** DEPÓSITO *****************
+CPF: 01078232334
+Agência: 2885
+Conta: 634545
+Valor: R$45.76
+Operação realizada em: 21/04/2023 13:56:17
+************* FIM DO DEPÓSITO **************
+
