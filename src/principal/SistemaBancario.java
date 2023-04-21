@@ -32,18 +32,6 @@ public class SistemaBancario {
 
         Leitor.leitura(".\\database\\registrodedados.txt");
         
-        List<Conta> listaContas = new ArrayList<>(SistemaBancario.mapaDeContas.values());
-        
-        Relatorio.valorTotalCapitalBanco(listaContas);
-
-        System.out.println("Testando Mapa Funcionários =>  " + mapaDeClientes.get("56489723114"));
-        System.out.println(mapaDeFuncionarios.get("80466528906"));
-
-//        List<Conta> listaConta = new ArrayList<>(mapaDeContas.values());
-//        for (Conta c : listaConta) {
-//            System.out.println(c);
-//        }
-
         try { // TRATAMENTO EXCEÇÃO IO
         	Menu.menuInicial();
         }

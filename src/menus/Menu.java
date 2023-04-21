@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import contas.Conta;
+import contas.enums.ContasEnum;
 import io.Escritor;
 import pessoas.Cliente;
 import pessoas.Funcionario;
@@ -30,9 +31,9 @@ public class Menu{
 				System.out.println();
 				System.out.println("================================");
 				System.out.println("=== BEM VINDO AO BANCO JAVA ====");
-				System.out.print("[ Digite seu CPF ]:");
+				System.out.print("[ Digite seu CPF ]: ");
 				String cpf = sc.nextLine(); // CPF do usuário
-				System.out.print("[ Digite sua senha ]:");
+				System.out.print("[ Digite sua senha ]: ");
 				senha = sc.nextInt();
 				sc.nextLine();
 				System.out.println("================================");
@@ -67,7 +68,7 @@ public class Menu{
 			System.out.println(e.getMessage());
 		}
 		finally{
-			menuInicial();
+//			menuInicial();
 		}
 		sc.close();
 	}
@@ -275,21 +276,34 @@ public class Menu{
 		int opcao = 0;
 		
 		try {
-			do {
 				opcao = sc.nextInt();
-	
+				
 				switch (opcao) {
 				case 1:
 					Relatorio.imprimirSaldo(conta);
+					menuRelatorio(conta, cliente);
 					break;
 				case 2:
-					Relatorio.tributacaoCC (conta);
+					if(conta.getTipoDeConta().equals(ContasEnum.CORRENTE)) {
+						Relatorio.tributacaoCC (conta);
+					}
+					else {
+						System.out.println("Você não possui Conta Corrente.");
+					}
+					menuRelatorio(conta, cliente);
 					break;
 				case 3:
-					Relatorio.simularRendimentoPoupanca();
+					if(conta.getTipoDeConta().equals(ContasEnum.POUPANCA)) {
+						Relatorio.simularRendimentoPoupanca();
+					}
+					else {
+						System.out.println("Você não possui Conta Poupança.");
+					}
+					menuRelatorio(conta, cliente);
 					break;
 				case 4:
 					System.out.println("DESAFIO");
+					menuRelatorio(conta, cliente);
 					break;
 				case 5:
 					menuCliente(conta, cliente);
@@ -298,8 +312,7 @@ public class Menu{
 					menuRelatorio(conta, cliente);
 					break;
 				}
-			} while (opcao < 1 || opcao > 5);
-		}	 
+		}
 		catch (InputMismatchException e) {
 			System.out.println(e.getMessage());
 		}
@@ -309,9 +322,6 @@ public class Menu{
 		catch (NullPointerException e) {
 			System.out.println(e.getMessage());
 		}		
-		finally {
-			menuRelatorio(conta, cliente);
-		}			
 		sc.close();
 	}
 }

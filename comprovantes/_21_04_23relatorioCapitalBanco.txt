@@ -286,3 +286,21 @@ Capital total armazenado no banco: R$
 Operação realizada em: 21/04/2023 14:40:58
 *******************************************************************************
 
+************************* TOTAL DE CAPITAL ARMAZENADO *************************
+
+Capital total armazenado no banco: R$
+Operação realizada em: 21/04/2023 15:15:44
+*******************************************************************************
+
+************************* TOTAL DE CAPITAL ARMAZENADO *************************
+
+Capital total armazenado no banco: R$
+Operação realizada em: 21/04/2023 15:18:23
+*******************************************************************************
+
+************************* TOTAL DE CAPITAL ARMAZENADO *************************
+
+Capital total armazenado no banco: R$
+Operação realizada em: 21/04/2023 15:22:43
+*******************************************************************************
+
