@@ -91,8 +91,6 @@ public class Relatorio {
 		double capitalBancoTotal = capitalBancoSaldo + ContaCorrente.getTotalTarifas();
 		System.out.printf("Total em saldo + tarifas: R$ %.2f%n", capitalBancoTotal);
 	}
-	
-
 
 	// LeitorEscritor.escritura...
 
@@ -104,5 +102,4 @@ public class Relatorio {
 
 		// LeitorEscritor.escritura
 	}
-
 }
