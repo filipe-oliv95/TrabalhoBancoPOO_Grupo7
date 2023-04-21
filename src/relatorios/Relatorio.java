@@ -7,10 +7,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import menus.Menu;
 import contas.Conta;
 import contas.ContaCorrente;
 import contas.ContaPoupanca;
 import io.Escritor;
+import pessoas.Cliente;
 import pessoas.Gerente;
 import principal.SistemaBancario;
 
@@ -58,7 +60,7 @@ public class Relatorio {
 //		Escritor.relatorioTributacaoCC(conta); // VAI DEIXAR ASSIM OU MODIFICAR OS DADOS ACIMA?
 	}
 
-	public static void simularRendimentoPoupanca() {
+	public static void simularRendimentoPoupanca(Conta conta, Cliente cliente){
 		
 			Scanner sc = new Scanner(System.in);
 			// Relatório de Rendimento da poupança, simulação do valor de rendimento da
@@ -71,8 +73,18 @@ public class Relatorio {
 			double rendimento = valor * ((ContaPoupanca.getTaxaRendimento() / 30) * dias);
 			System.out.printf("O rendimento para o prazo informado: %.2f%n", rendimento);
 			System.out.printf("Valor final ficaria: %.2f", valor + rendimento);
+			System.out.println();
 			System.out.println("**************************************************");
 			System.out.println();
+			try {
+				Menu.menuRelatorio(conta , cliente);
+			} catch (NullPointerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			// LeitorEscritor.escritura();
 			sc.close();
 		

@@ -255,7 +255,7 @@ public class Menu{
 			System.out.println("Erro: " + e.getMessage());
 		}
 		finally {
-			menuCliente(conta, cliente);
+		//	menuCliente(conta, cliente);
 		}
 		sc.close();
 	}
@@ -294,12 +294,13 @@ public class Menu{
 					break;
 				case 3:
 					if(conta.getTipoDeConta().equals(ContasEnum.POUPANCA)) {
-						Relatorio.simularRendimentoPoupanca();
+						Relatorio.simularRendimentoPoupanca(conta , cliente);
 					}
 					else {
 						System.out.println("Você não possui Conta Poupança.");
+					
+				    	menuRelatorio(conta, cliente);
 					}
-					menuRelatorio(conta, cliente);
 					break;
 				case 4:
 					System.out.println("DESAFIO");
