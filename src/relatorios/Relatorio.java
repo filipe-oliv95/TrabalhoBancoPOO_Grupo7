@@ -7,11 +7,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import menus.Menu;
 import contas.Conta;
 import contas.ContaCorrente;
 import contas.ContaPoupanca;
 import io.Escritor;
+import menus.Menu;
 import pessoas.Cliente;
 import pessoas.Gerente;
 import principal.SistemaBancario;
@@ -76,7 +76,7 @@ public class Relatorio {
 			System.out.println();
 			System.out.println("**************************************************");
 			System.out.println();
-			try {
+			try { // CORREÇÃO DO ERRO DO LOOPING NA CONSULTA RENDIMENTO
 				Menu.menuRelatorio(conta , cliente);
 			} catch (NullPointerException e) {
 				// TODO Auto-generated catch block
@@ -116,7 +116,7 @@ public class Relatorio {
         }
       }
 	
-	public static void informacoesClientes(List<Conta> contas) { // RELATORIO DIRETOR
+	public static void informacoesClientes(List<Conta> contas) throws IOException { // RELATORIO DIRETOR
 		System.out.println("***** Informações dos Clientes *****");
 		Collections.sort(contas); // ordenou a lista usando o Comparable no Contas
 		for (Conta conta : contas) {
@@ -124,6 +124,8 @@ public class Relatorio {
 		}
 		System.out.println("**************************************************");
 		System.out.println();
+		
+		Escritor.relatorioClientes(contas);
 		// ESCRITOR
 	}	
 	

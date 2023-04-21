@@ -104,7 +104,7 @@ public class ContaCorrente extends Conta {
 		System.out.println("Titular: " + this.getTitular().getNome());
 		System.out.println("CPF: " + this.getTitular().getCpf());
 		System.out.println("Número da conta: " + getNumConta());
-		System.out.printf("Saldo: R$ %.2f%n", this.getSaldo());
+		System.out.println("Saldo: R$" + this.getSaldo());
 		System.out.println("Data: " + sdf.format(date));
 	}
 

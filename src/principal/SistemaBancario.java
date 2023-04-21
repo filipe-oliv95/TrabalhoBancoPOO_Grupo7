@@ -1,9 +1,7 @@
 package principal;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import contas.Conta;
@@ -15,7 +13,6 @@ import pessoas.Funcionario;
 import pessoas.Gerente;
 import pessoas.Presidente;
 import pessoas.Usuario;
-import relatorios.Relatorio;
 
 public class SistemaBancario {
 
@@ -31,6 +28,8 @@ public class SistemaBancario {
     public static void main(String[] args) throws IOException {
 
         Leitor.leitura(".\\database\\registrodedados.txt");
+        
+        System.out.println(SistemaBancario.mapaDeContas.get("23156489785"));
         
         try { // TRATAMENTO EXCEÇÃO IO
         	Menu.menuInicial();

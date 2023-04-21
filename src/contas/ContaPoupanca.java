@@ -1,10 +1,12 @@
 package contas;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import agencias.Agencia;
 import contas.enums.ContasEnum;
+import menus.Menu;
 import pessoas.Cliente;
 
 public class ContaPoupanca extends Conta {
@@ -25,15 +27,16 @@ public class ContaPoupanca extends Conta {
 	}
 
 	@Override
-	public void imprimeExtrato() {
-		System.out.println("******** Extrato da Conta Poupança ********");
+	public void imprimeExtrato(){
+		System.out.println("***** Extrato da Conta Poupança ********");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
 		System.out.println("Titular: " + this.getTitular().getNome());
 		System.out.println("CPF: " + this.getTitular().getCpf());
 		System.out.println("Número da conta: " + getNumConta ());
-		System.out.printf("Saldo: R$ %.2f%n" + this.saldo);
-		System.out.println("Data: " + sdf.format(date));
+		System.out.println("Saldo: R$" + this.getSaldo());
+		System.out.println("Data: " + sdf.format(date));		
+		System.out.println("************************************");
 	}
     
     @Override
