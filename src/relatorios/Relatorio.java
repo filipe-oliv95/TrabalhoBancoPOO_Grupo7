@@ -120,7 +120,7 @@ public class Relatorio {
 		System.out.println("***** Informações dos Clientes *****");
 		Collections.sort(contas); // ordenou a lista usando o Comparable no Contas
 		for (Conta conta : contas) {
-			System.out.printf("NOME: %s\t AGÊNCIA: %s\n", conta.getTitular(), conta.getAgencia());
+			System.out.printf("NOME: %s\t| AGÊNCIA: %s\n", conta.getTitular(), conta.getAgencia());
 		}
 		System.out.println("**************************************************");
 		System.out.println();
@@ -131,20 +131,17 @@ public class Relatorio {
 	
 	public static void valorTotalCapitalBanco(List<Conta> listaContas) { // PRESIDENTE
 		
-		System.out.println("******* Consulta do Capital do Banco *******");
+		System.out.println("********* Consulta do Capital do Banco ***********");
 		double capitalBancoSaldo = 0;
 		for(Conta lista : listaContas) {
 			capitalBancoSaldo += lista.getSaldo();
 		}
 		System.out.printf("Total em saldo: R$ %.2f%n", capitalBancoSaldo);
-		System.out.printf("Total de tarifas: R$ %.2f%n",  ContaCorrente.getTotalTarifas());
-		
-		double capitalBancoTotal = capitalBancoSaldo + ContaCorrente.getTotalTarifas();
-		System.out.printf("Total em saldo + tarifas: R$ %.2f%n", capitalBancoTotal);
+
 		System.out.println("**************************************************");
 		System.out.println();
 		// ADICIONAR O ESCRITOR
-		Escritor.relatorioCapitalBanco(listaContas, capitalBancoTotal);
+		Escritor.relatorioCapitalBanco(listaContas);
 	}
 	
 }

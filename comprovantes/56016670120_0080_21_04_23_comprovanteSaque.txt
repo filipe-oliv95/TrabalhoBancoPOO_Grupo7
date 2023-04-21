@@ -1,0 +1,16 @@
+*************** SAQUE ***************
+CPF: 56016670120
+Agencia: 0080
+Conta: 287645
+Valor do saque: R$1000.0
+Operação realizada em: 21/04/2023 19:07:55
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56016670120
+Agencia: 0080
+Conta: 287645
+Valor do saque: R$500.0
+Operação realizada em: 21/04/2023 19:08:27
+************ FIM DO SAQUE ************
+

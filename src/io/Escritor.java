@@ -337,26 +337,30 @@ public class Escritor {
 		}
 	
 
-	public static void relatorioCapitalBanco(List<Conta> listaConta, double saldo) { // PRESIDENTE
+	public static void relatorioCapitalBanco(List<Conta> listaContas) { // PRESIDENTE
 
-		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
-		String arquivo = "_" + hojeFormatado + "relatorioCapitalBanco";
+		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MMyy"));
+        String arquivo = "" + hojeFormatado + "relatorioCapitalBanco";
 
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
+            double capitalTotalBanco = 0;
+            String linha = "******** TOTAL DE CAPITAL ARMAZENADO NO BANCO ********";
+            bw.append(linha + "\n\n");
 
-			String linha = "************************* TOTAL DE CAPITAL ARMAZENADO *************************";
-			bw.append(linha + "\n\n");
+            for (Conta lista : listaContas) {
+                capitalTotalBanco += lista.getSaldo();
+            }
 
-			linha = "Capital total armazenado no banco: R$";
-			bw.append(linha + "\n");
+            linha = "Total do Capital armazenado no banco: R$" + capitalTotalBanco;
+            bw.append(linha + "\n\n");
 
-			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+            String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+            linha = "Operação realizada em: " + date;
+            bw.append(linha + "\n");
 
-			linha = "Operação realizada em: " + date;
-			bw.append(linha + "\n");
+                linha = "******************************************************";
+            bw.append(linha + "\n\n");
 
-			linha = "*******************************************************************************";
-			bw.append(linha + "\n\n");
 
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());

@@ -29,6 +29,6 @@ public class Cliente extends Usuario {
 	
 	@Override
 	public String toString() {
-		return getNome() + ", CPF = " + imprimeCPF(getCpf());
+		return getNome() + " | CPF = " + imprimeCPF(getCpf());
 	}
 }
