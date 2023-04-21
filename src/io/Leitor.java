@@ -32,7 +32,7 @@ public class Leitor {
 					if (vetor[0].equalsIgnoreCase("AGENCIA")) {
 						
 						Agencia agencias = new Agencia(vetor[1]);
-						SistemaBancario.mapaDeAgencias.put(vetor[1], agencias);
+					//	SistemaBancario.mapaDeAgencias.put(vetor[1], agencias); TALVEZ REMOVER
 						
 					} 
 					else if (vetor[0].equalsIgnoreCase(UsuariosEnum.GERENTE.name())) {

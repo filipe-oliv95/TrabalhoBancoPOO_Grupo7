@@ -15,6 +15,7 @@ public class ContaCorrente extends Conta {
 	private static double totalSaques;
 	private static double totalDepositos;
 	private static double totalTransferencias;
+	private static double totalDeGastos; // ADIICONA TOTAL DE GASTOS COM TRIBUTACAO?
 
 	public ContaCorrente() {
 		super();
@@ -24,31 +25,20 @@ public class ContaCorrente extends Conta {
 		super(tipoDeConta, agencia, numConta, titular, cpf, saldoInicial);
 	}	
 	
-	public static double getTotalTarifas() {
-		double totalTarifaDeposito = TARIFA_DEPOSITO * totalDepositos;
-		double totalTarifaSaque = TARIFA_SAQUE * totalSaques;
-		double totalTarifaTransferencia = TARIFA_TRANSFERENCIA * totalTransferencias;
-		return totalTarifaDeposito + totalTarifaSaque + totalTarifaTransferencia;
-	}
-	
-	public static double getTotalDepositos() {
-		return totalDepositos;
-	}
-
-	public static double getTARIFA_SAQUE() {
-		return TARIFA_SAQUE;
-	}
-
 	public static double getTotalSaques() {
 		return totalSaques;
 	}
 
-	public static double Transferencia() {
+	public static double getTotalDepositos() {
 		return totalDepositos;
 	}
 
 	public static double getTotalTransferencias() {
 		return totalTransferencias;
+	}
+	
+	public static double getTarifaSaque() {
+		return TARIFA_SAQUE;
 	}
 
 	public static double getTarifaDeposito() {
@@ -57,6 +47,14 @@ public class ContaCorrente extends Conta {
 
 	public static double getTarifaTransferencia() {
 		return TARIFA_TRANSFERENCIA;
+	}
+
+	public static double getTotalTarifas() {
+		double totalTarifaDeposito = TARIFA_DEPOSITO * totalDepositos;
+		double totalTarifaSaque = TARIFA_SAQUE * totalSaques;
+		double totalTarifaTransferencia = TARIFA_TRANSFERENCIA * totalTransferencias;
+		double totalTarifas = totalTarifaDeposito + totalTarifaSaque + totalTarifaTransferencia;
+		return totalTarifas;
 	}
 
 	@Override
@@ -73,7 +71,7 @@ public class ContaCorrente extends Conta {
 	
 	@Override
 	public void depositar(double valor) {
-		// verificar se o saldo que está fazendo deposito é maior que o tributo
+		// VERIFICAR se o saldo que está fazendo deposito é maior que o tributo?
 		saldo += valor - TARIFA_DEPOSITO;
 		totalDepositos ++;
 	}

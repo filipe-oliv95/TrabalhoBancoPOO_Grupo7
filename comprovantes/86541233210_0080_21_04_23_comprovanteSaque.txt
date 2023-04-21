@@ -1,0 +1,8 @@
+*************** SAQUE ***************
+CPF: 86541233210
+Agencia: 0080
+Conta: 281564
+Valor do saque: R$201.0
+Operação realizada em: 21/04/2023 10:59:40
+************ FIM DO SAQUE ************
+

@@ -25,11 +25,6 @@ public class ContaPoupanca extends Conta {
 	}
 
 	@Override
-    public void depositar(double valor) {
-        saldo += valor;
-    }
-	
-	@Override
 	public void imprimeExtrato() {
 		System.out.println("#### Extrato da Conta Poupança ####");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

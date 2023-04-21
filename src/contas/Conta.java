@@ -95,8 +95,6 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta>{
 		}
 	}
 	
-	
-	
 	@Override
 	public int compareTo(Conta cont) {
 		if (this.getTitular().compareTo(cont.getTitular()) > 0) { // comparou pelo nome

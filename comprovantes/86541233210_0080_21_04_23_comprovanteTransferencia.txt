@@ -1,0 +1,15 @@
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+CPF: 86541233210
+Agência : 0080
+Conta: 281564
+********** DADOS DO DESTINATÁRIO ************
+CPF: 98654712548
+Agência: 5086
+Conta: 683145
+*********************************************
+Valor: R$1500.0
+Operação realizada em: 21/04/2023 10:59:57
+*********** FIM DA TRANSFERÊNCIA ************

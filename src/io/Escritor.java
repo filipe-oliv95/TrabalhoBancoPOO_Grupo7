@@ -6,10 +6,12 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import contas.Conta;
 import contas.ContaCorrente;
+import principal.SistemaBancario;
 
 public class Escritor {
 
@@ -239,8 +241,66 @@ public class Escritor {
 		
 	}
 	
-	public static void relatorioContasPorAgencia() { // GERENTE
+	public static void relatorioContasPorAgencia(Conta conta) throws IOException { // GERENTE
+		
+		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
+		String arquivo = conta.getCpf() + "_" + conta.getAgencia() + "_" + hojeFormatado + "relatorioContasPorAgencia";
+		
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
+			
+			int totalContas = 0;
+			String linha = "****************** RESPONSÁVEL **********************";
+			bw.append(linha + "\n\n");
+			
+			linha = "CPF: " + conta.getCpf();
+			bw.append(linha + "\n");
 
+			linha = "Agência : " + conta.getAgencia().getNumAgencia();
+			bw.append(linha + "\n");
+
+			linha = "*********************************************************";
+			bw.append(linha + "\n\n");
+
+			linha = "****************** TOTAL DE CONTAS NA AGÊNCIA ***************";
+			bw.append(linha + "\n\n");
+
+			for (String cpf : SistemaBancario.mapaDeContas.keySet()) {
+				if (SistemaBancario.mapaDeContas.get(cpf).getAgencia().getNumAgencia().equals(conta.getAgencia().getNumAgencia())) {
+
+					linha = "CPF: " + SistemaBancario.mapaDeContas.get(cpf).getCpf();
+					bw.append(linha + "\n");
+
+					linha = "Agência : " + SistemaBancario.mapaDeContas.get(cpf).getAgencia();
+					bw.append(linha + "\n");
+
+					linha = "Conta: " + SistemaBancario.mapaDeContas.get(cpf).getNumConta();
+					bw.append(linha + "\n");
+
+					totalContas++;
+
+					linha = "**************************************";
+					bw.append(linha + "\n");
+			}
+
+			}
+
+			linha = "Total de contas: " + totalContas;
+			bw.append(linha + "\n");
+
+			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+			linha = "Operações realizada em: " + date;
+			bw.append(linha + "\n");
+
+			linha = "************************************************************************";
+			bw.append(linha + "\n\n");
+
+			bw.close();			
+		}
+		catch (IOException e) {
+			System.out.println("Erro: " + e.getMessage());
+		} finally {
+		
+		}
 	}
 
 	public static void relatorioClientes() { // DIRETOR
