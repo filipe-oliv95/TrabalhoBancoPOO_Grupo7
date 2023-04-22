@@ -9,7 +9,7 @@ import pessoas.Cliente;
 
 public class ContaPoupanca extends Conta {
     
-    private static final double TAXA_RENDIMENTO_MES = 0.5; 
+    private static final double TAXA_RENDIMENTO_MES = 0.005; 
     
     public ContaPoupanca() {
         super();

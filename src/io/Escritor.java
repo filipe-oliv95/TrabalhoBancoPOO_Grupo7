@@ -12,9 +12,9 @@ import java.util.List;
 import contas.Conta;
 import contas.ContaCorrente;
 import menus.Menu;
-import menus.SeguroDeVida;
 import pessoas.Cliente;
 import principal.SistemaBancario;
+import segurosDeVida.SeguroDeVida;
 
 public class Escritor {
 
@@ -260,6 +260,9 @@ public class Escritor {
 			linha = "Total de tranferências realizadas = " + ContaCorrente.getTarifaTransferencia();
 			bw.append(linha + "\n\n");
 
+			linha = "Valor adicionado para seu seguro = R$ " + SeguroDeVida.getValorSeguroAposTaxa(false);
+			bw.append(linha + "\n\n");
+			
 			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
 			linha = "Operações realizada em: " + date;
 			bw.append(linha + "\n");
@@ -272,26 +275,26 @@ public class Escritor {
 		}
 	}
 
-	public static void rendimentDaPoupanca(Conta conta, Cliente cliente) {
+	public static void rendimentDaPoupanca(Conta conta, Cliente cliente, Double rendimento) {
 		
 		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
 		String arquivo = conta.getCpf() + "_" + conta.getAgencia() + "_" + hojeFormatado + "_relatorioRendimentoPoupanca";
 		
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
 			
-			String linha = "*************** Simulação de Rendimento da Poupança *****************";
+			String linha = "******* Simulação de Rendimento da Poupança ********";
 			bw.append(linha + "\n\n");
 			
 			linha = "Simulação para CPF = " + conta.getCpf();
 			bw.append(linha + "\n");
 			
-			// linha = "Rendimento para o prazo informado = " + // ;  FAZER ESSE
-		//	bw.append(linha + "\n");
-			
+			linha = "O rendimento foi de: R$" + rendimento;
+			bw.append(linha + "\n");
+				
 			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
 			linha = "Operações realizada em: " + date;
 			bw.append(linha + "\n");
-
+			
 			linha = "****************************************************";
 			bw.append(linha + "\n\n");
 		}
@@ -423,43 +426,4 @@ public class Escritor {
 		}
         
 	}
-public static void SeguroDeVida(Conta conta , Cliente cliente) {
-		
-		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MMyy"));
-	    String arquivo = "" + hojeFormatado + "relatorioSeguroDeVida";
-		
-	    try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
-	       
-		SeguroDeVida n = new SeguroDeVida();
-		
-		
-		bw.append("\n");
-		String linha = ("*********** Seguro de vida ***********");
-		bw.append(linha + "\n");
-		
-		linha = ("NOME : ");
-		bw.append(linha + "\n");
-		
-		linha = ("CPF : ");		
-		bw.append(linha + "\n");
-		
-		linha = ("O valor adicionado para seu seguro foi de: R$"  + + SeguroDeVida.getVALOR());
-		bw.append(linha + "\n");
-		
-		linha = ("Seu seguro de vida e de: R$" + SeguroDeVida.getSEGURO() );
-		bw.append(linha + "\n");
-		
-			   linha = ("**************************************");
-		
-		
-			Menu.menuRelatorio(conta, cliente);
-		} catch (NullPointerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		}
 }

@@ -12,10 +12,10 @@ import contas.ContaCorrente;
 import contas.ContaPoupanca;
 import io.Escritor;
 import menus.Menu;
-import menus.SeguroDeVida;
 import pessoas.Cliente;
 import pessoas.Gerente;
 import principal.SistemaBancario;
+import segurosDeVida.SeguroDeVida;
 
 public class Relatorio {
 
@@ -58,63 +58,80 @@ public class Relatorio {
 		System.out.println("Total de tarifas cobradas em transferências: R$" + tarifaTotalTransferencia);
 		double somaTarifas = tarifaTotalSaque + tarifaTotalDeposito + tarifaTotalTransferencia;
 		System.out.println("Soma de todas as tarifas: R$" + somaTarifas);
+		System.out.println();
+		
+		if(Menu.contratoSeguro == true) {
+			System.out.println("O valor adicionado para seu seguro foi de: R$ " + SeguroDeVida.getValorSeguroAposTaxa(false));
+		}
+		
 //		Escritor.relatorioTributacaoCC(conta); // VAI DEIXAR ASSIM OU MODIFICAR OS DADOS ACIMA?
 	}
 
-	public static void simularRendimentoPoupanca(Conta conta, Cliente cliente){
-		
-			Scanner sc = new Scanner(System.in);
-			System.out.println("****** Simulação de Rendimento da Poupança ******");
+	public static void simularRendimentoPoupanca(Conta conta, Cliente cliente) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println();
+		System.out.println("****** Simulação de Rendimento da Poupança ******");
+		Double valor = 0.0;
+		Integer dias = 0;
+		do {
 			System.out.print("Qual valor deseja simular: R$ ");
-			double valor = sc.nextDouble();
+			valor = sc.nextDouble();
+			if (valor < 0 || valor == null)
+				System.out.println("Insira um valor positivo em reais. \n");
+		} while (valor < 0);
+
+		do {
 			System.out.printf("Quantos dias deseja saber o rendimento: ");
-			int dias = sc.nextInt();
-			
-			double rendimento = valor * ((ContaPoupanca.getTaxaRendimento() / 30) * dias);
-			System.out.printf("O rendimento para o prazo informado: %.2f%n", rendimento);
-			System.out.printf("Valor final ficaria: %.2f", valor + rendimento);
-			Escritor.rendimentDaPoupanca(conta, cliente);
-			System.out.println();
-			System.out.println("**************************************************");
-			System.out.println();
-			
-			try { // CORREÇÃO DO ERRO DO LOOPING NA CONSULTA RENDIMENTO
-				Menu.menuRelatorio(conta , cliente);
-			} catch (NullPointerException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			sc.close();
-		
+			dias = sc.nextInt();
+			if (dias < 0)
+				System.out.println("Insira um valor positivo de dias. \n");
+		} while (dias < 0|| dias == null);
+
+		Double rendimento = valor * ((ContaPoupanca.getTaxaRendimento() / 30) * dias);
+		System.out.printf("O rendimento para o prazo informado: %.2f%n", rendimento);
+		System.out.printf("Valor final ficaria: R$ %.2f", valor + rendimento);
+		Escritor.rendimentDaPoupanca(conta, cliente, rendimento);
+
+		System.out.println();
+		System.out.println("**************************************************");
+
+		try { // CORREÇÃO DO ERRO DO LOOPING NA CONSULTA RENDIMENTO
+			Menu.menuRelatorio(conta, cliente);
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		sc.close();
+
 	}
 
-	public static void numDeContasNaAgencia(Conta conta,  String cpf) throws IOException {
-        int totalContas = 0;
-        Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf);
-    	System.out.println("****** Contas na agência do Gerente ******");
-        try {
-        	if(gerente.getCpf().equals(cpf)){ 
-	           for (String cpfConta : SistemaBancario.mapaDeContas.keySet()) {
-	                if (SistemaBancario.mapaDeContas.get(cpfConta).getAgencia().getNumAgencia().equals(gerente.getAgencia().getNumAgencia())) {
-	                    System.out.println(SistemaBancario.mapaDeContas.get(cpfConta));
-	                    totalContas++;
-	                }
-	            }
-	            System.out.println("Total de contas na agência : " + totalContas);
-	        	System.out.println("*********************************");
-	            System.out.println();
-	            Escritor.relatorioContasPorAgencia(conta);	         
-        	}
-        }
-        catch(IOException e) {
-        	System.out.println(e.getMessage());
-        }
-        finally {
-        	// COLOCAR O QUE AQUI?
-        }
-      }
-	
+	public static void numDeContasNaAgencia(Conta conta, String cpf) throws IOException {
+		int totalContas = 0;
+		Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf);
+		System.out.println("****** Contas na agência do Gerente ******");
+		try {
+			if (gerente.getCpf().equals(cpf)) {
+				for (String cpfConta : SistemaBancario.mapaDeContas.keySet()) {
+					if (SistemaBancario.mapaDeContas.get(cpfConta).getAgencia().getNumAgencia()
+							.equals(gerente.getAgencia().getNumAgencia())) {
+						System.out.println(SistemaBancario.mapaDeContas.get(cpfConta));
+						totalContas++;
+					}
+				}
+				System.out.println("Total de contas na agência : " + totalContas);
+				System.out.println("*********************************");
+				System.out.println();
+				Escritor.relatorioContasPorAgencia(conta);
+			}
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			// COLOCAR O QUE AQUI?
+		}
+	}
+
 	public static void informacoesClientes(List<Conta> contas) throws IOException { // RELATORIO DIRETOR
 		System.out.println("***** Informações dos Clientes *****");
 		Collections.sort(contas); // ordenou a lista usando o Comparable no Contas
@@ -123,16 +140,16 @@ public class Relatorio {
 		}
 		System.out.println("**************************************************");
 		System.out.println();
-		
+
 		Escritor.relatorioClientes(contas);
 		// ESCRITOR
-	}	
-	
+	}
+
 	public static void valorTotalCapitalBanco(List<Conta> listaContas) { // PRESIDENTE
-		
+
 		System.out.println("********* Consulta do Capital do Banco ***********");
 		double capitalBancoSaldo = 0;
-		for(Conta lista : listaContas) {
+		for (Conta lista : listaContas) {
 			capitalBancoSaldo += lista.getSaldo();
 		}
 		System.out.printf("Total em saldo: R$ %.2f%n", capitalBancoSaldo);
@@ -142,19 +159,19 @@ public class Relatorio {
 		// ADICIONAR O ESCRITOR
 		Escritor.relatorioCapitalBanco(listaContas);
 	}
-	
-	public static void SeguroDeVida(Conta conta , Cliente cliente) {
-	 
+
+	public static void SeguroDeVida(Conta conta, Cliente cliente) {
+
 		System.out.println();
 		System.out.println("*********** Seguro de vida ***********");
 		System.out.println();
 		System.out.println("NOME : " + cliente.getNome());
 		System.out.println("CPF : " + cliente.getCpf());
-		System.out.println("O valor adicionado para seu seguro foi de: " + SeguroDeVida.getVALOR());
-		System.out.println("Seu seguro de vida e de: R$" + SeguroDeVida.getVALOR_SALDO() );
+		System.out.println("O valor debitado do seu saldo foi de: R$ " + SeguroDeVida.getValorSeguro());
+		System.out.println("Seu seguro de vida é de: R$ " + SeguroDeVida.getValorSeguroAposTaxa(true));
+		System.out.printf("Você pagou R$ %.2f de tarifa.", SeguroDeVida.getValorTributacao());
 		System.out.println();
 		System.out.println("**************************************");
-		Escritor.SeguroDeVida(conta, cliente);
 	}
-	
+
 }

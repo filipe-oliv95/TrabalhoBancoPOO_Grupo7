@@ -69,6 +69,16 @@ public class ContaCorrente extends Conta {
 			System.out.println("Saque realizado com sucesso.");
 		}
 	}
+	
+	public void sacarSeguro(double valor) {
+		if (this.saldo < valor) {
+			System.out.println("Saldo insuficiente");
+		} else if (valor < 0) {
+			System.out.println("Insira um valor válido.");
+		} else {
+			this.saldo -= valor;
+		}
+	}
 
 	@Override
 	public void depositar(double valor) {

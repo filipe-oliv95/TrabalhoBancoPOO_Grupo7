@@ -14,8 +14,11 @@ import pessoas.Cliente;
 import pessoas.Funcionario;
 import principal.SistemaBancario;
 import relatorios.Relatorio;
+import segurosDeVida.SeguroDeVida;
 
 public class Menu {
+
+	public static boolean contratoSeguro = false;
 
 	public static void menuInicial() throws InputMismatchException, IOException, NullPointerException {
 
@@ -156,6 +159,7 @@ public class Menu {
 						break;
 					}
 				case 3:
+					contratoSeguro = false;
 					menuInicial();
 					break;
 				}
@@ -171,7 +175,7 @@ public class Menu {
 
 	}
 
-	public static void menuCliente(Conta conta, Cliente cliente) throws IOException,  NullPointerException {
+	public static void menuCliente(Conta conta, Cliente cliente) throws IOException, NullPointerException {
 		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
 
@@ -192,71 +196,71 @@ public class Menu {
 			case 1:
 				System.out.print("Insira o valor do saque: R$ ");
 				double valor = sc.nextDouble();
-				
+
 				conta.sacar(valor);
 				Escritor.comprovanteSaque(conta, valor); // ADICIONEI CHAMADA PARA ESCRITA DO SAQUE
-				
+
 				menuCliente(conta, cliente);
 				break;
 			case 2:
 				System.out.printf("Insira o valor para depósito: R$ ");
 				valor = sc.nextDouble();
-				
+
 				conta.depositar(valor);
 				Escritor.comprovanteDeposito(conta, valor); // CHAMADA PARA ESCRITA DO DEPOSITO
-				
-				System.out.printf("Saldo atual: R$ %.2f", conta.getSaldo()); // TESTE REMOVER DEPOIS 
+
+				System.out.printf("Saldo atual: R$ %.2f", conta.getSaldo()); // TESTE REMOVER DEPOIS
 				System.out.println();
-				
+
 				menuCliente(conta, cliente);
 				break;
 			case 3:
 				System.out.printf("Insira o valor da transferencia: R$ ");
 				valor = sc.nextDouble();
-					if(valor < 0 || valor > conta.getSaldo()) {
-						System.out.println("Insira um valor válido.");
-						menuCliente(conta, cliente);
-					}
+				if (valor < 0 || valor > conta.getSaldo()) {
+					System.out.println("Insira um valor válido.");
+					menuCliente(conta, cliente);
+				}
 				sc.nextLine();
-				
+
 				System.out.printf("Insira o CPF do destinatário: ");
 				String cpf = sc.nextLine();
-					if(cpf.equals(conta.getCpf())){  // TESTA SE CPF DIGITADO É O MESMO DA PESSOA DEPOSITANDO
-						System.out.println("Você não pode fazer transferência para si mesmo! Entre CPF válido");
-						cpf = sc.nextLine();
-					}
+				if (cpf.equals(conta.getCpf())) { // TESTA SE CPF DIGITADO É O MESMO DA PESSOA DEPOSITANDO
+					System.out.println("Você não pode fazer transferência para si mesmo! Entre CPF válido");
+					cpf = sc.nextLine();
+				}
 				Conta contaDestino = SistemaBancario.mapaDeContas.get(cpf);
 				conta.transferir(contaDestino, valor);
-				Escritor.comprovanteTransferencia(conta, contaDestino, valor); // ADICIONEI CHAMADA PARA ESCRITA TRANSFERENCIA
-				
+				Escritor.comprovanteTransferencia(conta, contaDestino, valor); // ADICIONEI CHAMADA PARA ESCRITA
+																				// TRANSFERENCIA
+
 				System.out.println("Transferência realizada com sucesso.");
 				menuCliente(conta, cliente);
 				break;
 			case 4:
 				conta.imprimeExtrato(conta);
 				Escritor.extratoConta(conta);
-				
 				menuCliente(conta, cliente);
 				break;
 			case 5:
 				menuRelatorio(conta, cliente);
 				break;
 			case 6:
+				contratoSeguro = false;
 				menuInicial();
 			default:
 				break;
 			}
-		} 
-		catch (InputMismatchException e) {
+		} catch (InputMismatchException e) {
 			System.out.println("Ocorreu um erro na transferência.");
 			System.out.println("Possível solução para o erro:");
-			System.out.println("- Insira apenas números com ou sem ponto (.). Não utilize vírgula.");
-		}
-		catch (IOException e) {
+			System.out.println("- Insira apenas números com ou sem ponto (.)");
+		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
-		}
-		catch (NullPointerException e) {
+		} catch (NullPointerException e) {
 			System.out.println("Erro: " + e.getMessage());
+		} finally {
+			menuCliente(conta, cliente);
 		}
 		sc.close();
 	}
@@ -269,12 +273,11 @@ public class Menu {
 		System.out.println();
 		System.out.println("Escolha entre as opções abaixo:");
 		System.out.println("[1] Saldo");
-		System.out.println("[2] Relatório de tributação da Conta Corrente");
+		System.out.println("[2] Relatório de Tributação da Conta Corrente");
 		System.out.println("[3] Relatório de Rendimento da Conta Poupança");
-		//System.out.println("[4] Desafio");
-		System.out.println("[4] Seguro de vida");//TESTE SEGURO DE VIDA...
+		System.out.println("[4] Seguro de vida");
 		System.out.println("[5] Retornar ao menu anterior");
-		
+
 		int opcao = 0;
 
 		try {
@@ -290,6 +293,7 @@ public class Menu {
 					Relatorio.tributacaoCC(conta);
 					Escritor.relatorioTributacaoCC(conta);
 				} else {
+					System.out.println();
 					System.out.println("Você não possui Conta Corrente.");
 				}
 				menuRelatorio(conta, cliente);
@@ -299,23 +303,44 @@ public class Menu {
 					Relatorio.simularRendimentoPoupanca(conta, cliente);
 					// Escritor.rendimentDaPoupanca(conta, cliente);
 				} else {
-					System.out.println("Você não possui Conta Poupança.");
+					System.out.println("Desculpe, você não possui Conta Poupança.");
 
 					menuRelatorio(conta, cliente);
 				}
 				break;
 			case 4:
-				System.out.println("AVISO!! AO REALIZAR A CONTRATAÇÃO DO SEGURO VC PAGARA 20% DO VALOR DESEJADO COMO TAXA!!");
-				System.out.println("Deseja contratar um seguro de vida [y] | [n] ? ");
-				char n = sc.next().charAt(0);
-				
-				if (n == 'y' || n == 'Y') {
-					SeguroDeVida.SeguroVida(conta , cliente);
+				if (contratoSeguro == true) {
+					System.out.println("Você ja contratou esse serviço.");
+				} else if (conta.getTipoDeConta().equals(ContasEnum.CORRENTE)) {
+					System.out
+							.println("Ao realizar a contratação do seguro de vida, você pagará 20% do valor como taxa");
+					System.out.println("Deseja contratar um seguro de vida? Sim [1] Não [2] ");
+
+					do {
+						opcao = sc.nextInt();
+						switch (opcao) {
+						case 1:
+							contratoSeguro = true;
+							System.out.print("Qual o valor que será segurado? R$ ");
+							double valor = sc.nextDouble();
+							SeguroDeVida.setValorSeguro(valor);
+							Relatorio.SeguroDeVida(conta, cliente);
+							menuRelatorio(conta, cliente);
+							break;
+						case 2:
+							menuRelatorio(conta, cliente);
+							break;
+						default:
+							System.out.println("\n" + "Insira um valor válido.");
+							break;
+						}
+
+					} while (opcao != 1 || opcao != 2);
+
+				} else {
+					System.out.println("Desculpe, você não possui Conta Corrente.");
+					menuRelatorio(conta, cliente);
 				}
-				else {
-					menuRelatorio(conta , cliente);
-				}			
-				break;
 			case 5:
 				menuCliente(conta, cliente);
 				break;
