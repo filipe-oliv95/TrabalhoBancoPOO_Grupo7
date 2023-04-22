@@ -101,6 +101,8 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 			contaDestino.saldo += valor;
 		}
 	}
+	
+	public abstract void debitarSeguro(double valor);
 
 	@Override
 	public int compareTo(Conta cont) {

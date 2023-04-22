@@ -1,0 +1,17 @@
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+Nome: Jullian Cardoso
+CPF: 98756412365
+Agência : 0080
+Conta: 112564
+********** DADOS DO DESTINATÁRIO ************
+Nome: Vinicius da Silva
+CPF: 80466528906
+Agência: 5086
+Conta: 681245
+*********************************************
+Valor: R$15623.0
+Operação realizada em: 22/04/2023 19:09:14
+*********** FIM DA TRANSFERÊNCIA ************

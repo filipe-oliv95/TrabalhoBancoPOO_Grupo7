@@ -11,7 +11,6 @@ import java.util.List;
 
 import contas.Conta;
 import contas.ContaCorrente;
-import menus.Menu;
 import pessoas.Cliente;
 import principal.SistemaBancario;
 import segurosDeVida.SeguroDeVida;
@@ -260,7 +259,7 @@ public class Escritor {
 			linha = "Total de tranferências realizadas = " + ContaCorrente.getTarifaTransferencia();
 			bw.append(linha + "\n\n");
 
-			linha = "Valor adicionado para seu seguro = R$ " + SeguroDeVida.getValorSeguroAposTaxa(false);
+			linha = "Valor adicionado para seu seguro = R$ " + SeguroDeVida.getValorSeguroAposTaxa();
 			bw.append(linha + "\n\n");
 			
 			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));

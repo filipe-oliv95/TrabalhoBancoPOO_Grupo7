@@ -187,7 +187,7 @@ public class Menu {
 			System.out.println("[2] Depósito");
 			System.out.println("[3] Transferência para outra conta");
 			System.out.println("[4] Extrato da conta");
-			System.out.println("[5] Relatórios");
+			System.out.println("[5] Relatórios e Saldo");
 			System.out.println("[6] Logout");
 
 			int opcao = sc.nextInt();
@@ -324,6 +324,7 @@ public class Menu {
 							System.out.print("Qual o valor que será segurado? R$ ");
 							double valor = sc.nextDouble();
 							SeguroDeVida.setValorSeguro(valor);
+							conta.debitarSeguro(valor);
 							Relatorio.SeguroDeVida(conta, cliente);
 							menuRelatorio(conta, cliente);
 							break;
@@ -348,13 +349,18 @@ public class Menu {
 				menuRelatorio(conta, cliente);
 				break;
 			}
-		} catch (InputMismatchException e) {
-			System.out.println(e.getMessage());
+		}  catch (InputMismatchException e) {
+			System.out.println("Ocorreu um erro na transferência.");
+			System.out.println("Possível solução para o erro:");
+			System.out.println("- Insira apenas números com ou sem ponto (.)");
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		} catch (NullPointerException e) {
 			System.out.println(e.getMessage());
-		}
+		
+	} finally {
+		menuRelatorio(conta, cliente);
+	}
 		sc.close();
 	}
 }

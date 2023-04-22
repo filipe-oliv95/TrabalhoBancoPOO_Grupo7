@@ -1,0 +1,21 @@
+*************** SALDO ***************
+Tipo: CORRENTE
+Agencia: 5086
+Conta: 681245
+Saldo: R$18123.0
+Operação realizada em: 22/04/2023 19:09:33
+*************** FIM ***************
+*************** SALDO ***************
+Tipo: CORRENTE
+Agencia: 5086
+Conta: 681245
+Saldo: R$18123.0
+Operação realizada em: 22/04/2023 19:10:12
+*************** FIM ***************
+*************** SALDO ***************
+Tipo: CORRENTE
+Agencia: 5086
+Conta: 681245
+Saldo: R$1000.0
+Operação realizada em: 22/04/2023 19:22:26
+*************** FIM ***************

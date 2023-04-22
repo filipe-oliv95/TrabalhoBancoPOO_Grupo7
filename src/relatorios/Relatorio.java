@@ -61,7 +61,7 @@ public class Relatorio {
 		System.out.println();
 		
 		if(Menu.contratoSeguro == true) {
-			System.out.println("O valor adicionado para seu seguro foi de: R$ " + SeguroDeVida.getValorSeguroAposTaxa(false));
+			System.out.println("O valor adicionado para seu seguro foi de: R$ " + SeguroDeVida.getValorSeguroAposTaxa());
 		}
 		
 //		Escritor.relatorioTributacaoCC(conta); // VAI DEIXAR ASSIM OU MODIFICAR OS DADOS ACIMA?
@@ -168,7 +168,7 @@ public class Relatorio {
 		System.out.println("NOME : " + cliente.getNome());
 		System.out.println("CPF : " + cliente.getCpf());
 		System.out.println("O valor debitado do seu saldo foi de: R$ " + SeguroDeVida.getValorSeguro());
-		System.out.println("Seu seguro de vida é de: R$ " + SeguroDeVida.getValorSeguroAposTaxa(true));
+		System.out.println("Seu seguro de vida é de: R$ " + SeguroDeVida.getValorSeguroAposTaxa());
 		System.out.printf("Você pagou R$ %.2f de tarifa.", SeguroDeVida.getValorTributacao());
 		System.out.println();
 		System.out.println("**************************************");

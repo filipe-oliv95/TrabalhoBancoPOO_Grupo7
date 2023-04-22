@@ -3,16 +3,11 @@ package segurosDeVida;
 public abstract class SeguroDeVida {
 
 	private final static double TAXA_SEGURO = 0.20;
-	private static double TARIFA; // vai somando os valores a cada contratação de seguro
 	private static double valorSeguro;
 	private static double valorSeguroAposTaxa;
 	
 	public SeguroDeVida(double valorSeguro, double valor) {
 		super();
-	}
-
-	public static double getTARIFA() {
-		return TARIFA;
 	}
 
 	public static void setValorSeguroAposTaxa(double valorSeguroAposTaxa) {
@@ -27,10 +22,6 @@ public abstract class SeguroDeVida {
 		SeguroDeVida.valorSeguro = valorSeguro;
 	}
 
-	public static void setTARIFA(double tARIFA) {
-		TARIFA = tARIFA;
-	}
-
 	public static double getTaxaSeguro() {
 		return TAXA_SEGURO;
 	}
@@ -40,11 +31,8 @@ public abstract class SeguroDeVida {
 		return getValorSeguro() * TAXA_SEGURO;
 	}
 
-	public static double getValorSeguroAposTaxa(boolean somarTarifa) {
+	public static double getValorSeguroAposTaxa() {
 		valorSeguroAposTaxa = valorSeguro * (1 - TAXA_SEGURO);
-		if(somarTarifa == true) {
-			TARIFA += (valorSeguro - valorSeguroAposTaxa);
-		}
 		return valorSeguroAposTaxa; // retorna 800
 	}
 

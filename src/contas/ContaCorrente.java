@@ -70,7 +70,7 @@ public class ContaCorrente extends Conta {
 		}
 	}
 	
-	public void sacarSeguro(double valor) {
+	public void debitarSeguro(double valor) {
 		if (this.saldo < valor) {
 			System.out.println("Saldo insuficiente");
 		} else if (valor < 0) {
