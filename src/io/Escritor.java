@@ -11,7 +11,7 @@ import java.util.List;
 
 import contas.Conta;
 import contas.ContaCorrente;
-import pessoas.Diretor;
+import pessoas.Cliente;
 import principal.SistemaBancario;
 
 public class Escritor {
@@ -52,8 +52,6 @@ public class Escritor {
 
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
-		} finally {
-
 		}
 	}
 
@@ -89,10 +87,7 @@ public class Escritor {
 
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
-		} finally {
-
 		}
-
 	}
 
 	public static void comprovanteTransferencia(Conta conta, Conta contaDestino, double valorTransferencia) { // CLIENTE
@@ -151,14 +146,49 @@ public class Escritor {
 
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
-		} finally {
-
 		}
-
 	}
 
-	public static void extratoConta() {
+	public static void extratoConta(Conta conta) {
+		
+		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
+		String arquivo = conta.getCpf() + "_" + conta.getAgencia() + "_" + hojeFormatado + "_comprovanteEXTRATO";
+		
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
+			
+			String linha = "*************** EXTRATO ******************";
+			bw.append(linha + "\n");
+			
+			linha = "Tipo: " + conta.getTipoDeConta();
+			bw.append(linha + "\n");
+			
+			linha = "Titular: " + conta.getTitular().getNome();
+			bw.append(linha + "\n");
+			
+			linha = "Agencia: " + conta.getAgencia().getNumAgencia();
+			bw.append(linha + "\n");
 
+			linha = "Conta: " + conta.getNumConta();
+			bw.append(linha + "\n");
+			
+//			if() { VERIFICAR O QUE DECIDIR
+//				linha = "Quantidade de saques: " + ContaCorrente.getTotalDepositos();
+//				bw.append(linha + "\n");
+//			}
+			
+			linha = "Saldo: R$" + conta.getSaldo();
+			bw.append(linha + "\n");
+
+			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+			linha = "Operação realizada em: " + date;
+			bw.append(linha + "\n");
+
+			linha = "*************** FIM **************************";
+			bw.append(linha + "\n");
+
+		} catch (IOException e) {
+			System.out.println("Erro: " + e.getMessage());
+		}
 	}
 
 	public static void comprovanteSaldo(Conta conta) {
@@ -192,47 +222,43 @@ public class Escritor {
 
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
-		} finally {
-
-		}
-
+		}	
 	}
+	
 
-	// CRIAR 1 RELATORIO PARA O CLIENTE E 1 PARA O GERENTE/PRESIDENTE/DIRETOR
-	public static void relatorioTributacaoCC(ContaCorrente conta) {
+	public static void relatorioTributacaoCC(Conta conta) {
 
 		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
 		String arquivo = conta.getCpf() + "_" + conta.getAgencia() + "_" + hojeFormatado + "relatorioTributacaoCC";
 
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
 
-			String linha = "*************** TOTAL DE TRIBUTAÇÕES ***************";
+			String linha = "*************** TOTAL DE TRIBUTAÇÕES *****************";
 			bw.append(linha + "\n\n");
 
-			linha = "Total recebido em transações = R$" + conta.getTotalTarifas();
-			bw.append(linha + "\n");
+			linha = "Total recebido em transações = R$" + ContaCorrente.getTotalTarifas();
+			bw.append(linha + "\n\n");
 
 			linha = "Taxa para saque = R$0,10";
 			bw.append(linha + "\n");
 
 			// ATUALIZAR
-			linha = "Total de saques realizados = ";
+			linha = "Total de saques realizados = " + ContaCorrente.getTotalSaques();
 			bw.append(linha + "\n\n");
 
 			linha = "Taxa para deposito = R$0,10";
 			bw.append(linha + "\n");
 
-			linha = "Total de depósitos realizados = ";
+			linha = "Total de depósitos realizados = " + ContaCorrente.getTarifaDeposito();
 			bw.append(linha + "\n\n");
 
 			linha = "Taxa para tranferência = R$0,20";
 			bw.append(linha + "\n");
 
-			linha = "Total de tranferências realizadas = ";
+			linha = "Total de tranferências realizadas = " + ContaCorrente.getTarifaTransferencia();
 			bw.append(linha + "\n\n");
 
 			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
-
 			linha = "Operações realizada em: " + date;
 			bw.append(linha + "\n");
 
@@ -241,12 +267,38 @@ public class Escritor {
 
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
-		} finally {
-
 		}
-
 	}
 
+	public static void rendimentDaPoupanca(Conta conta, Cliente cliente) {
+		
+		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
+		String arquivo = conta.getCpf() + "_" + conta.getAgencia() + "_" + hojeFormatado + "_relatorioRendimentoPoupanca";
+		
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
+			
+			String linha = "*************** Simulação de Rendimento da Poupança *****************";
+			bw.append(linha + "\n\n");
+			
+			linha = "Simulação para CPF = " + conta.getCpf();
+			bw.append(linha + "\n");
+			
+			// linha = "Rendimento para o prazo informado = " + // ;  FAZER ESSE
+		//	bw.append(linha + "\n");
+			
+			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+			linha = "Operações realizada em: " + date;
+			bw.append(linha + "\n");
+
+			linha = "****************************************************";
+			bw.append(linha + "\n\n");
+		}
+		catch (IOException e) {
+			System.out.println("Erro: " + e.getMessage());
+		 }
+	}
+	
+	
 	public static void relatorioContasPorAgencia(Conta conta) throws IOException { // GERENTE
 
 		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
@@ -288,7 +340,6 @@ public class Escritor {
 					linha = "**************************************";
 					bw.append(linha + "\n");
 				}
-
 			}
 
 			linha = "Total de contas: " + totalContas;
@@ -304,12 +355,11 @@ public class Escritor {
 			bw.close();
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
-		} finally {
-
+			e.printStackTrace();
 		}
 	}
 
-	public static void relatorioClientes(List<Conta> contas) throws IOException { // DIRETOR
+	public static void relatorioClientes(List<Conta> contas)  { // DIRETOR
 
 		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
 		String arquivo = "_" + hojeFormatado + "_relatoriodeCLIENTES";
@@ -334,7 +384,11 @@ public class Escritor {
 			linha = "************************************************************************";
 			bw.append(linha + "\n\n");
 			}
+		catch(IOException e) {
+			System.out.println("Erro: " + e.getMessage());
+			e.printStackTrace();
 		}
+	}
 	
 
 	public static void relatorioCapitalBanco(List<Conta> listaContas) { // PRESIDENTE
@@ -364,10 +418,6 @@ public class Escritor {
 
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
-		} finally {
-
 		}
-
 	}
-
 }

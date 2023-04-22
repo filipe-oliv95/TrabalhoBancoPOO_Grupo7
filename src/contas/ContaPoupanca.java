@@ -1,12 +1,10 @@
 package contas;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import agencias.Agencia;
 import contas.enums.ContasEnum;
-import menus.Menu;
 import pessoas.Cliente;
 
 public class ContaPoupanca extends Conta {
@@ -25,9 +23,9 @@ public class ContaPoupanca extends Conta {
     public static double getTaxaRendimento() {
 		return TAXA_RENDIMENTO_MES;
 	}
-
+    
 	@Override
-	public void imprimeExtrato(){
+	public void imprimeExtrato(Conta conta){
 		System.out.println("***** Extrato da Conta Poupança ********");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();

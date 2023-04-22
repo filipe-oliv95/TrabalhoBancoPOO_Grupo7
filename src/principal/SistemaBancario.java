@@ -25,8 +25,9 @@ public class SistemaBancario {
     public static Map<String, Usuario> mapaDeUsuarios = new HashMap<>();
     public static Map<String, Presidente> mapaDePresidente = new HashMap<>();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
+    	// POPULANDO OS DADOS DO SISTEMA
         Leitor.leitura(".\\database\\registrodedados.txt");
         
         System.out.println(SistemaBancario.mapaDeContas.get("23156489785"));
@@ -35,10 +36,8 @@ public class SistemaBancario {
         	Menu.menuInicial();
         }
         catch(IOException e){
-			System.out.println(e.getMessage());
-		}
-		finally{
-			Menu.menuInicial();
-		}        
+			System.out.println(" Ërro: " + e.getMessage());
+			e.getStackTrace();
+		}  
     }
 }

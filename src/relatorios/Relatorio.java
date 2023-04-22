@@ -63,7 +63,6 @@ public class Relatorio {
 	public static void simularRendimentoPoupanca(Conta conta, Cliente cliente){
 		
 			Scanner sc = new Scanner(System.in);
-			// Relatório de Rendimento da poupança, simulação do valor de rendimento da
 			System.out.println("****** Simulação de Rendimento da Poupança ******");
 			System.out.print("Qual valor deseja simular: R$ ");
 			double valor = sc.nextDouble();
@@ -73,19 +72,18 @@ public class Relatorio {
 			double rendimento = valor * ((ContaPoupanca.getTaxaRendimento() / 30) * dias);
 			System.out.printf("O rendimento para o prazo informado: %.2f%n", rendimento);
 			System.out.printf("Valor final ficaria: %.2f", valor + rendimento);
+			Escritor.rendimentDaPoupanca(conta, cliente);
 			System.out.println();
 			System.out.println("**************************************************");
 			System.out.println();
+			
 			try { // CORREÇÃO DO ERRO DO LOOPING NA CONSULTA RENDIMENTO
 				Menu.menuRelatorio(conta , cliente);
 			} catch (NullPointerException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			// LeitorEscritor.escritura();
 			sc.close();
 		
 	}

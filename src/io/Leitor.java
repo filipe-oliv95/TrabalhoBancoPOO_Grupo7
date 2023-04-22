@@ -3,6 +3,8 @@ package io;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import agencias.Agencia;
 import contas.ContaCorrente;
@@ -31,8 +33,10 @@ public class Leitor {
 
 					if (vetor[0].equalsIgnoreCase("AGENCIA")) {
 						
-						Agencia agencias = new Agencia(vetor[1]);
-					//	SistemaBancario.mapaDeAgencias.put(vetor[1], agencias); TALVEZ REMOVER
+						Agencia agencia = new Agencia(vetor[1]);
+						List<Agencia> agencias = new ArrayList<>();
+						agencias.add(agencia);
+						//	SistemaBancario.mapaDeAgencias.put(vetor[1], agencias); TALVEZ REMOVER
 						
 					} 
 					else if (vetor[0].equalsIgnoreCase(UsuariosEnum.GERENTE.name())) {

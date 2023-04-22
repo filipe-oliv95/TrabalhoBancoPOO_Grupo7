@@ -15,7 +15,6 @@ public class ContaCorrente extends Conta {
 	private static double totalSaques;
 	private static double totalDepositos;
 	private static double totalTransferencias;
-	private static double totalDeGastos; // ADIICONA TOTAL DE GASTOS COM TRIBUTACAO?
 
 	public ContaCorrente() {
 		super();
@@ -96,7 +95,7 @@ public class ContaCorrente extends Conta {
 	}
 
 	@Override
-	public void imprimeExtrato() {
+	public void imprimeExtrato(Conta conta) {
 		System.out.println();
 		System.out.println("******** Extrato da Conta Corrente ********");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -106,6 +105,7 @@ public class ContaCorrente extends Conta {
 		System.out.println("Número da conta: " + getNumConta());
 		System.out.println("Saldo: R$" + this.getSaldo());
 		System.out.println("Data: " + sdf.format(date));
+		System.out.println("******************************************");
 	}
 
 	@Override

@@ -1,0 +1,34 @@
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+Nome: Fernanda Meirelles
+CPF: 23156489785
+Agência : 2885
+Conta: 658974
+********** DADOS DO DESTINATÁRIO ************
+Nome: Fernanda Meirelles
+CPF: 23156489785
+Agência: 2885
+Conta: 658974
+*********************************************
+Valor: R$1500.0
+Operação realizada em: 21/04/2023 21:24:57
+*********** FIM DA TRANSFERÊNCIA ************
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+Nome: Fernanda Meirelles
+CPF: 23156489785
+Agência : 2885
+Conta: 658974
+********** DADOS DO DESTINATÁRIO ************
+Nome: Paulo Vicente
+CPF: 98654712548
+Agência: 5086
+Conta: 683145
+*********************************************
+Valor: R$100.0
+Operação realizada em: 21/04/2023 21:31:04
+*********** FIM DA TRANSFERÊNCIA ************

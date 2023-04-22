@@ -1,0 +1,17 @@
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+Nome: Filipe Oliveira
+CPF: 86541233210
+Agência : 0080
+Conta: 281564
+********** DADOS DO DESTINATÁRIO ************
+Nome: Luan Cailleaux
+CPF: 56432145896
+Agência: 5086
+Conta: 621564
+*********************************************
+Valor: R$1200.0
+Operação realizada em: 22/04/2023 10:42:34
+*********** FIM DA TRANSFERÊNCIA ************

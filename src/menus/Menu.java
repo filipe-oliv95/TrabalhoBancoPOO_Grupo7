@@ -15,10 +15,10 @@ import pessoas.Funcionario;
 import principal.SistemaBancario;
 import relatorios.Relatorio;
 
-public class Menu{
+public class Menu {
 
-	public static void menuInicial() throws InputMismatchException, IOException,  NullPointerException {
-											
+	public static void menuInicial() throws InputMismatchException, IOException, NullPointerException {
+
 		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
 		Cliente cliente = null;
@@ -37,12 +37,12 @@ public class Menu{
 				senha = sc.nextInt();
 				sc.nextLine();
 				System.out.println("================================");
-	
+
 				cliente = SistemaBancario.mapaDeClientes.get(cpf);
 				conta = SistemaBancario.mapaDeContas.get(cpf);
 				funcionario = SistemaBancario.mapaDeFuncionarios.get(cpf);
 				List<Conta> listaContas = new ArrayList<>(SistemaBancario.mapaDeContas.values());
-	
+
 				if (conta != null && funcionario != null) {
 					if (funcionario.getSenha() == senha) {
 						menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
@@ -55,33 +55,30 @@ public class Menu{
 						System.out.println("DADOS INCORRETOS. Digite novamente \n");
 					}
 				}
-			}while (conta == null || cliente == null || cliente.getSenha() != senha || funcionario.getSenha() != senha);
+			} while (conta == null || cliente == null || cliente.getSenha() != senha
+					|| funcionario.getSenha() != senha);
 		}
 
 		catch (InputMismatchException e) {
-			System.out.println(e.getMessage());  // ADICIONEI ALGUNS TIPOS DE EXCECAO
-		}
-		catch(IOException e){
+			System.out.println(e.getMessage()); // ADICIONEI ALGUNS TIPOS DE EXCECAO
+		} catch (IOException e) {
 			System.out.println(e.getMessage());
-		}
-		catch (NullPointerException e) {
+		} catch (NullPointerException e) {
 			System.out.println(e.getMessage());
-		}
-		finally{
+		} finally {
 //			menuInicial();
 		}
 		sc.close();
 	}
-	
 
 	public static void menuFuncionario(Funcionario funcionario, Conta conta, List<Conta> listaContas, String cpf,
-			Cliente cliente) throws IOException,  NullPointerException  {  
-		Scanner sc = new Scanner(System.in);  
+			Cliente cliente) throws IOException, NullPointerException {
+		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
 		int opcao = 0;
 		System.out.println();
 		System.out.println("Olá " + funcionario.getTipoDeUsuario().getTipoPessoa());
-		
+
 		try {
 			do {
 				System.out.println("Escolha entre as opções abaixo:");
@@ -89,9 +86,9 @@ public class Menu{
 				System.out.println("[2] Entrar como " + funcionario.getTipoDeUsuario().getTipoPessoa());
 				System.out.println("[3] Logout");
 				opcao = sc.nextInt();
-	
+
 				switch (opcao) { // MENU CLIENTE PARA FUNCIONARIO
-	
+
 				case 1:
 					Menu.menuCliente(conta, cliente);
 					break;
@@ -114,7 +111,7 @@ public class Menu{
 							break;
 						}
 						break;
-	
+
 					case DIRETOR:
 						System.out.println();
 						System.out.println("Escolha entre as opções abaixo:");
@@ -132,7 +129,7 @@ public class Menu{
 							break;
 						}
 						break;
-	
+
 					case PRESIDENTE:
 						System.out.println();
 						System.out.println("Escolha entre as opções abaixo:");
@@ -154,7 +151,7 @@ public class Menu{
 							break;
 						}
 						break;
-	
+
 					default:
 						break;
 					}
@@ -163,19 +160,13 @@ public class Menu{
 					break;
 				}
 			} while (!(opcao == 0)); // PENSAR EM UMA OUTRO SOLUÇÃO
-		}
-		catch (InputMismatchException e) {
+		} catch (InputMismatchException e) {
+			System.out.println(e.getMessage());
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} catch (NullPointerException e) {
 			System.out.println(e.getMessage());
 		}
-		catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
-		catch (NullPointerException e) {
-			System.out.println(e.getMessage());
-		}
-		finally {
-			menuInicial(); // MENU INIICAL OU SERIA MENU FUNCIONARIO?
-	}
 		sc.close();
 
 	}
@@ -201,37 +192,50 @@ public class Menu{
 			case 1:
 				System.out.print("Insira o valor do saque: R$ ");
 				double valor = sc.nextDouble();
+				
 				conta.sacar(valor);
 				Escritor.comprovanteSaque(conta, valor); // ADICIONEI CHAMADA PARA ESCRITA DO SAQUE
+				
 				menuCliente(conta, cliente);
 				break;
 			case 2:
 				System.out.printf("Insira o valor para depósito: R$ ");
 				valor = sc.nextDouble();
+				
 				conta.depositar(valor);
-				Escritor.comprovanteDeposito(conta, valor); // ADICIONEI CHAMADA PARA ESCRITA DO DEPOSITO
+				Escritor.comprovanteDeposito(conta, valor); // CHAMADA PARA ESCRITA DO DEPOSITO
+				
 				System.out.printf("Saldo atual: R$ %.2f", conta.getSaldo()); // TESTE REMOVER DEPOIS 
 				System.out.println();
+				
 				menuCliente(conta, cliente);
 				break;
 			case 3:
 				System.out.printf("Insira o valor da transferencia: R$ ");
 				valor = sc.nextDouble();
-				if(valor < 0 || valor > conta.getSaldo()) {
-					System.out.println("Insira um valor válido.");
-					menuCliente(conta, cliente);
-				}
+					if(valor < 0 || valor > conta.getSaldo()) {
+						System.out.println("Insira um valor válido.");
+						menuCliente(conta, cliente);
+					}
 				sc.nextLine();
+				
 				System.out.printf("Insira o CPF do destinatário: ");
 				String cpf = sc.nextLine();
+					if(cpf.equals(conta.getCpf())){  // TESTA SE CPF DIGITADO É O MESMO DA PESSOA DEPOSITANDO
+						System.out.println("Você não pode fazer transferência para si mesmo! Entre CPF válido");
+						cpf = sc.nextLine();
+					}
 				Conta contaDestino = SistemaBancario.mapaDeContas.get(cpf);
 				conta.transferir(contaDestino, valor);
-				System.out.println("Transferência realizada com sucesso.");
 				Escritor.comprovanteTransferencia(conta, contaDestino, valor); // ADICIONEI CHAMADA PARA ESCRITA TRANSFERENCIA
+				
+				System.out.println("Transferência realizada com sucesso.");
 				menuCliente(conta, cliente);
 				break;
 			case 4:
-				conta.imprimeExtrato();
+				conta.imprimeExtrato(conta);
+				Escritor.extratoConta(conta);
+				
 				menuCliente(conta, cliente);
 				break;
 			case 5:
@@ -254,15 +258,12 @@ public class Menu{
 		catch (NullPointerException e) {
 			System.out.println("Erro: " + e.getMessage());
 		}
-		finally {
-		//	menuCliente(conta, cliente);
-		}
 		sc.close();
 	}
 
-	public static void menuRelatorio(Conta conta, Cliente cliente) throws IOException,  NullPointerException {
+	public static void menuRelatorio(Conta conta, Cliente cliente) throws IOException, NullPointerException {
 		System.out.println();
-		Scanner sc = new Scanner(System.in);     
+		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
 		System.out.println("******** Menu relatório ********");
 		System.out.println();
@@ -274,55 +275,52 @@ public class Menu{
 		System.out.println("[5] Retornar ao menu anterior");
 
 		int opcao = 0;
-		
+
 		try {
-				opcao = sc.nextInt();
-				
-				switch (opcao) {
-				case 1:
-					Relatorio.imprimirSaldo(conta);
-					menuRelatorio(conta, cliente);
-					break;
-				case 2:
-					if(conta.getTipoDeConta().equals(ContasEnum.CORRENTE)) {
-						Relatorio.tributacaoCC (conta);
-					}
-					else {
-						System.out.println("Você não possui Conta Corrente.");
-					}
-					menuRelatorio(conta, cliente);
-					break;
-				case 3:
-					if(conta.getTipoDeConta().equals(ContasEnum.POUPANCA)) {
-						Relatorio.simularRendimentoPoupanca(conta , cliente);
-					}
-					else {
-						System.out.println("Você não possui Conta Poupança.");
-					
-				    	menuRelatorio(conta, cliente);
-					}
-					break;
-				case 4:
-					System.out.println("DESAFIO");
-					menuRelatorio(conta, cliente);
-					break;
-				case 5:
-					menuCliente(conta, cliente);
-					break;
-				default:
-					menuRelatorio(conta, cliente);
-					break;
+			opcao = sc.nextInt();
+
+			switch (opcao) {
+			case 1:
+				Relatorio.imprimirSaldo(conta);
+				menuRelatorio(conta, cliente);
+				break;
+			case 2:
+				if (conta.getTipoDeConta().equals(ContasEnum.CORRENTE)) {
+					Relatorio.tributacaoCC(conta);
+					Escritor.relatorioTributacaoCC(conta);
+				} else {
+					System.out.println("Você não possui Conta Corrente.");
 				}
-		}
-		catch (InputMismatchException e) {
+				menuRelatorio(conta, cliente);
+				break;
+			case 3:
+				if (conta.getTipoDeConta().equals(ContasEnum.POUPANCA)) {
+					Relatorio.simularRendimentoPoupanca(conta, cliente);
+					// Escritor.rendimentDaPoupanca(conta, cliente);
+				} else {
+					System.out.println("Você não possui Conta Poupança.");
+
+					menuRelatorio(conta, cliente);
+				}
+				break;
+			case 4:
+				System.out.println("DESAFIO");
+				menuRelatorio(conta, cliente);
+				break;
+			case 5:
+				menuCliente(conta, cliente);
+				break;
+			default:
+				menuRelatorio(conta, cliente);
+				break;
+			}
+		} catch (InputMismatchException e) {
+			System.out.println(e.getMessage());
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} catch (NullPointerException e) {
 			System.out.println(e.getMessage());
 		}
-		catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
-		catch (NullPointerException e) {
-			System.out.println(e.getMessage());
-		}		
 		sc.close();
 	}
 }

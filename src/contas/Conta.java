@@ -113,7 +113,7 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 		return 0;
 	}
 
-	public abstract void imprimeExtrato();
+	public abstract void imprimeExtrato(Conta conta);
 
 	@Override
 	public String toString() {

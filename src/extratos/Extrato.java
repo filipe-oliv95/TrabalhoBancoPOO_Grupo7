@@ -1,6 +1,8 @@
 package extratos;
 
+import contas.Conta;
+
 public interface Extrato {
 
-	void imprimeExtrato();
+	void imprimeExtrato(Conta conta);
 }
