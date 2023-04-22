@@ -1,8 +1,0 @@
-*************** EXTRATO ******************
-Tipo: CORRENTE
-Titular: Filipe Oliveira
-Agencia: 0080
-Conta: 281564
-Saldo: R$5000.0
-Operação realizada em: 22/04/2023 17:36:02
-*************** FIM **************************

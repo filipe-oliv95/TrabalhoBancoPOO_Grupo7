@@ -124,7 +124,7 @@ public class Menu {
 						switch (opcao) {
 						// ADICIONAR TRY CATCH
 						case 1:
-							Relatorio.informacoesClientes(listaContas);
+							Relatorio.informacoesClientes(listaContas, conta);
 							menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 							break;
 						case 2:
@@ -142,11 +142,11 @@ public class Menu {
 						opcao = sc.nextInt();
 						switch (opcao) {
 						case 1:
-							Relatorio.informacoesClientes(listaContas);
+							Relatorio.informacoesClientes(listaContas, conta);
 							menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 							break;
 						case 2:
-							Relatorio.valorTotalCapitalBanco(listaContas);
+							Relatorio.valorTotalCapitalBanco(listaContas, conta);
 							menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 							break;
 						case 3:

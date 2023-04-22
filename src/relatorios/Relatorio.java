@@ -132,20 +132,20 @@ public class Relatorio {
 		}
 	}
 
-	public static void informacoesClientes(List<Conta> contas) throws IOException { // RELATORIO DIRETOR
+	public static void informacoesClientes(List<Conta> contas, Conta conta) throws IOException { // RELATORIO DIRETOR
 		System.out.println("***** Informações dos Clientes *****");
 		Collections.sort(contas); // ordenou a lista usando o Comparable no Contas
-		for (Conta conta : contas) {
-			System.out.printf("NOME: %s\t| AGÊNCIA: %s\n", conta.getTitular(), conta.getAgencia());
+		for (Conta c : contas) {
+			System.out.printf("NOME: %s\t| AGÊNCIA: %s\n", c.getTitular(), c.getAgencia());
 		}
 		System.out.println("**************************************************");
 		System.out.println();
 
-		Escritor.relatorioClientes(contas);
+		Escritor.relatorioClientes(contas, conta);
 		// ESCRITOR
 	}
 
-	public static void valorTotalCapitalBanco(List<Conta> listaContas) { // PRESIDENTE
+	public static void valorTotalCapitalBanco(List<Conta> listaContas, Conta conta) { // PRESIDENTE
 
 		System.out.println("********* Consulta do Capital do Banco ***********");
 		double capitalBancoSaldo = 0;
@@ -157,7 +157,7 @@ public class Relatorio {
 		System.out.println("**************************************************");
 		System.out.println();
 		// ADICIONAR O ESCRITOR
-		Escritor.relatorioCapitalBanco(listaContas);
+		Escritor.relatorioCapitalBanco(listaContas, conta);
 	}
 
 	public static void SeguroDeVida(Conta conta, Cliente cliente) {

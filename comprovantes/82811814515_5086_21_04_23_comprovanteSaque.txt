@@ -1,8 +1,0 @@
-*************** SAQUE ***************
-CPF: 82811814515
-Agencia: 5086
-Conta: 696545
-Valor do saque: R$500.0
-Operação realizada em: 21/04/2023 10:53:36
-************ FIM DO SAQUE ************
-

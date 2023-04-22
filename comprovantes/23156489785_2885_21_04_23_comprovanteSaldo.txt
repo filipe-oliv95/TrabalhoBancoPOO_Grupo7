@@ -1,7 +1,0 @@
-*************** SALDO ***************
-Tipo: POUPANCA
-Agencia: 2885
-Conta: 658974
-Saldo: R$1500.0
-Operação realizada em: 21/04/2023 18:17:39
-*************** FIM ***************

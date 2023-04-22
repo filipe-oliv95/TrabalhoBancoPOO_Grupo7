@@ -1,8 +1,0 @@
-*************** EXTRATO ******************
-Tipo: CORRENTE
-Titular: Adriana Neves
-Agencia: 2885
-Conta: 278561
-Saldo: R$2000.0
-Operação realizada em: 22/04/2023 17:50:43
-*************** FIM **************************
