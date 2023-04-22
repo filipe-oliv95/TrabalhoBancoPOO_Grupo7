@@ -11,6 +11,8 @@ import java.util.List;
 
 import contas.Conta;
 import contas.ContaCorrente;
+import menus.Menu;
+import menus.SeguroDeVida;
 import pessoas.Cliente;
 import principal.SistemaBancario;
 
@@ -419,5 +421,45 @@ public class Escritor {
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
 		}
+        
 	}
+public static void SeguroDeVida(Conta conta , Cliente cliente) {
+		
+		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MMyy"));
+	    String arquivo = "" + hojeFormatado + "relatorioSeguroDeVida";
+		
+	    try (BufferedWriter bw = new BufferedWriter(new FileWriter(CAMINHO + arquivo + EXTENSAO, true))) {
+	       
+		SeguroDeVida n = new SeguroDeVida();
+		
+		
+		bw.append("\n");
+		String linha = ("*********** Seguro de vida ***********");
+		bw.append(linha + "\n");
+		
+		linha = ("NOME : ");
+		bw.append(linha + "\n");
+		
+		linha = ("CPF : ");		
+		bw.append(linha + "\n");
+		
+		linha = ("O valor adicionado para seu seguro foi de: R$"  + + SeguroDeVida.getVALOR());
+		bw.append(linha + "\n");
+		
+		linha = ("Seu seguro de vida e de: R$" + SeguroDeVida.getSEGURO() );
+		bw.append(linha + "\n");
+		
+			   linha = ("**************************************");
+		
+		
+			Menu.menuRelatorio(conta, cliente);
+		} catch (NullPointerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		}
 }

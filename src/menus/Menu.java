@@ -271,9 +271,10 @@ public class Menu {
 		System.out.println("[1] Saldo");
 		System.out.println("[2] Relatório de tributação da Conta Corrente");
 		System.out.println("[3] Relatório de Rendimento da Conta Poupança");
-		System.out.println("[4] Desafio");
+		//System.out.println("[4] Desafio");
+		System.out.println("[4] Seguro de vida");//TESTE SEGURO DE VIDA...
 		System.out.println("[5] Retornar ao menu anterior");
-
+		
 		int opcao = 0;
 
 		try {
@@ -304,8 +305,16 @@ public class Menu {
 				}
 				break;
 			case 4:
-				System.out.println("DESAFIO");
-				menuRelatorio(conta, cliente);
+				System.out.println("AVISO!! AO REALIZAR A CONTRATAÇÃO DO SEGURO VC PAGARA 20% DO VALOR DESEJADO COMO TAXA!!");
+				System.out.println("Deseja contratar um seguro de vida [y] | [n] ? ");
+				char n = sc.next().charAt(0);
+				
+				if (n == 'y' || n == 'Y') {
+					SeguroDeVida.SeguroVida(conta , cliente);
+				}
+				else {
+					menuRelatorio(conta , cliente);
+				}			
 				break;
 			case 5:
 				menuCliente(conta, cliente);

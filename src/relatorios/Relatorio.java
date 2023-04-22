@@ -12,6 +12,7 @@ import contas.ContaCorrente;
 import contas.ContaPoupanca;
 import io.Escritor;
 import menus.Menu;
+import menus.SeguroDeVida;
 import pessoas.Cliente;
 import pessoas.Gerente;
 import principal.SistemaBancario;
@@ -140,6 +141,20 @@ public class Relatorio {
 		System.out.println();
 		// ADICIONAR O ESCRITOR
 		Escritor.relatorioCapitalBanco(listaContas);
+	}
+	
+	public static void SeguroDeVida(Conta conta , Cliente cliente) {
+	 
+		System.out.println();
+		System.out.println("*********** Seguro de vida ***********");
+		System.out.println();
+		System.out.println("NOME : " + cliente.getNome());
+		System.out.println("CPF : " + cliente.getCpf());
+		System.out.println("O valor adicionado para seu seguro foi de: " + SeguroDeVida.getVALOR());
+		System.out.println("Seu seguro de vida e de: R$" + SeguroDeVida.getVALOR_SALDO() );
+		System.out.println();
+		System.out.println("**************************************");
+		Escritor.SeguroDeVida(conta, cliente);
 	}
 	
 }
