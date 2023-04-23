@@ -1,0 +1,242 @@
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$15326.0
+O valor assegurado após taxação foi de: R$12260.800000000001
+Você pagou de tarifa R$3065.2000000000003
+Operação realizada em: 23/04/2023 12:49:29
+************************************************
+
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$15623.0
+O valor assegurado após taxação foi de: R$12498.400000000001
+Você pagou de tarifa R$3124.6000000000004
+Operação realizada em: 23/04/2023 12:50:18
+************************************************
+
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$15632.0
+O valor assegurado após taxação foi de: R$12505.6
+Você pagou de tarifa R$3126.4
+Operação realizada em: 23/04/2023 12:51:30
+************************************************
+
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$156322.0
+O valor assegurado após taxação foi de: R$125057.6
+Você pagou de tarifa R$31264.4
+Operação realizada em: 23/04/2023 12:54:41
+************************************************
+
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$12000.0
+O valor assegurado após taxação foi de: R$9600.0
+Você pagou de tarifa R$2400.0
+Operação realizada em: 23/04/2023 12:56:17
+************************************************
+
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$12563.0
+O valor assegurado após taxação foi de: R$10050.400000000001
+Você pagou de tarifa R$2512.6000000000004
+Operação realizada em: 23/04/2023 12:57:55
+************************************************
+
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$100000.0
+O valor assegurado após taxação foi de: R$80000.0
+Você pagou de tarifa R$20000.0
+Operação realizada em: 23/04/2023 13:01:16
+************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$12563.0
+O valor assegurado após taxação foi de: R$10050.400000000001
+Você pagou de tarifa R$2512.6000000000004
+Operação realizada em: 23/04/2023 13:06:24
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$15236.0
+O valor assegurado após taxação foi de: R$12188.800000000001
+Você pagou de tarifa R$3047.2000000000003
+Operação realizada em: 23/04/2023 13:10:05
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$15263.0
+O valor segurado após taxação foi de: R$12210.400000000001
+Você pagou de tarifa R$3052.6000000000004
+Operação realizada em: 23/04/2023 13:17:11
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$15365.0
+O valor segurado após taxação foi de: R$12292.0
+Você pagou de tarifa R$3073.0
+Operação realizada em: 23/04/2023 13:38:18
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$12523.0
+O valor segurado após taxação foi de: R$10018.400000000001
+Você pagou de tarifa R$2504.6000000000004
+Operação realizada em: 23/04/2023 13:39:30
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$45623.0
+O valor segurado após taxação foi de: R$36498.4
+Você pagou de tarifa R$9124.6
+Operação realizada em: 23/04/2023 13:47:48
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$15222.0
+O valor segurado após taxação foi de: R$12177.6
+Você pagou de tarifa R$3044.4
+Operação realizada em: 23/04/2023 14:12:42
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$12356.0
+O valor segurado após taxação foi de: R$9884.800000000001
+Você pagou de tarifa R$2471.2000000000003
+Operação realizada em: 23/04/2023 14:28:24
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$1523.0
+O valor segurado após taxação foi de: R$1218.4
+Você pagou de tarifa R$304.6
+Operação realizada em: 23/04/2023 14:29:39
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$151515.0
+O valor segurado após taxação foi de: R$121212.0
+Você pagou de tarifa R$30303.0
+Operação realizada em: 23/04/2023 14:31:04
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$15151.0
+O valor segurado após taxação foi de: R$12120.800000000001
+Você pagou de tarifa R$3030.2000000000003
+Operação realizada em: 23/04/2023 14:31:50
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$151515.0
+O valor segurado após taxação foi de: R$121212.0
+Você pagou de tarifa R$30303.0
+Operação realizada em: 23/04/2023 14:35:22
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$151465.0
+O valor segurado após taxação foi de: R$121172.0
+Você pagou de tarifa R$30293.0
+Operação realizada em: 23/04/2023 14:36:48
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$151515.00
+O valor segurado após taxação foi de: R$121212.00
+Você pagou de tarifa R$30303.00
+Operação realizada em: 23/04/2023 14:44:51
+*************************************************************
+
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+Simulação para CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$151523.00
+O valor segurado após taxação foi de: R$121218.40
+Você pagou de tarifa R$30304.60
+Operação realizada em: 23/04/2023 14:54:28
+*************************************************************
+

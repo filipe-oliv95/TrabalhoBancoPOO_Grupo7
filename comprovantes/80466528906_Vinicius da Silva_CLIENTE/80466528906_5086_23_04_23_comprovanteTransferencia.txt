@@ -1,0 +1,17 @@
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+Nome: Vinicius da Silva
+CPF: 80466528906
+Agência : 5086
+Conta: 681245
+********** DADOS DO DESTINATÁRIO ************
+Nome: Fernanda Meirelles
+CPF: 23156489785
+Agência: 2885
+Conta: 658974
+*********************************************
+Valor: R$1215.0
+Operação realizada em: 23/04/2023 15:12:07
+*********** FIM DA TRANSFERÊNCIA ************

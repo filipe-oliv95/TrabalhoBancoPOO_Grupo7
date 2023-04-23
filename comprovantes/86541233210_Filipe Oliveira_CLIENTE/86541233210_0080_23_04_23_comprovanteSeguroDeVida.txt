@@ -1,0 +1,44 @@
+***************** SEGURO DE VIDA *****************
+Nome = Filipe Oliveira
+Simulação para CPF = 86541233210
+Agência: 0080
+Conta: 281564
+O valor pago na contratação do Seguro de Vida foi de: R$15000.0
+O valor assegurado após taxação foi de: R$12000.0
+Você pagou R$ %.2f de tarifa.3000.0
+Operação realizada em: 23/04/2023 11:19:28
+************* NOTA FISCAL SEGURO DE VIDA **************
+
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Filipe Oliveira
+Simulação para CPF = 865.412.332-10
+Agência: 0080
+Conta: 281564
+O valor pago na contratação do Seguro de Vida foi de: R$15236.0
+O valor assegurado após taxação foi de: R$12188.800000000001
+Você pagou de tarifa R$3047.2000000000003
+Operação realizada em: 23/04/2023 11:23:53
+************************************************
+
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Filipe Oliveira
+Simulação para CPF = 865.412.332-10
+Agência: 0080
+Conta: 281564
+O valor pago na contratação do Seguro de Vida foi de: R$1563.0
+O valor assegurado após taxação foi de: R$1250.4
+Você pagou de tarifa R$312.6
+Operação realizada em: 23/04/2023 11:31:44
+************************************************
+
+************* COMPROVANTE SEGURO DE VIDA ********************
+Nome = Filipe Oliveira
+Simulação para CPF = 865.412.332-10
+Agência: 0080
+Conta: 281564
+O valor pago na contratação do Seguro de Vida foi de: R$15236.0
+O valor assegurado após taxação foi de: R$12188.800000000001
+Você pagou de tarifa R$3047.2000000000003
+Operação realizada em: 23/04/2023 11:34:38
+************************************************
+

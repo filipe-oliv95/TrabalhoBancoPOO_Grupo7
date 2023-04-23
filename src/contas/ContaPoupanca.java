@@ -5,6 +5,7 @@ import java.util.Date;
 
 import agencias.Agencia;
 import contas.enums.ContasEnum;
+import extratos.Extrato;
 import pessoas.Cliente;
 
 public class ContaPoupanca extends Conta {
@@ -36,17 +37,21 @@ public class ContaPoupanca extends Conta {
 	}
     
 	@Override
-	public void imprimeExtrato(Conta conta){
-		System.out.println("***** Extrato da Conta Poupança ********");
+	public void imprimeExtrato(Conta conta) {
+		System.out.println();
+		System.out.println("************* Extrato da Conta Poupança *************");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
-		System.out.println("Titular: " + this.getTitular().getNome());
-		System.out.println("CPF: " + this.getTitular().getCpf());
-		System.out.println("Agência: " + getAgencia().getNumAgencia());
-		System.out.println("Número da conta: " + getNumConta ());
-		System.out.println("Saldo: R$ " + String.format(Double.toString(conta.getSaldo()), 2));
-		System.out.println("Data: " + sdf.format(date));		
-		System.out.println("************************************");
+		System.out.println("Titular: " + this.getTitular().getNome() + ", CPF: " + Cliente.imprimeCPF(getCpf()));
+		System.out.println("Agência: " + getAgencia().getNumAgencia() + ", Número da conta: " + getNumConta());
+		System.out.println();
+		for(Extrato cc : getlistaDeMovimentacoes()) {
+				System.out.println(cc);
+		}
+		System.out.println();
+		System.out.printf("Saldo atualizado: R$%.2f%n" , conta.getSaldo());
+		System.out.println("Data: " + sdf.format(date));
+		System.out.println("****************************************************");
 	}
     
     @Override

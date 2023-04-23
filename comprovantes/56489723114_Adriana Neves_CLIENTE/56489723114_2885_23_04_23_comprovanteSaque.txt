@@ -1,0 +1,104 @@
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$1500.0
+Operação realizada em: 23/04/2023 10:54:43
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$1562.0
+Operação realizada em: 23/04/2023 10:56:25
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$4563.0
+Operação realizada em: 23/04/2023 10:56:50
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$1500.0
+Operação realizada em: 23/04/2023 11:09:30
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$15000.0
+Operação realizada em: 23/04/2023 11:09:49
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$1532.0
+Operação realizada em: 23/04/2023 11:12:30
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$1523.0
+Operação realizada em: 23/04/2023 11:15:25
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$1563.0
+Operação realizada em: 23/04/2023 11:46:22
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$15626.0
+Operação realizada em: 23/04/2023 12:00:36
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$154.0
+Operação realizada em: 23/04/2023 12:03:12
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$15632.0
+Operação realizada em: 23/04/2023 12:06:58
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$452.0
+Operação realizada em: 23/04/2023 12:13:02
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 56489723114
+Agencia: 2885
+Conta: 278561
+Valor do saque: R$1520.0
+Operação realizada em: 23/04/2023 15:46:03
+************ FIM DO SAQUE ************
+

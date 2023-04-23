@@ -62,10 +62,8 @@ public class Relatorio {
 		System.out.println();
 		
 		if(Menu.contratoSeguro == true) {
-			System.out.println("O valor adicionado para seu seguro foi de: R$ " + SeguroDeVida.getValorSeguroAposTaxa());
+			System.out.printf("O valor adicionado para seu seguro foi de: R$%.2f%n", SeguroDeVida.getValorSeguroAposTaxa());
 		}
-		
-//		Escritor.relatorioTributacaoCC(conta); // VAI DEIXAR ASSIM OU MODIFICAR OS DADOS ACIMA?
 	}
 
 	public static void simularRendimentoPoupanca(Conta conta, Cliente cliente) {
@@ -97,7 +95,7 @@ public class Relatorio {
 		System.out.println();
 		System.out.println("**************************************************");
 
-		try { // CORREÇÃO DO ERRO DO LOOPING NA CONSULTA RENDIMENTO
+		try { 
 			Menu.menuRelatorio(conta, cliente);
 		} catch (NullPointerException e) {
 			e.printStackTrace();
@@ -167,12 +165,13 @@ public class Relatorio {
 		System.out.println("*********** Seguro de vida ***********");
 		System.out.println();
 		System.out.println("NOME : " + cliente.getNome());
-		System.out.println("CPF : " + cliente.getCpf());
-		System.out.println("O valor debitado do seu saldo foi de: R$ " + SeguroDeVida.getValorSeguro());
-		System.out.println("Seu seguro de vida é de: R$ " + SeguroDeVida.getValorSeguroAposTaxa());
-		System.out.printf("Você pagou R$ %.2f de tarifa.", SeguroDeVida.getValorTributacao());
-		System.out.println();
-		System.out.println("**************************************");
+		System.out.println("CPF : " + Cliente.imprimeCPF(cliente.getCpf()));
+		System.out.printf("O valor debitado do seu saldo foi de: R$%.2f%n", SeguroDeVida.getValorSeguro());
+		System.out.printf("O valor assegurado foi de: R$%.2f%n", SeguroDeVida.getValorSeguroAposTaxa());
+		System.out.printf("Você pagou R$%.2f de tarifa.", SeguroDeVida.getValorTributacao());
+		
+		System.out.println("\n\n**************************************");
+		
+		Escritor.comprovanteSeguroDeVida(conta, cliente);
 	}
-
 }

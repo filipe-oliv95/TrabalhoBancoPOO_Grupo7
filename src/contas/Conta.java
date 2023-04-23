@@ -1,12 +1,15 @@
 package contas;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import agencias.Agencia;
 import contas.enums.ContasEnum;
 import extratos.Extrato;
 import operacoes.Operacao;
 import pessoas.Cliente;
 
-public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
+public abstract class Conta implements Operacao, Comparable<Conta> {
 
 	private Agencia agencia;
 	private String numConta;
@@ -15,6 +18,8 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 	protected double saldo; // deixei tipo primitivo pois dá para ver os erros (senão dá nulo)
 	private ContasEnum tipoDeConta;
 
+	private List<Extrato> listaDeMovimentacoes = new ArrayList<>();
+	
 	public Conta() {
 
 	}
@@ -71,6 +76,10 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 	public double getSaldo() {
 		return saldo;
 	}
+	
+	public List<Extrato> getlistaDeMovimentacoes() {
+		return listaDeMovimentacoes;
+	}
 
 	public void depositar(double valor) {
 		if (valor > 0) {
@@ -103,6 +112,11 @@ public abstract class Conta implements Extrato, Operacao, Comparable<Conta> {
 	}
 	
 	public abstract void debitarSeguro(double valor);
+	
+	public String imprimeCPF(String CPF) {
+        return(CPF.substring(0, 3) + "." + CPF.substring(3, 6) + "." +
+        CPF.substring(6, 9) + "-" + CPF.substring(9, 11));
+    }
 
 	@Override
 	public int compareTo(Conta cont) {

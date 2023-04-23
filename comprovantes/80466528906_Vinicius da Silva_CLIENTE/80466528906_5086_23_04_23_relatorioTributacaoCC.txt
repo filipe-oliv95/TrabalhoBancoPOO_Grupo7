@@ -1,0 +1,34 @@
+*************** TOTAL DE TRIBUTAÇÕES *****************
+
+Total gasto em transações = R$0.4
+
+Taxa para saque = 0.1
+Total de saques realizados = 1.0
+
+Taxa para deposito = 0.1
+Total de depósitos realizados = 1.0
+
+Taxa para tranferência = 0.2
+Total de tranferências realizadas = 1.0
+
+Operações realizada em: 23/04/2023 15:12:13
+****************************************************
+
+*************** TOTAL DE TRIBUTAÇÕES *****************
+
+Total gasto em transações = R$0.4
+
+Taxa para saque = 0.1
+Total de saques realizados = 1.0
+
+Taxa para deposito = 0.1
+Total de depósitos realizados = 1.0
+
+Taxa para tranferência = 0.2
+Total de tranferências realizadas = 1.0
+
+Valor segurado do Seguro de Vida = R$ 12121212.00
+
+Operações realizada em: 23/04/2023 15:12:22
+****************************************************
+

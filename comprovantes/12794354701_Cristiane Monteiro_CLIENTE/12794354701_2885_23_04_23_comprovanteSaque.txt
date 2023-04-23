@@ -1,0 +1,40 @@
+*************** SAQUE ***************
+CPF: 12794354701
+Agencia: 2885
+Conta: 647645
+Valor do saque: R$1515.0
+Operação realizada em: 23/04/2023 15:27:08
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 12794354701
+Agencia: 2885
+Conta: 647645
+Valor do saque: R$15151.0
+Operação realizada em: 23/04/2023 15:31:14
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 12794354701
+Agencia: 2885
+Conta: 647645
+Valor do saque: R$1515.0
+Operação realizada em: 23/04/2023 15:32:48
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 12794354701
+Agencia: 2885
+Conta: 647645
+Valor do saque: R$1515.0
+Operação realizada em: 23/04/2023 15:34:13
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 12794354701
+Agencia: 2885
+Conta: 647645
+Valor do saque: R$1500.0
+Operação realizada em: 23/04/2023 15:44:03
+************ FIM DO SAQUE ************
+

@@ -6,7 +6,7 @@ public abstract class SeguroDeVida {
 	private static double valorSeguro;
 	private static double valorSeguroAposTaxa;
 	
-	public SeguroDeVida(double valorSeguro, double valor) {
+	public SeguroDeVida(double valorSeguro) {
 		super();
 	}
 
@@ -14,7 +14,7 @@ public abstract class SeguroDeVida {
 		SeguroDeVida.valorSeguroAposTaxa = valorSeguroAposTaxa;
 	}
 
-	public static double getValorSeguro() { //retorna 1000
+	public static double getValorSeguro() {
 		return valorSeguro;
 	}
 
@@ -33,7 +33,7 @@ public abstract class SeguroDeVida {
 
 	public static double getValorSeguroAposTaxa() {
 		valorSeguroAposTaxa = valorSeguro * (1 - TAXA_SEGURO);
-		return valorSeguroAposTaxa; // retorna 800
+		return valorSeguroAposTaxa; 
 	}
 
 }

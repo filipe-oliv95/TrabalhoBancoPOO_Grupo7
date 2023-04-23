@@ -1,0 +1,255 @@
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 1563.00
+2023-04-23 | Lançamento = Depósito | Valor = 2356.00
+2023-04-23 | Lançamento = Depósito | Valor = 3256.00
+2023-04-23 | Lançamento = Saque | Valor = 46565.00
+2023-04-23 | Lançamento = Saque | Valor = 46565.00
+
+Total gasto em tributos = R$0.30000000000000004
+Saldo: R$6848.700000000001
+Operação realizada em: 23/04/2023 12:36:43
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 1235.00
+2023-04-23 | Lançamento = Depósito | Valor = 12356.00
+2023-04-23 | Lançamento = Depósito | Valor = 1562.00
+2023-04-23 | Lançamento = Depósito | Valor = 1562.00
+
+Total gasto em tributos = R$0.30000000000000004
+Saldo: R$15482.699999999999
+Operação realizada em: 23/04/2023 12:39:05
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 1523.00
+2023-04-23 | Lançamento = Depósito | Valor = 23256.00
+2023-04-23 | Lançamento = Depósito | Valor = 56389.00
+2023-04-23 | Lançamento = Depósito | Valor = 56389.00
+
+Total gasto em tributos = R$0.30000000000000004
+Saldo: R$80921.70000000001
+Operação realizada em: 23/04/2023 12:41:17
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 263.00
+2023-04-23 | Lançamento = Depósito | Valor = 26543.00
+2023-04-23 | Lançamento = Depósito | Valor = 265544.00
+2023-04-23 | Lançamento = Depósito | Valor = 265544.00
+
+Total gasto em tributos = R$0.30000000000000004
+Saldo: R$294623.7
+Operação realizada em: 23/04/2023 12:43:50
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 154546.00
+2023-04-23 | Lançamento = Depósito | Valor = 12563.00
+2023-04-23 | Lançamento = Depósito | Valor = 15632.00
+2023-04-23 | Lançamento = Saque | Valor = 125.00
+2023-04-23 | Lançamento = Saque | Valor = 125.00
+
+Total gasto em tributos = R$0.30000000000000004
+Saldo: R$30869.7
+Operação realizada em: 23/04/2023 12:48:08
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Depósito | Valor = 12365.00
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 15326.00
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 15326.00
+
+Total gasto em tributos = R$0.1
+Valor adicionado para seu seguro = R$ 12260.800000000001
+Saldo: R$15164.9
+Operação realizada em: 23/04/2023 12:49:35
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 1563.00
+2023-04-23 | Lançamento = Depósito | Valor = 23256.00
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 15263.00
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 15263.00
+
+Total gasto em tributos = R$0.2
+Valor do Seguro de Vida = R$ 12210.400000000001
+Saldo: R$9229.800000000003
+Operação realizada em: 23/04/2023 13:17:24
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+extratos.Extrato@5034c75a
+extratos.Extrato@396a51ab
+extratos.Extrato@51081592
+extratos.Extrato@51081592
+
+Total gasto em tributos = R$0.1
+Valor do Seguro de Vida = R$ 10018.400000000001
+Saldo: R$7362.9
+Operação realizada em: 23/04/2023 13:39:34
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+Agencia: 5086 | Conta: 696545
+
+Total gasto em tributos = R$0.2
+Valor do Seguro de Vida = R$ 36498.4
+Saldo: R$24830.800000000003
+Operação realizada em: 23/04/2023 13:47:51
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 1235.00
+2023-04-23 | Lançamento = Depósito | Valor = 23556.00
+2023-04-23 | Lançamento = Depósito | Valor = 23556.00
+
+Total gasto em tributos = R$0.2
+Saldo: R$25120.800000000003
+Operação realizada em: 23/04/2023 13:49:23
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+2023-04-23 | Lançamento = Saque | Valor = 1522.00
+2023-04-23 | Lançamento = Depósito | Valor = 21313.00
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 1523.00
+Total gasto em tributos = R$0.2
+Valor do Seguro de Vida = R$ 1218.4
+Saldo: R$21067.800000000003
+Operação realizada em: 23/04/2023 14:29:42
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+2023-04-23 | Lançamento = Depósito | Valor = 12121.00
+
+2023-04-23 | Lançamento = Depósito | Valor = 21212.00
+
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 151515.00
+
+Total gasto em tributos = R$0.2
+Valor do Seguro de Vida = R$ 121212.0
+Saldo: R$36132.8
+Operação realizada em: 23/04/2023 14:31:07
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+2023-04-23 | Lançamento = Saque | Valor = 1512.00
+2023-04-23 | Lançamento = Depósito | Valor = 255.00
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 15151.00
+
+Total gasto em tributos = R$0.2
+Valor do Seguro de Vida = R$ 12120.800000000001
+Saldo: R$1542.8000000000002
+Operação realizada em: 23/04/2023 14:31:53
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 15151.00
+2023-04-23 | Lançamento = Depósito | Valor = 154616.00
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 151515.00
+
+Total gasto em tributos = R$0.1
+Valor do Seguro de Vida = R$ 121212.0
+Saldo: R$5900.90
+Operação realizada em: 23/04/2023 14:35:25
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 15151.00
+2023-04-23 | Lançamento = Depósito | Valor = 15151.00
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 151465.00
+
+Total gasto em tributos = R$0.10
+Valor do Seguro de Vida = R$ 121172.00
+Saldo: R$17950.90
+Operação realizada em: 23/04/2023 14:36:51
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-23 | Lançamento = Saque | Valor = 15151.00
+2023-04-23 | Lançamento = Depósito | Valor = 15151.00
+2023-04-23 | Lançamento = Seguro de Vida | Valor = 151515.00
+
+Total gasto em tributos = R$0.10
+Valor do Seguro de Vida = R$ 121212.00
+Saldo: R$17950.90
+Operação realizada em: 23/04/2023 14:44:57
+********************* FIM **************************
+

@@ -1,0 +1,14 @@
+*************** SALDO ******************
+Tipo: CORRENTE
+Agencia: 5086
+Conta: 696545
+Saldo: R$36132.8
+Operação realizada em: 23/04/2023 14:30:59
+*************** FIM ******************
+*************** SALDO ******************
+Tipo: CORRENTE
+Agencia: 5086
+Conta: 696545
+Saldo: R$17950.90
+Operação realizada em: 23/04/2023 14:44:38
+*************** FIM ******************

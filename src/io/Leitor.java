@@ -36,7 +36,6 @@ public class Leitor {
 						Agencia agencia = new Agencia(vetor[1]);
 						List<Agencia> agencias = new ArrayList<>();
 						agencias.add(agencia);
-						//	SistemaBancario.mapaDeAgencias.put(vetor[1], agencias); TALVEZ REMOVER
 						
 					} 
 					else if (vetor[0].equalsIgnoreCase(UsuariosEnum.GERENTE.name())) {
@@ -45,7 +44,7 @@ public class Leitor {
 								Integer.parseInt(vetor[3]), new Agencia(vetor[4]));
 						SistemaBancario.mapaDeGerentes.put(vetor[2], gerentes);
 						SistemaBancario.mapaDeFuncionarios.put(vetor[2], gerentes);
-						SistemaBancario.mapaDeUsuarios.put(vetor[2], gerentes);
+//						SistemaBancario.mapaDeUsuarios.put(vetor[2], gerentes);
 						
 					} 
 					else if (vetor[0].equalsIgnoreCase(UsuariosEnum.DIRETOR.name())) {
@@ -54,16 +53,16 @@ public class Leitor {
 								Integer.parseInt(vetor[3]));
 						SistemaBancario.mapaDeDiretores.put(vetor[2], diretores);
 						SistemaBancario.mapaDeFuncionarios.put(vetor[2], diretores);
-						SistemaBancario.mapaDeUsuarios.put(vetor[2], diretores);
+//						SistemaBancario.mapaDeUsuarios.put(vetor[2], diretores);
 						
 					} 
 					else if (vetor[0].equalsIgnoreCase(UsuariosEnum.PRESIDENTE.name())) {
 						
 						Presidente presidente = new Presidente(UsuariosEnum.PRESIDENTE, vetor[1], vetor[2],
 								Integer.parseInt(vetor[3]));
-						SistemaBancario.mapaDePresidente.put(vetor[2], presidente);
+//						SistemaBancario.mapaDePresidente.put(vetor[2], presidente);
 						SistemaBancario.mapaDeFuncionarios.put(vetor[2], presidente);
-						SistemaBancario.mapaDeUsuarios.put(vetor[2], presidente);
+//						SistemaBancario.mapaDeUsuarios.put(vetor[2], presidente);
 					
 					} 
 					else if (vetor[0].equalsIgnoreCase(UsuariosEnum.CLIENTE.name())) {
@@ -71,7 +70,7 @@ public class Leitor {
 						Cliente cliente = new Cliente(UsuariosEnum.CLIENTE, vetor[1], vetor[2],
 								Integer.parseInt(vetor[3]));
 						SistemaBancario.mapaDeClientes.put(vetor[2], cliente);
-						SistemaBancario.mapaDeUsuarios.put(vetor[2], cliente);
+//						SistemaBancario.mapaDeUsuarios.put(vetor[2], cliente);
 						
 					} 
 					

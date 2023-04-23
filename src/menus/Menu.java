@@ -1,6 +1,7 @@
 package menus;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 import contas.Conta;
 import contas.ContaCorrente;
 import contas.enums.ContasEnum;
+import extratos.Extrato;
 import io.Escritor;
 import pessoas.Cliente;
 import pessoas.Funcionario;
@@ -36,7 +38,7 @@ public class Menu {
 				System.out.println("================================");
 				System.out.println("=== BEM VINDO AO BANCO JAVA ====");
 				System.out.print("[ Digite seu CPF ]: ");
-				String cpf = sc.nextLine(); // CPF do usuário
+				String cpf = sc.nextLine();
 				System.out.print("[ Digite sua senha ]: ");
 				senha = sc.nextInt();
 				sc.nextLine();
@@ -64,7 +66,9 @@ public class Menu {
 		}
 
 		catch (InputMismatchException e) {
-			System.out.println(e.getMessage()); // ADICIONEI ALGUNS TIPOS DE EXCECAO
+			System.out.println("Ocorreu um erro.");
+			System.out.println("Possível solução para o erro:");
+			System.out.println("- Insira apenas números com ou sem ponto (.)");
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		} catch (NullPointerException e) {
@@ -124,7 +128,6 @@ public class Menu {
 						System.out.println("[2] Retornar ao menu anterior");
 						opcao = sc.nextInt();
 						switch (opcao) {
-						// ADICIONAR TRY CATCH
 						case 1:
 							Relatorio.informacoesClientes(listaContas, conta, funcionario);
 							menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
@@ -167,12 +170,21 @@ public class Menu {
 					break;
 				}
 			} while (opcao != 1 || opcao != 2 || opcao != 3);
-		} catch (InputMismatchException e) {
+		} 
+		catch (InputMismatchException e) {
+			System.out.println("Ocorreu um erro.");
+			System.out.println("Possíveis soluções para o erro:");
+			System.out.println("- Insira apenas números com ou sem ponto (.)");
+			System.out.println("- Digite números ao invés de letras");
+		} 
+		catch (IOException e) {
 			System.out.println(e.getMessage());
-		} catch (IOException e) {
+		} 
+		catch (NullPointerException e) {
 			System.out.println(e.getMessage());
-		} catch (NullPointerException e) {
-			System.out.println(e.getMessage());
+		} 
+		finally {
+			menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 		}
 		sc.close();
 
@@ -184,7 +196,7 @@ public class Menu {
 
 		try {
 			System.out.println();
-			System.out.println("******** Menu cliente ********");
+			System.out.println("******** Menu cliente ********\n");
 			System.out.println("Olá " + cliente.getNome() + "!");
 			System.out.println("Escolha entre as opções abaixo:");
 			System.out.println("[1] Saque");
@@ -192,7 +204,7 @@ public class Menu {
 			System.out.println("[3] Transferência para outra conta");
 			System.out.println("[4] Extrato da conta");
 			System.out.println("[5] Relatórios e Saldo");
-			System.out.println("[6] Logout");
+			System.out.println("[6] Logout dos sistema");
 
 			int opcao = sc.nextInt();
 			switch (opcao) {
@@ -201,7 +213,10 @@ public class Menu {
 				double valor = sc.nextDouble();
 
 				conta.sacar(valor);
-				Escritor.comprovanteSaque(conta, valor); // ADICIONEI CHAMADA PARA ESCRITA DO SAQUE
+				Extrato saque = new Extrato(LocalDate.now(), "Saque", valor);
+				conta.getlistaDeMovimentacoes().add(saque);
+
+				Escritor.comprovanteSaque(conta, valor);
 
 				menuCliente(conta, cliente);
 				break;
@@ -210,6 +225,8 @@ public class Menu {
 				valor = sc.nextDouble();
 
 				conta.depositar(valor);
+				Extrato deposito = new Extrato(LocalDate.now(), "Depósito", valor);
+				conta.getlistaDeMovimentacoes().add(deposito);
 				Escritor.comprovanteDeposito(conta, valor); // CHAMADA PARA ESCRITA DO DEPOSITO
 
 				System.out.printf("Saldo atual: R$ %.2f", conta.getSaldo()); // TESTE REMOVER DEPOIS
@@ -221,7 +238,7 @@ public class Menu {
 				System.out.printf("Insira o valor da transferencia: R$ ");
 				valor = sc.nextDouble();
 				if (valor < 0 || valor > conta.getSaldo()) {
-					System.out.println("Insira um valor válido.");
+					System.out.println("Insira um valor válido. Saldo insuficente.");
 					menuCliente(conta, cliente);
 				}
 				sc.nextLine();
@@ -234,8 +251,9 @@ public class Menu {
 				}
 				Conta contaDestino = SistemaBancario.mapaDeContas.get(cpf);
 				conta.transferir(contaDestino, valor);
-				Escritor.comprovanteTransferencia(conta, contaDestino, valor); // ADICIONEI CHAMADA PARA ESCRITA
-																				// TRANSFERENCIA
+				Extrato transferencia = new Extrato(LocalDate.now(), "Transferêcia", valor);
+				conta.getlistaDeMovimentacoes().add(transferencia);
+				Escritor.comprovanteTransferencia(conta, contaDestino, valor);
 
 				System.out.println("Transferência realizada com sucesso.");
 				menuCliente(conta, cliente);
@@ -251,7 +269,9 @@ public class Menu {
 			case 6:
 				contratoSeguro = false;
 				menuInicial();
+				break;
 			default:
+				System.out.println("Opção não existe. Digite o número corretoe.");
 				break;
 			}
 		} catch (InputMismatchException e) {
@@ -325,8 +345,12 @@ public class Menu {
 							contratoSeguro = true;
 							System.out.print("Qual o valor que será segurado? R$ ");
 							double valor = sc.nextDouble();
+
 							SeguroDeVida.setValorSeguro(valor);
 							conta.debitarSeguro(valor);
+							Extrato seguroVida = new Extrato(LocalDate.now(), "Seguro de Vida", valor);
+							conta.getlistaDeMovimentacoes().add(seguroVida);
+
 							Relatorio.SeguroDeVida(conta, cliente);
 							menuRelatorio(conta, cliente);
 							break;
@@ -334,7 +358,7 @@ public class Menu {
 							menuRelatorio(conta, cliente);
 							break;
 						default:
-							System.out.println("\n" + "Insira um valor válido.");
+							System.out.println("\n" + "Insira um valor válido");
 							break;
 						}
 
@@ -352,9 +376,10 @@ public class Menu {
 				break;
 			}
 		} catch (InputMismatchException e) {
-			System.out.println("Ocorreu um erro na transferência.");
-			System.out.println("Possível solução para o erro:");
+			System.out.println("Ocorreu um erro.");
+			System.out.println("Possíveis soluções para o erro:");
 			System.out.println("- Insira apenas números com ou sem ponto (.)");
+			System.out.println("- Digite números ao invés de letras");
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		} catch (NullPointerException e) {

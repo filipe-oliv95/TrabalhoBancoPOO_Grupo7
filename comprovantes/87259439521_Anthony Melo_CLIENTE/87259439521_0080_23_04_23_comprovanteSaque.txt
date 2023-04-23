@@ -1,0 +1,24 @@
+*************** SAQUE ***************
+CPF: 87259439521
+Agencia: 0080
+Conta: 286545
+Valor do saque: R$1520.0
+Operação realizada em: 23/04/2023 15:50:31
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 87259439521
+Agencia: 0080
+Conta: 286545
+Valor do saque: R$1522335.0
+Operação realizada em: 23/04/2023 15:50:34
+************ FIM DO SAQUE ************
+
+*************** SAQUE ***************
+CPF: 87259439521
+Agencia: 0080
+Conta: 286545
+Valor do saque: R$563.0
+Operação realizada em: 23/04/2023 15:50:37
+************ FIM DO SAQUE ************
+

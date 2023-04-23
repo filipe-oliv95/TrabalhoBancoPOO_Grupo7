@@ -1,0 +1,40 @@
+***************** DEPÓSITO *****************
+CPF: 98654712548
+Agência: 5086
+Conta: 683145
+Valor: R$1523659.0
+Operação realizada em: 23/04/2023 12:30:17
+************* FIM DO DEPÓSITO **************
+
+***************** DEPÓSITO *****************
+CPF: 98654712548
+Agência: 5086
+Conta: 683145
+Valor: R$2563.0
+Operação realizada em: 23/04/2023 12:33:56
+************* FIM DO DEPÓSITO **************
+
+***************** DEPÓSITO *****************
+CPF: 98654712548
+Agência: 5086
+Conta: 683145
+Valor: R$5632.0
+Operação realizada em: 23/04/2023 12:33:59
+************* FIM DO DEPÓSITO **************
+
+***************** DEPÓSITO *****************
+CPF: 98654712548
+Agência: 5086
+Conta: 683145
+Valor: R$1546.0
+Operação realizada em: 23/04/2023 12:34:43
+************* FIM DO DEPÓSITO **************
+
+***************** DEPÓSITO *****************
+CPF: 98654712548
+Agência: 5086
+Conta: 683145
+Valor: R$3562.0
+Operação realizada em: 23/04/2023 12:34:48
+************* FIM DO DEPÓSITO **************
+

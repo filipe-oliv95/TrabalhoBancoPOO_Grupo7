@@ -1,0 +1,11 @@
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Vinicius da Silva
+Simulação para CPF = 804.665.289-06
+Agência: 5086
+Conta: 681245
+O valor pago na contratação do Seguro de Vida foi de: R$15151515.00
+O valor segurado após taxação foi de: R$12121212.00
+Você pagou de tarifa R$3030303.00
+Operação realizada em: 23/04/2023 15:12:17
+*************************************************************
+
