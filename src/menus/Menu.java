@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import contas.Conta;
+import contas.ContaCorrente;
 import contas.enums.ContasEnum;
 import io.Escritor;
 import pessoas.Cliente;
@@ -85,28 +86,28 @@ public class Menu {
 		try {
 			do {
 				System.out.println("Escolha entre as opções abaixo:");
-				System.out.println("[1] Entrar como cliente");
+				System.out.println("[1] Entrar como Cliente");
 				System.out.println("[2] Entrar como " + funcionario.getTipoDeUsuario().getTipoPessoa());
 				System.out.println("[3] Logout");
 				opcao = sc.nextInt();
 
-				switch (opcao) { // MENU CLIENTE PARA FUNCIONARIO
+				switch (opcao) {
 
 				case 1:
 					Menu.menuCliente(conta, cliente);
 					break;
-				case 2: // MENU DO FUNCIONÁRIO
+				case 2:
 					switch (funcionario.getTipoDeUsuario()) {
 					case GERENTE:
 						System.out.println();
+						System.out.println("******** Menu Gerente ********");
 						System.out.println("Escolha entre as opções abaixo:");
-						System.out.println("[1] Consulta de contas da agência ");
+						System.out.println("[1] Consulta de contas da sua agência ");
 						System.out.println("[2] Retornar ao menu anterior");
 						opcao = sc.nextInt();
 						switch (opcao) {
-						// ADICIONAR TRY CATCH
 						case 1:
-							Relatorio.numDeContasNaAgencia(conta, cpf);
+							Relatorio.numDeContasNaAgencia(conta, cpf, funcionario);
 							menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 							break;
 						case 2:
@@ -117,6 +118,7 @@ public class Menu {
 
 					case DIRETOR:
 						System.out.println();
+						System.out.println("******** Menu Diretor ********");
 						System.out.println("Escolha entre as opções abaixo:");
 						System.out.println("[1] Relatório de informações dos clientes do banco");
 						System.out.println("[2] Retornar ao menu anterior");
@@ -124,7 +126,7 @@ public class Menu {
 						switch (opcao) {
 						// ADICIONAR TRY CATCH
 						case 1:
-							Relatorio.informacoesClientes(listaContas, conta);
+							Relatorio.informacoesClientes(listaContas, conta, funcionario);
 							menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 							break;
 						case 2:
@@ -135,18 +137,19 @@ public class Menu {
 
 					case PRESIDENTE:
 						System.out.println();
+						System.out.println("******** Menu Presidente ********");
 						System.out.println("Escolha entre as opções abaixo:");
 						System.out.println("[1] Relatório de informações dos clientes do banco");
-						System.out.println("[2] Relatório valor total armazenado");
+						System.out.println("[2] Relatório do capital total armazenado");
 						System.out.println("[3] Retornar ao menu anterior");
 						opcao = sc.nextInt();
 						switch (opcao) {
 						case 1:
-							Relatorio.informacoesClientes(listaContas, conta);
+							Relatorio.informacoesClientes(listaContas, conta, funcionario);
 							menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 							break;
 						case 2:
-							Relatorio.valorTotalCapitalBanco(listaContas, conta);
+							Relatorio.valorTotalCapitalBanco(listaContas, conta, funcionario);
 							menuFuncionario(funcionario, conta, listaContas, cpf, cliente);
 							break;
 						case 3:
@@ -163,7 +166,7 @@ public class Menu {
 					menuInicial();
 					break;
 				}
-			} while (!(opcao == 0)); // PENSAR EM UMA OUTRO SOLUÇÃO
+			} while (opcao != 1 || opcao != 2 || opcao != 3);
 		} catch (InputMismatchException e) {
 			System.out.println(e.getMessage());
 		} catch (IOException e) {
@@ -181,6 +184,7 @@ public class Menu {
 
 		try {
 			System.out.println();
+			System.out.println("******** Menu cliente ********");
 			System.out.println("Olá " + cliente.getNome() + "!");
 			System.out.println("Escolha entre as opções abaixo:");
 			System.out.println("[1] Saque");
@@ -191,7 +195,6 @@ public class Menu {
 			System.out.println("[6] Logout");
 
 			int opcao = sc.nextInt();
-			// adicionar o retorno
 			switch (opcao) {
 			case 1:
 				System.out.print("Insira o valor do saque: R$ ");
@@ -290,8 +293,8 @@ public class Menu {
 				break;
 			case 2:
 				if (conta.getTipoDeConta().equals(ContasEnum.CORRENTE)) {
-					Relatorio.tributacaoCC(conta);
-					Escritor.relatorioTributacaoCC(conta);
+					Relatorio.tributacaoCC((ContaCorrente) conta);
+					Escritor.relatorioTributacaoCC((ContaCorrente) conta);
 				} else {
 					System.out.println();
 					System.out.println("Você não possui Conta Corrente.");
@@ -301,7 +304,6 @@ public class Menu {
 			case 3:
 				if (conta.getTipoDeConta().equals(ContasEnum.POUPANCA)) {
 					Relatorio.simularRendimentoPoupanca(conta, cliente);
-					// Escritor.rendimentDaPoupanca(conta, cliente);
 				} else {
 					System.out.println("Desculpe, você não possui Conta Poupança.");
 
@@ -349,7 +351,7 @@ public class Menu {
 				menuRelatorio(conta, cliente);
 				break;
 			}
-		}  catch (InputMismatchException e) {
+		} catch (InputMismatchException e) {
 			System.out.println("Ocorreu um erro na transferência.");
 			System.out.println("Possível solução para o erro:");
 			System.out.println("- Insira apenas números com ou sem ponto (.)");
@@ -357,10 +359,10 @@ public class Menu {
 			System.out.println(e.getMessage());
 		} catch (NullPointerException e) {
 			System.out.println(e.getMessage());
-		
-	} finally {
-		menuRelatorio(conta, cliente);
-	}
+
+		} finally {
+			menuRelatorio(conta, cliente);
+		}
 		sc.close();
 	}
 }

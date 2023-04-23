@@ -12,9 +12,9 @@ public class ContaCorrente extends Conta {
 	private final static double TARIFA_SAQUE = 0.1;
 	private final static double TARIFA_DEPOSITO = 0.1;
 	private final static double TARIFA_TRANSFERENCIA = 0.2;
-	private static double totalSaques;
-	private static double totalDepositos;
-	private static double totalTransferencias;
+	private double totalSaques;
+	private double totalDepositos;
+	private double totalTransferencias;
 
 	public ContaCorrente() {
 		super();
@@ -25,16 +25,28 @@ public class ContaCorrente extends Conta {
 		super(tipoDeConta, agencia, numConta, titular, cpf, saldoInicial);
 	}
 
-	public static double getTotalSaques() {
+	public double getTotalSaques() {
 		return totalSaques;
 	}
 
-	public static double getTotalDepositos() {
+	public void setTotalSaques(double totalSaques) {
+		this.totalSaques = totalSaques;
+	}
+
+	public double getTotalDepositos() {
 		return totalDepositos;
 	}
 
-	public static double getTotalTransferencias() {
+	public void setTotalDepositos(double totalDepositos) {
+		this.totalDepositos = totalDepositos;
+	}
+
+	public double getTotalTransferencias() {
 		return totalTransferencias;
+	}
+
+	public void setTotalTransferencias(double totalTransferencias) {
+		this.totalTransferencias = totalTransferencias;
 	}
 
 	public static double getTarifaSaque() {
@@ -49,7 +61,7 @@ public class ContaCorrente extends Conta {
 		return TARIFA_TRANSFERENCIA;
 	}
 
-	public static double getTotalTarifas() {
+	public double getTotalTarifas() {
 		double totalTarifaDeposito = TARIFA_DEPOSITO * totalDepositos;
 		double totalTarifaSaque = TARIFA_SAQUE * totalSaques;
 		double totalTarifaTransferencia = TARIFA_TRANSFERENCIA * totalTransferencias;
@@ -69,7 +81,7 @@ public class ContaCorrente extends Conta {
 			System.out.println("Saque realizado com sucesso.");
 		}
 	}
-	
+
 	public void debitarSeguro(double valor) {
 		if (this.saldo < valor) {
 			System.out.println("Saldo insuficiente");
@@ -112,8 +124,9 @@ public class ContaCorrente extends Conta {
 		Date date = new Date();
 		System.out.println("Titular: " + this.getTitular().getNome());
 		System.out.println("CPF: " + this.getTitular().getCpf());
+		System.out.println("Agência: " + getAgencia().getNumAgencia());
 		System.out.println("Número da conta: " + getNumConta());
-		System.out.println("Saldo: R$" + this.getSaldo());
+		System.out.println("Saldo: R$ " + String.format(Double.toString(conta.getSaldo()), 2));
 		System.out.println("Data: " + sdf.format(date));
 		System.out.println("******************************************");
 	}

@@ -2,7 +2,7 @@ package contas.enums;
 
 public enum ContasEnum {  // TESTE
 
-    CORRENTE("Conta Corrente", 1),
+	CORRENTE("Conta Corrente", 1),
     POUPANCA("Poupança", 2);
 
     private final String tipoDeConta;

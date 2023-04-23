@@ -13,6 +13,7 @@ import contas.ContaPoupanca;
 import io.Escritor;
 import menus.Menu;
 import pessoas.Cliente;
+import pessoas.Funcionario;
 import pessoas.Gerente;
 import principal.SistemaBancario;
 import segurosDeVida.SeguroDeVida;
@@ -33,24 +34,24 @@ public class Relatorio {
 		Escritor.comprovanteSaldo(conta);
 	}
 
-	public static void tributacaoCC(Conta conta) {
+	public static void tributacaoCC(ContaCorrente conta) {
 		System.out.println();
 		System.out.println("****** Relatório de tributação ******");
 		System.out.println();
 		System.out.println("Valor de tarifa cobrado no saque: R$ " + ContaCorrente.getTarifaSaque());
-		System.out.println("Total de saques: " + ContaCorrente.getTotalSaques());
+		System.out.println("Total de saques: " + conta.getTotalSaques());
 		System.out.println();
 		System.out.println("Valor de tarifa cobrado no depósito: R$ " + ContaCorrente.getTarifaDeposito());
-		System.out.println("Total de depósitos: " + ContaCorrente.getTotalDepositos());
+		System.out.println("Total de depósitos: " + conta.getTotalDepositos());
 		System.out.println();
 		System.out.println("Valor de tarifa cobrado na tranferência: R$ " + ContaCorrente.getTarifaTransferencia());
-		System.out.println("Total de transferências: " + ContaCorrente.getTotalTransferencias());
+		System.out.println("Total de transferências: " + conta.getTotalTransferencias());
 		System.out.println("**************************************");
 		System.out.println();
 
-		double tarifaTotalSaque = ContaCorrente.getTotalSaques() * ContaCorrente.getTarifaSaque();
-		double tarifaTotalDeposito = ContaCorrente.getTotalDepositos() * ContaCorrente.getTarifaDeposito();
-		double tarifaTotalTransferencia = ContaCorrente.getTotalTransferencias()
+		double tarifaTotalSaque = conta.getTotalSaques() * ContaCorrente.getTarifaSaque();
+		double tarifaTotalDeposito = conta.getTotalDepositos() * ContaCorrente.getTarifaDeposito();
+		double tarifaTotalTransferencia = conta.getTotalTransferencias()
 				* ContaCorrente.getTarifaTransferencia();
 
 		System.out.println("Total de tarifas cobradas em saques: R$" + tarifaTotalSaque);
@@ -107,7 +108,7 @@ public class Relatorio {
 
 	}
 
-	public static void numDeContasNaAgencia(Conta conta, String cpf) throws IOException {
+	public static void numDeContasNaAgencia(Conta conta, String cpf, Funcionario funcionario) throws IOException {
 		int totalContas = 0;
 		Gerente gerente = SistemaBancario.mapaDeGerentes.get(cpf);
 		System.out.println("****** Contas na agência do Gerente ******");
@@ -123,7 +124,7 @@ public class Relatorio {
 				System.out.println("Total de contas na agência : " + totalContas);
 				System.out.println("*********************************");
 				System.out.println();
-				Escritor.relatorioContasPorAgencia(conta);
+				Escritor.relatorioContasPorAgencia(conta, funcionario);
 			}
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
@@ -132,7 +133,7 @@ public class Relatorio {
 		}
 	}
 
-	public static void informacoesClientes(List<Conta> contas, Conta conta) throws IOException { // RELATORIO DIRETOR
+	public static void informacoesClientes(List<Conta> contas, Conta conta, Funcionario funcionario) throws IOException { // RELATORIO DIRETOR
 		System.out.println("***** Informações dos Clientes *****");
 		Collections.sort(contas); // ordenou a lista usando o Comparable no Contas
 		for (Conta c : contas) {
@@ -141,11 +142,11 @@ public class Relatorio {
 		System.out.println("**************************************************");
 		System.out.println();
 
-		Escritor.relatorioClientes(contas, conta);
+		Escritor.relatorioClientes(contas, conta, funcionario);
 		// ESCRITOR
 	}
 
-	public static void valorTotalCapitalBanco(List<Conta> listaContas, Conta conta) { // PRESIDENTE
+	public static void valorTotalCapitalBanco(List<Conta> listaContas, Conta conta, Funcionario funcionario) { // PRESIDENTE
 
 		System.out.println("********* Consulta do Capital do Banco ***********");
 		double capitalBancoSaldo = 0;
@@ -157,7 +158,7 @@ public class Relatorio {
 		System.out.println("**************************************************");
 		System.out.println();
 		// ADICIONAR O ESCRITOR
-		Escritor.relatorioCapitalBanco(listaContas, conta);
+		Escritor.relatorioCapitalBanco(listaContas, conta, funcionario);
 	}
 
 	public static void SeguroDeVida(Conta conta, Cliente cliente) {

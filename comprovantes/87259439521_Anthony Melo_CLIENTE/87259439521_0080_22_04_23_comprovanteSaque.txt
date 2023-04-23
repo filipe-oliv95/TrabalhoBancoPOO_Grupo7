@@ -1,0 +1,8 @@
+*************** SAQUE ***************
+CPF: 87259439521
+Agencia: 0080
+Conta: 286545
+Valor do saque: R$300.0
+Operação realizada em: 22/04/2023 21:20:43
+************ FIM DO SAQUE ************
+

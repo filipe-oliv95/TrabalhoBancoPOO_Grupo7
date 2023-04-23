@@ -42,8 +42,9 @@ public class ContaPoupanca extends Conta {
 		Date date = new Date();
 		System.out.println("Titular: " + this.getTitular().getNome());
 		System.out.println("CPF: " + this.getTitular().getCpf());
+		System.out.println("Agência: " + getAgencia().getNumAgencia());
 		System.out.println("Número da conta: " + getNumConta ());
-		System.out.println("Saldo: R$" + this.getSaldo());
+		System.out.println("Saldo: R$ " + String.format(Double.toString(conta.getSaldo()), 2));
 		System.out.println("Data: " + sdf.format(date));		
 		System.out.println("************************************");
 	}

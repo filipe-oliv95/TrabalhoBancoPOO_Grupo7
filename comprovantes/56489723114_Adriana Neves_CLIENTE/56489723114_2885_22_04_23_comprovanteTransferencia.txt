@@ -1,0 +1,17 @@
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+Nome: Adriana Neves
+CPF: 56489723114
+Agência : 2885
+Conta: 278561
+********** DADOS DO DESTINATÁRIO ************
+Nome: Vinicius da Silva
+CPF: 80466528906
+Agência: 5086
+Conta: 681245
+*********************************************
+Valor: R$700.0
+Operação realizada em: 22/04/2023 22:26:37
+*********** FIM DA TRANSFERÊNCIA ************

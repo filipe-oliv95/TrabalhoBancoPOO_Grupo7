@@ -1,0 +1,32 @@
+*************** TOTAL DE TRIBUTAÇÕES *****************
+
+Total recebido em transações = R$0.9
+
+Taxa para saque = 0.1
+Total de saques realizados = 3.0
+
+Taxa para deposito = 0.1
+Total de depósitos realizados = 2.0
+
+Taxa para tranferência = 0.2
+Total de tranferências realizadas = 2.0
+
+Operações realizada em: 22/04/2023 22:16:10
+****************************************************
+
+*************** TOTAL DE TRIBUTAÇÕES *****************
+
+Total recebido em transações = R$0.1
+
+Taxa para saque = 0.1
+Total de saques realizados = 1.0
+
+Taxa para deposito = 0.1
+Total de depósitos realizados = 0.0
+
+Taxa para tranferência = 0.2
+Total de tranferências realizadas = 0.0
+
+Operações realizada em: 22/04/2023 22:28:14
+****************************************************
+

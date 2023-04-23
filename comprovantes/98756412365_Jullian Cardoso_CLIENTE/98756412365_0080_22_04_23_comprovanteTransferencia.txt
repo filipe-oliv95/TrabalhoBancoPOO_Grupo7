@@ -1,0 +1,17 @@
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+Nome: Jullian Cardoso
+CPF: 98756412365
+Agência : 0080
+Conta: 112564
+********** DADOS DO DESTINATÁRIO ************
+Nome: Adriana Neves
+CPF: 56489723114
+Agência: 2885
+Conta: 278561
+*********************************************
+Valor: R$300.0
+Operação realizada em: 22/04/2023 22:16:03
+*********** FIM DA TRANSFERÊNCIA ************

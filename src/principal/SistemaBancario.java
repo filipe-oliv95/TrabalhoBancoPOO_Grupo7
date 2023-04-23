@@ -16,7 +16,6 @@ import pessoas.Usuario;
 
 public class SistemaBancario {
 
-    //public static Map<String, Agencia> mapaDeAgencias = new HashMap<>();
     public static Map<String, Gerente> mapaDeGerentes = new HashMap<>();
     public static Map<String, Diretor> mapaDeDiretores = new HashMap<>();
     public static Map<String, Funcionario> mapaDeFuncionarios = new HashMap<>();
@@ -30,14 +29,12 @@ public class SistemaBancario {
     	// POPULANDO OS DADOS DO SISTEMA
         Leitor.leitura(".\\database\\registrodedados.txt");
         
-        System.out.println(SistemaBancario.mapaDeContas.get("23156489785"));
         
-        try { // TRATAMENTO EXCEÇÃO IO
+        try {
         	Menu.menuInicial();
         }
         catch(IOException e){
 			System.out.println(" Ërro: " + e.getMessage());
-			e.getStackTrace();
 		}  
     }
 }
