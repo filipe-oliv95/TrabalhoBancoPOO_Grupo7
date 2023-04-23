@@ -1,8 +1,0 @@
-*************** EXTRATO ******************
-Tipo: CORRENTE
-Titular: Anthony Melo
-Agencia: 0080
-Conta: 286545
-Saldo: R$2500.0
-Operação realizada em: 22/04/2023 21:45:50
-*************** FIM **************************

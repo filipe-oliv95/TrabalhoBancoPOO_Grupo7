@@ -1,8 +1,0 @@
-******* Simulação de Rendimento da Poupança ********
-
-Nome = Luan Cailleaux
-Simulação para CPF = 56432145896
-O rendimento foi de: R$3.9075
-Operações realizada em: 23/04/2023 11:18:13
-****************************************************
-

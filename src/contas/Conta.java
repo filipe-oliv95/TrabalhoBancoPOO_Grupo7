@@ -1,5 +1,6 @@
 package contas;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,11 +16,11 @@ public abstract class Conta implements Operacao, Comparable<Conta> {
 	private String numConta;
 	private Cliente titular;
 	private String cpf;
-	protected double saldo; // deixei tipo primitivo pois dá para ver os erros (senão dá nulo)
+	protected double saldo;
 	private ContasEnum tipoDeConta;
 
 	private List<Extrato> listaDeMovimentacoes = new ArrayList<>();
-	
+
 	public Conta() {
 
 	}
@@ -76,20 +77,22 @@ public abstract class Conta implements Operacao, Comparable<Conta> {
 	public double getSaldo() {
 		return saldo;
 	}
-	
+
 	public List<Extrato> getlistaDeMovimentacoes() {
 		return listaDeMovimentacoes;
 	}
 
-	public void depositar(double valor) {
+	public void depositar(double valor, Conta conta) {
 		if (valor > 0) {
 			saldo += valor;
+			Extrato deposito = new Extrato(LocalDate.now(), "Depósito", valor);
+			conta.getlistaDeMovimentacoes().add(deposito);
 		} else {
 			System.out.println("Insira um valor válido.");
 		}
 	}
 
-	public void sacar(double valor) {
+	public void sacar(double valor, Conta conta) {
 		if (this.saldo < valor) {
 			System.out.println("Saldo insuficiente");
 		} else if (valor < 0) {
@@ -97,10 +100,12 @@ public abstract class Conta implements Operacao, Comparable<Conta> {
 		} else {
 			this.saldo -= valor;
 			System.out.println("Saque realizado com sucesso.");
+			Extrato saque = new Extrato(LocalDate.now(), "Saque", valor);
+			conta.getlistaDeMovimentacoes().add(saque);
 		}
 	}
 
-	public void transferir(Conta contaDestino, double valor) {
+	public void transferir(Conta contaDestino, double valor, Conta conta) {
 		if (this.saldo < valor) {
 			System.out.println("Seu saldo é insuficiente!");
 		} else if (valor < 0) {
@@ -108,19 +113,21 @@ public abstract class Conta implements Operacao, Comparable<Conta> {
 		} else {
 			this.saldo -= valor;
 			contaDestino.saldo += valor;
+			Extrato transferencia = new Extrato(LocalDate.now(), "Transferêcia", valor);
+			conta.getlistaDeMovimentacoes().add(transferencia);
 		}
 	}
-	
-	public abstract void debitarSeguro(double valor);
-	
+
+	public abstract void debitarSeguro(double valor, Conta conta, Cliente cliente);
+
 	public String imprimeCPF(String CPF) {
-        return(CPF.substring(0, 3) + "." + CPF.substring(3, 6) + "." +
-        CPF.substring(6, 9) + "-" + CPF.substring(9, 11));
-    }
+		return (CPF.substring(0, 3) + "." + CPF.substring(3, 6) + "." + CPF.substring(6, 9) + "-"
+				+ CPF.substring(9, 11));
+	}
 
 	@Override
 	public int compareTo(Conta cont) {
-		if (this.getTitular().compareTo(cont.getTitular()) > 0) { // comparou pelo nome
+		if (this.getTitular().compareTo(cont.getTitular()) > 0) {
 			return -1;
 		}
 		if (this.getTitular().compareTo(cont.getTitular()) < 0) {
@@ -136,4 +143,5 @@ public abstract class Conta implements Operacao, Comparable<Conta> {
 		return "Numero = " + getNumConta() + ", agencia = " + agencia + ", titular = " + titular + ", cpf = " + cpf
 				+ ", saldo = " + saldo;
 	}
+
 }

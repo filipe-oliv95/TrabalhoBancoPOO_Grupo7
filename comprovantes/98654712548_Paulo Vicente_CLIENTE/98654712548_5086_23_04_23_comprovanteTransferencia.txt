@@ -2,33 +2,33 @@
 *************** TRANSFERÊNCIA ***************
 
 ************ DADOS DO REMETENTE *************
-Nome: Luan Cailleaux
-CPF: 56432145896
+Nome: Paulo Vicente
+CPF: 98654712548
 Agência : 5086
-Conta: 621564
+Conta: 683145
 ********** DADOS DO DESTINATÁRIO ************
-Nome: Filipe Oliveira
-CPF: 86541233210
+Nome: Jullian Cardoso
+CPF: 98756412365
 Agência: 0080
-Conta: 281564
+Conta: 112564
 *********************************************
-Valor: R$15000.0
-Operação realizada em: 23/04/2023 11:15:06
+Valor: R$1500.0
+Operação realizada em: 23/04/2023 17:36:03
 *********** FIM DA TRANSFERÊNCIA ************
 
 *************** TRANSFERÊNCIA ***************
 
 ************ DADOS DO REMETENTE *************
-Nome: Luan Cailleaux
-CPF: 56432145896
+Nome: Paulo Vicente
+CPF: 98654712548
 Agência : 5086
-Conta: 621564
+Conta: 683145
 ********** DADOS DO DESTINATÁRIO ************
-Nome: Filipe Oliveira
-CPF: 86541233210
+Nome: Jullian Cardoso
+CPF: 98756412365
 Agência: 0080
-Conta: 281564
+Conta: 112564
 *********************************************
-Valor: R$1546.0
-Operação realizada em: 23/04/2023 11:17:18
+Valor: R$500.0
+Operação realizada em: 23/04/2023 17:36:13
 *********** FIM DA TRANSFERÊNCIA ************

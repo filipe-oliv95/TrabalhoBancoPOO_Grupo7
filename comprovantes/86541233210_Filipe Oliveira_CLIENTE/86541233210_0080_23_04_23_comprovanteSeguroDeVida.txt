@@ -42,3 +42,14 @@ Você pagou de tarifa R$3047.2000000000003
 Operação realizada em: 23/04/2023 11:34:38
 ************************************************
 
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Filipe Oliveira
+Simulação para CPF = 865.412.332-10
+Agência: 0080
+Conta: 281564
+O valor pago na contratação do Seguro de Vida foi de: R$2000.00
+O valor segurado após taxação foi de: R$1600.00
+Você pagou de tarifa R$400.00
+Operação realizada em: 23/04/2023 16:18:59
+*************************************************************
+

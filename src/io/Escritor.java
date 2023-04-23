@@ -105,7 +105,7 @@ public class Escritor {
 		}
 	}
 
-	public static void comprovanteTransferencia(Conta conta, Conta contaDestino, double valorTransferencia) { 
+	public static void comprovanteTransferencia(Conta conta, Conta contaDestino, double valorTransferencia) {
 
 		SUB_CAMINHO = conta.getCpf() + "_" + conta.getTitular().getNome() + "_" + conta.getTitular().getTipoDeUsuario();
 		new File(CAMINHO + "\\" + SUB_CAMINHO).mkdir();
@@ -172,7 +172,7 @@ public class Escritor {
 
 		SUB_CAMINHO = conta.getCpf() + "_" + conta.getTitular().getNome() + "_" + conta.getTitular().getTipoDeUsuario();
 		new File(CAMINHO + "\\" + SUB_CAMINHO).mkdir();
-		
+
 		String hojeFormatado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd_MM_yy"));
 		String arquivo = conta.getCpf() + "_" + conta.getAgencia() + "_" + hojeFormatado + "_comprovanteExtrato";
 
@@ -190,23 +190,24 @@ public class Escritor {
 
 			linha = "Agencia: " + conta.getAgencia().getNumAgencia() + " | Conta: " + conta.getNumConta();
 			bw.append(linha + "\n");
-			
+
 			bw.append("\n");
 			for (Extrato listaMovimentacao : conta.getlistaDeMovimentacoes()) {
 				bw.append(listaMovimentacao.toString() + "\n");
 			}
 			bw.append("\n");
-					
-			if(conta.getTipoDeConta().equals(ContasEnum.CORRENTE)) {
-				linha = "Total gasto em tributos = R$" + String.format("%.2f", ((ContaCorrente) conta).getTotalTarifas());
+
+			if (conta.getTipoDeConta().equals(ContasEnum.CORRENTE)) {
+				linha = "Total gasto em tributos = R$"
+						+ String.format("%.2f", ((ContaCorrente) conta).getTotalTarifas());
 				bw.append(linha + "\n");
 			}
-			
+
 			if (Menu.contratoSeguro == true) {
-				linha = "Valor do Seguro de Vida = R$ " + String.format("%.2f",SeguroDeVida.getValorSeguroAposTaxa());
+				linha = "Valor do Seguro de Vida = R$ " + String.format("%.2f", SeguroDeVida.getValorSeguroAposTaxa());
 				bw.append(linha + "\n");
 			}
-								
+
 			linha = "Saldo: R$" + String.format("%.2f", conta.getSaldo());
 			bw.append(linha + "\n");
 
@@ -233,7 +234,7 @@ public class Escritor {
 		try (BufferedWriter bw = new BufferedWriter(
 				new FileWriter(CAMINHO + "\\" + SUB_CAMINHO + "\\" + arquivo + EXTENSAO, true))) {
 
-			String linha = "*************** SALDO ******************";
+			String linha = "******************* SALDO *******************";
 			bw.append(linha + "\n");
 
 			linha = "Tipo: " + conta.getTipoDeConta();
@@ -252,7 +253,7 @@ public class Escritor {
 			linha = "Operação realizada em: " + date;
 			bw.append(linha + "\n");
 
-			linha = "*************** FIM ******************";
+			linha = "******************* FIM *********************";
 			bw.append(linha + "\n");
 
 		} catch (IOException e) {
@@ -297,7 +298,8 @@ public class Escritor {
 			bw.append(linha + "\n\n");
 
 			if (Menu.contratoSeguro == true) {
-				linha = "Valor segurado do Seguro de Vida = R$ " + String.format("%.2f", SeguroDeVida.getValorSeguroAposTaxa());
+				linha = "Valor segurado do Seguro de Vida = R$ "
+						+ String.format("%.2f", SeguroDeVida.getValorSeguroAposTaxa());
 				bw.append(linha + "\n\n");
 			}
 
@@ -313,7 +315,8 @@ public class Escritor {
 		}
 	}
 
-	public static void rendimentDaPoupanca(Conta conta, Cliente cliente, Double rendimento) {
+	public static void rendimentDaPoupanca(Conta conta, Cliente cliente, Double rendimento, int dias,
+			double valorSimulado, double totalFinal) {
 
 		SUB_CAMINHO = conta.getCpf() + "_" + conta.getTitular().getNome() + "_" + conta.getTitular().getTipoDeUsuario();
 		new File(CAMINHO + "\\" + SUB_CAMINHO).mkdir();
@@ -331,10 +334,19 @@ public class Escritor {
 			linha = "Nome = " + conta.getTitular().getNome();
 			bw.append(linha + "\n");
 
-			linha = "Simulação para CPF = " + conta.getCpf();
+			linha = "Simulação para CPF: " + conta.getCpf();
 			bw.append(linha + "\n");
 
-			linha = "O rendimento foi de: R$" + String.format("%.2f", rendimento);
+			linha = "Valor simulado: R$ " + String.format("%.2f", valorSimulado);
+			bw.append(linha + "\n");
+
+			linha = "Total de dias: " + dias;
+			bw.append(linha + "\n");
+
+			linha = "O rendimento seria de: R$ " + String.format("%.2f", rendimento);
+			bw.append(linha + "\n");
+
+			linha = "O valor final seria de: R$ " + String.format("%.2f", totalFinal);
 			bw.append(linha + "\n");
 
 			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
@@ -348,7 +360,7 @@ public class Escritor {
 		}
 	}
 
-	public static void relatorioContasPorAgencia(Conta conta, Funcionario funcionario) throws IOException { 
+	public static void relatorioContasPorAgencia(Conta conta, Funcionario funcionario) throws IOException {
 
 		SUB_CAMINHO = conta.getCpf() + "_" + conta.getTitular().getNome() + "_" + funcionario.getTipoDeUsuario();
 		new File(CAMINHO + "\\" + SUB_CAMINHO).mkdir();
@@ -372,10 +384,10 @@ public class Escritor {
 			linha = "Agência : " + conta.getAgencia().getNumAgencia();
 			bw.append(linha + "\n");
 
-			linha = "*********************************************************";
+			linha = "*****************************************************";
 			bw.append(linha + "\n\n");
 
-			linha = "****************** TOTAL DE CONTAS NA AGÊNCIA ***************";
+			linha = "************ TOTAL DE CONTAS NA AGÊNCIA *************";
 			bw.append(linha + "\n\n");
 
 			for (String cpf : SistemaBancario.mapaDeContas.keySet()) {
@@ -393,7 +405,7 @@ public class Escritor {
 
 					totalContas++;
 
-					linha = "**************************************";
+					linha = "*****************************************************";
 					bw.append(linha + "\n");
 				}
 			}
@@ -415,7 +427,7 @@ public class Escritor {
 		}
 	}
 
-	public static void relatorioClientes(List<Conta> contas, Conta conta, Funcionario funcionario) { 
+	public static void relatorioClientes(List<Conta> contas, Conta conta, Funcionario funcionario) {
 
 		SUB_CAMINHO = conta.getCpf() + "_" + conta.getTitular().getNome() + "_" + funcionario.getTipoDeUsuario();
 		new File(CAMINHO + "\\" + SUB_CAMINHO).mkdir();
@@ -430,7 +442,7 @@ public class Escritor {
 			String linha = "******************* Informações dos Clientes *******************";
 			bw.append(linha + "\n\n");
 
-			Collections.sort(contas); 
+			Collections.sort(contas);
 			for (Conta c : contas) {
 				linha = c.getAgencia().getNumAgencia() + " - " + c.getTitular();
 				bw.append(linha + "\n");
@@ -439,8 +451,7 @@ public class Escritor {
 			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
 			linha = "Operações realizada em: " + date;
 			bw.append(linha + "\n");
-
-			linha = "************************************************************************";
+			linha = "****************************************************************";
 			bw.append(linha + "\n\n");
 		} catch (IOException e) {
 			System.out.println("Erro: " + e.getMessage());
@@ -448,7 +459,7 @@ public class Escritor {
 		}
 	}
 
-	public static void relatorioCapitalBanco(List<Conta> listaContas, Conta conta, Funcionario funcionario) { 
+	public static void relatorioCapitalBanco(List<Conta> listaContas, Conta conta, Funcionario funcionario) {
 
 		SUB_CAMINHO = conta.getCpf() + "_" + conta.getTitular().getNome() + "_" + funcionario.getTipoDeUsuario();
 		new File(CAMINHO + "\\" + SUB_CAMINHO).mkdir();
@@ -466,7 +477,7 @@ public class Escritor {
 				capitalTotalBanco += lista.getSaldo();
 			}
 
-			linha = "Total do Capital armazenado no banco: R$" + capitalTotalBanco;
+			linha = "Total do Capital armazenado no banco: R$ " + capitalTotalBanco;
 			bw.append(linha + "\n\n");
 
 			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
@@ -480,8 +491,8 @@ public class Escritor {
 			System.out.println("Erro: " + e.getMessage());
 		}
 	}
-		
-		public static void comprovanteSeguroDeVida(Conta conta, Cliente cliente) {
+
+	public static void comprovanteSeguroDeVida(Conta conta, Cliente cliente) {
 
 		SUB_CAMINHO = conta.getCpf() + "_" + conta.getTitular().getNome() + "_" + conta.getTitular().getTipoDeUsuario();
 		new File(CAMINHO + "\\" + SUB_CAMINHO).mkdir();
@@ -498,22 +509,24 @@ public class Escritor {
 			linha = "Nome = " + conta.getTitular().getNome();
 			bw.append(linha + "\n");
 
-			linha = "Simulação para CPF = " + Cliente.imprimeCPF(conta.getCpf());
+			linha = "CPF = " + Cliente.imprimeCPF(conta.getCpf());
 			bw.append(linha + "\n");
-			
+
 			linha = "Agência: " + conta.getAgencia();
 			bw.append(linha + "\n");
 
 			linha = "Conta: " + conta.getNumConta();
 			bw.append(linha + "\n");
 
-			linha = "O valor pago na contratação do Seguro de Vida foi de: R$" +  String.format("%.2f", SeguroDeVida.getValorSeguro());
+			linha = "O valor pago na contratação do Seguro de Vida foi de: R$ "
+					+ String.format("%.2f", SeguroDeVida.getValorSeguro());
 			bw.append(linha + "\n");
-			
-			linha = "O valor segurado após taxação foi de: R$" + String.format("%.2f", SeguroDeVida.getValorSeguroAposTaxa());
+
+			linha = "O valor segurado após taxação foi de: R$ "
+					+ String.format("%.2f", SeguroDeVida.getValorSeguroAposTaxa());
 			bw.append(linha + "\n");
-			
-			linha = "Você pagou de tarifa R$" + String.format("%.2f", SeguroDeVida.getValorTributacao());
+
+			linha = "Você pagou de tarifa R$ " + String.format("%.2f", SeguroDeVida.getValorTributacao());
 			bw.append(linha + "\n");
 
 			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
@@ -528,5 +541,5 @@ public class Escritor {
 			System.out.println("Erro: " + e.getMessage());
 		}
 	}
-	
+
 }

@@ -39,3 +39,50 @@ Saldo: R$10576.0
 Operação realizada em: 23/04/2023 12:34:49
 ********************* FIM **************************
 
+
+********************* EXTRATO *********************
+Tipo: POUPANCA
+Titular: Paulo Vicente | CPF: 986.547.125-48
+Agencia: 5086 | Conta: 683145
+
+
+Saldo: R$7000.00
+Operação realizada em: 23/04/2023 17:22:23
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: POUPANCA
+Titular: Paulo Vicente | CPF: 986.547.125-48
+Agencia: 5086 | Conta: 683145
+
+
+Saldo: R$7000.00
+Operação realizada em: 23/04/2023 17:24:26
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: POUPANCA
+Titular: Paulo Vicente | CPF: 986.547.125-48
+Agencia: 5086 | Conta: 683145
+
+2023-04-23  |  Transferêcia  |  R$ 1500.00
+
+Saldo: R$5500.00
+Operação realizada em: 23/04/2023 17:36:06
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: POUPANCA
+Titular: Paulo Vicente | CPF: 986.547.125-48
+Agencia: 5086 | Conta: 683145
+
+2023-04-23  |  Transferêcia  |  R$ 1500.00
+2023-04-23  |  Transferêcia  |  R$ 500.00
+
+Saldo: R$5000.00
+Operação realizada em: 23/04/2023 17:36:16
+********************* FIM **************************
+

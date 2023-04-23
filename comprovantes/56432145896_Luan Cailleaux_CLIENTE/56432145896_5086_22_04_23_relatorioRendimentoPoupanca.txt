@@ -1,7 +1,0 @@
-******* Simulação de Rendimento da Poupança ********
-
-Simulação para CPF = 56432145896
-O rendimento foi de: R$1.6666666666666665
-Operações realizada em: 22/04/2023 22:05:40
-****************************************************
-
