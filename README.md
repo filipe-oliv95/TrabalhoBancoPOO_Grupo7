@@ -7,7 +7,7 @@ Este Banco refere-se ao projeto final da disciplina de Programação Orientada a
 
 O trabalho consistia na criação de um Sistema Bancário completo, utilizando os conceitos aprendidos durante as aulas ministradas pelo professor [mmcollares](https://github.com/mmcollares).
 
-O trabalho foi realizado em grupo, demandando habilidades de organização, comunicação e acesso compartilhado ao GitHub.Foram utilizados conceitos de herança, classes abstratas, interface, tratamento de erro, collections, map, encapsulamento, casting, polimorfismo, leitura e escrita de arquivos.
+O trabalho foi realizado em grupo, demandando habilidades de organização, comunicação e acesso compartilhado ao GitHub. Foram utilizados conceitos de herança, classes abstratas, interface, tratamento de erro, collections, map, encapsulamento, casting, polimorfismo, leitura e escrita de arquivos.
 
 
 ## Autores
