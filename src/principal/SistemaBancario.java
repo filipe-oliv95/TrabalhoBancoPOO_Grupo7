@@ -26,7 +26,6 @@ public class SistemaBancario {
 	public static List<Agencia> listaAgencias = new ArrayList<>();
 
 	public static void main(String[] args) throws InputMismatchException, NullPointerException, IOException {
-	
 		
 		Leitor.leitura(".\\database\\registrodedados.txt");		
 		Menu.menuEntrada();

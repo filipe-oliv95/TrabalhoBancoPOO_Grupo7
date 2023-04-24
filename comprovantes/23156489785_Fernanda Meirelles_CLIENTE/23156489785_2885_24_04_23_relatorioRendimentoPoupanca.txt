@@ -1,0 +1,22 @@
+******* Simulação de Rendimento da Poupança ********
+
+Nome = Fernanda Meirelles
+Simulação para CPF: 23156489785
+Valor simulado: R$ 1500.00
+Total de dias: 56
+O rendimento seria de: R$ 14.00
+O valor final seria de: R$ 1514.00
+Operações realizada em: 24/04/2023 16:10:48
+****************************************************
+
+******* Simulação de Rendimento da Poupança ********
+
+Nome = Fernanda Meirelles
+Simulação para CPF: 23156489785
+Valor simulado: R$ 1670.00
+Total de dias: 100
+O rendimento seria de: R$ 27.83
+O valor final seria de: R$ 1697.83
+Operações realizada em: 24/04/2023 19:36:28
+****************************************************
+

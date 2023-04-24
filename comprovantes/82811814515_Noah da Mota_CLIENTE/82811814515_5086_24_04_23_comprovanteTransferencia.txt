@@ -1,0 +1,17 @@
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+Nome: Noah da Mota
+CPF: 82811814515
+Agência : 5086
+Conta: 696545
+********** DADOS DO DESTINATÁRIO ************
+Nome: Bruna Barros
+CPF: 56016670120
+Agência: 0080
+Conta: 287645
+*********************************************
+Valor: R$200.0
+Operação realizada em: 24/04/2023 16:21:50
+*********** FIM DA TRANSFERÊNCIA ************

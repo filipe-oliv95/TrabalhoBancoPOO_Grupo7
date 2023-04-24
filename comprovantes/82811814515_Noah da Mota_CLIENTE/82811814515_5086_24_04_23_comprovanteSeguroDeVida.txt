@@ -1,0 +1,11 @@
+*************** COMPROVANTE SEGURO DE VIDA ********************
+Nome = Noah da Mota
+CPF = 828.118.145-15
+Agência: 5086
+Conta: 696545
+O valor pago na contratação do Seguro de Vida foi de: R$ 1000.00
+O valor segurado após taxação foi de: R$ 800.00
+Você pagou de tarifa R$ 200.00
+Operação realizada em: 24/04/2023 16:21:01
+*************************************************************
+

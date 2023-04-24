@@ -1,0 +1,49 @@
+
+********************* EXTRATO *********************
+Tipo: POUPANCA
+Titular: Fernanda Meirelles | CPF: 231.564.897-85
+Agencia: 2885 | Conta: 658974
+
+2023-04-24  |  Saque  |  R$ 100.00
+2023-04-24  |  Depósito  |  R$ 100000.00
+
+Saldo: R$101400.00
+Operação realizada em: 24/04/2023 16:08:16
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: POUPANCA
+Titular: Fernanda Meirelles | CPF: 231.564.897-85
+Agencia: 2885 | Conta: 658974
+
+2023-04-24  |  Saque  |  R$ 100.00
+2023-04-24  |  Depósito  |  R$ 100000.00
+2023-04-24  |  Transferêcia  |  R$ 30500.70
+
+Saldo: R$70899.30
+Operação realizada em: 24/04/2023 16:11:27
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: POUPANCA
+Titular: Fernanda Meirelles | CPF: 231.564.897-85
+Agencia: 2885 | Conta: 658974
+
+
+Saldo: R$3000.00
+Operação realizada em: 24/04/2023 19:35:52
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: POUPANCA
+Titular: Fernanda Meirelles | CPF: 231.564.897-85
+Agencia: 2885 | Conta: 658974
+
+
+Saldo: R$3000.00
+Operação realizada em: 24/04/2023 19:38:31
+********************* FIM **************************
+

@@ -5,3 +5,24 @@ Total do Capital armazenado no banco: R$ 40200.0
 Operação realizada em: 24/04/2023 11:17:55
 ******************************************************
 
+******** TOTAL DE CAPITAL ARMAZENADO NO BANCO ********
+
+Total do Capital armazenado no banco: R$ 139099.8
+
+Operação realizada em: 24/04/2023 16:23:47
+******************************************************
+
+******** TOTAL DE CAPITAL ARMAZENADO NO BANCO ********
+
+Total do Capital armazenado no banco: R$ 40200.0
+
+Operação realizada em: 24/04/2023 18:55:57
+******************************************************
+
+******** TOTAL DE CAPITAL ARMAZENADO NO BANCO ********
+
+Total do Capital armazenado no banco: R$ 190199.9
+
+Operação realizada em: 24/04/2023 18:56:16
+******************************************************
+

@@ -1,0 +1,41 @@
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+
+Total gasto em tributos = R$0.00
+Saldo: R$33300.70
+Operação realizada em: 24/04/2023 16:12:16
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-24  |  Seguro de Vida  |  R$ 1000.00
+
+Total gasto em tributos = R$0.00
+Valor do Seguro de Vida = R$ 800.00
+Saldo: R$32300.70
+Operação realizada em: 24/04/2023 16:21:06
+********************* FIM **************************
+
+
+********************* EXTRATO *********************
+Tipo: CORRENTE
+Titular: Noah da Mota | CPF: 828.118.145-15
+Agencia: 5086 | Conta: 696545
+
+2023-04-24  |  Seguro de Vida  |  R$ 1000.00
+2023-04-24  |  Transferêcia  |  R$ 200.00
+
+Total gasto em tributos = R$0.20
+Valor do Seguro de Vida = R$ 800.00
+Saldo: R$32100.50
+Operação realizada em: 24/04/2023 16:21:51
+********************* FIM **************************
+

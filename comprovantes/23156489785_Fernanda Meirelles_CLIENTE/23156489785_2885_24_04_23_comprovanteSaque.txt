@@ -1,0 +1,8 @@
+*************** SAQUE ***************
+CPF: 23156489785
+Agencia: 2885
+Conta: 658974
+Valor do saque: R$100.0
+Operação realizada em: 24/04/2023 16:07:07
+************ FIM DO SAQUE ************
+

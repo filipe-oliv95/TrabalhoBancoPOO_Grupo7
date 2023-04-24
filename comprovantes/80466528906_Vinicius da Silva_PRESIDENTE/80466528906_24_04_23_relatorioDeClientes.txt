@@ -15,3 +15,20 @@
 Operações realizada em: 24/04/2023 11:17:46
 ****************************************************************
 
+******************* Informações dos Clientes *******************
+
+2885 - Adriana Neves | CPF = 564.897.231-14
+0080 - Anthony Melo | CPF = 872.594.395-21
+0080 - Bruna Barros | CPF = 560.166.701-20
+2885 - Cristiane Monteiro | CPF = 127.943.547-01
+2885 - Emily Monteiro | CPF = 010.782.323-34
+2885 - Fernanda Meirelles | CPF = 231.564.897-85
+0080 - Filipe Oliveira | CPF = 865.412.332-10
+0080 - Jullian Cardoso | CPF = 987.564.123-65
+5086 - Luan Cailleaux | CPF = 564.321.458-96
+5086 - Noah da Mota | CPF = 828.118.145-15
+5086 - Paulo Vicente | CPF = 986.547.125-48
+5086 - Vinicius da Silva | CPF = 804.665.289-06
+Operações realizada em: 24/04/2023 16:23:39
+****************************************************************
+

@@ -1,0 +1,17 @@
+
+*************** TRANSFERÊNCIA ***************
+
+************ DADOS DO REMETENTE *************
+Nome: Fernanda Meirelles
+CPF: 23156489785
+Agência : 2885
+Conta: 658974
+********** DADOS DO DESTINATÁRIO ************
+Nome: Noah da Mota
+CPF: 82811814515
+Agência: 5086
+Conta: 696545
+*********************************************
+Valor: R$30500.7
+Operação realizada em: 24/04/2023 16:09:11
+*********** FIM DA TRANSFERÊNCIA ************
