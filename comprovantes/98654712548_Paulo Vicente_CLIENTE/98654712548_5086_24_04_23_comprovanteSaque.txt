@@ -1,0 +1,8 @@
+*************** SAQUE ***************
+CPF: 98654712548
+Agencia: 5086
+Conta: 683145
+Valor do saque: R$5000.0
+Operação realizada em: 24/04/2023 13:32:19
+************ FIM DO SAQUE ************
+

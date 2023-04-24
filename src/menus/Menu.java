@@ -24,7 +24,6 @@ public class Menu {
 	public static void menuEntrada() throws InputMismatchException, NullPointerException, IOException {
 		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
-
 		try {
 			System.out.println();
 			System.out.println("********************************");
@@ -39,6 +38,7 @@ public class Menu {
 				break;
 			case 2:
 				System.out.println();
+				Escritor.registroDeDadosAtualizados();
 				System.out.println("Sistema encerrado.");
 				System.exit(0);
 				break;

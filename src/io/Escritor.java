@@ -8,15 +8,22 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
+import agencias.Agencia;
 import contas.Conta;
 import contas.ContaCorrente;
 import contas.enums.ContasEnum;
 import extratos.Extrato;
 import menus.Menu;
 import pessoas.Cliente;
+import pessoas.Diretor;
 import pessoas.Funcionario;
+import pessoas.Gerente;
+import pessoas.enums.UsuariosEnum;
 import principal.SistemaBancario;
 import segurosDeVida.SeguroDeVida;
 
@@ -311,7 +318,7 @@ public class Escritor {
 			bw.append(linha + "\n\n");
 
 		} catch (IOException e) {
-			System.out.println("Erro: " + e.getMessage());
+			System.out.println("Erro escrevendo arquivo: " + e.getMessage());
 		}
 	}
 
@@ -356,7 +363,7 @@ public class Escritor {
 			linha = "****************************************************";
 			bw.append(linha + "\n\n");
 		} catch (IOException e) {
-			System.out.println("Erro: " + e.getMessage());
+			System.out.println("Erro escrevendo arquivo: " + e.getMessage());
 		}
 	}
 
@@ -422,7 +429,7 @@ public class Escritor {
 
 			bw.close();
 		} catch (IOException e) {
-			System.out.println("Erro: " + e.getMessage());
+			System.out.println("Erro escrevendo arquivo: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -454,7 +461,7 @@ public class Escritor {
 			linha = "****************************************************************";
 			bw.append(linha + "\n\n");
 		} catch (IOException e) {
-			System.out.println("Erro: " + e.getMessage());
+			System.out.println("Erro escrevendo arquivo: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -488,7 +495,7 @@ public class Escritor {
 			bw.append(linha + "\n\n");
 
 		} catch (IOException e) {
-			System.out.println("Erro: " + e.getMessage());
+			System.out.println("Erro escrevendo arquivo: " + e.getMessage());
 		}
 	}
 
@@ -538,8 +545,70 @@ public class Escritor {
 			bw.append(linha + "\n\n");
 
 		} catch (IOException e) {
-			System.out.println("Erro: " + e.getMessage());
+			System.out.println("Erro escrevendo arquivo: " + e.getMessage());
 		}
 	}
 
+	public static void registroDeDadosAtualizados() throws IOException {
+
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(".\\database\\registrodedados.txt"))) {
+
+			// registrando as agencias
+			Set<Agencia> set = new HashSet<>(SistemaBancario.listaAgencias);
+			for (Agencia ag : set) {
+				bw.write("AGENCIA" + ";" + ag.getNumAgencia());
+				bw.newLine();
+			}
+		
+			// Loop pelo mapa de gerente
+			for (Map.Entry<String, Gerente> dadosG : SistemaBancario.mapaDeGerentes.entrySet()) {
+				Gerente gerente = dadosG.getValue();
+				bw.write(gerente.getTipoDeUsuario().name() + ";" + gerente.getNome() + ";" + gerente.getCpf() + ";"
+						+ gerente.getSenha() + ";" + gerente.getAgencia().getNumAgencia());
+				bw.newLine();
+			}
+
+			// Loop pelo mapa de diretor
+			for (Map.Entry<String, Diretor> dadosD : SistemaBancario.mapaDeDiretores.entrySet()) {
+				Diretor diretor = dadosD.getValue();
+				bw.write(diretor.getTipoDeUsuario().name() + ";" + diretor.getNome() + ";" + diretor.getCpf() + ";"
+						+ diretor.getSenha());
+				bw.newLine();
+			}
+
+			// Loop pelo mapa de presidente
+			for (Map.Entry<String, Funcionario> dadosP : SistemaBancario.mapaDeFuncionarios.entrySet()) {
+				Funcionario presidente = dadosP.getValue();
+				if (presidente.getTipoDeUsuario() == UsuariosEnum.PRESIDENTE) {
+					bw.write(presidente.getTipoDeUsuario().name() + ";" + presidente.getNome() + ";"
+							+ presidente.getCpf() + ";" + presidente.getSenha());
+					bw.newLine();
+				}
+			}
+
+			// Loop pelo mapa de cliente
+			for (Map.Entry<String, Cliente> dadosClie : SistemaBancario.mapaDeClientes.entrySet()) {
+				Cliente cliente = dadosClie.getValue();
+				bw.write(cliente.getTipoDeUsuario().name() + ";" + cliente.getNome() + ";" + cliente.getCpf() + ";"
+						+ cliente.getSenha());
+				bw.newLine();
+			}
+
+			// Loop pelo mapa de contas
+			for (Map.Entry<String, Conta> entrada : SistemaBancario.mapaDeContas.entrySet()) {
+				Conta conta = entrada.getValue();
+
+				// Checando se a conta é POUPANCA ou CORRENTE
+				if (conta.getTipoDeConta() == ContasEnum.POUPANCA || conta.getTipoDeConta() == ContasEnum.CORRENTE) {
+
+					// Escrevendo detalhes da conta com o saldo atualizado
+					bw.write(conta.getTipoDeConta().name() + ";" + conta.getAgencia().getNumAgencia() + ";"
+							+ conta.getNumConta() + ";" + conta.getTitular().getTipoDeUsuario().name()+ ";" + conta.getTitular().getNome()
+							+ ";" + conta.getCpf() + ";" + conta.getTitular().getSenha() + ";"
+							+ conta.getCpf() + ";" + String.format("%.2f", conta.getSaldo()));
+					bw.newLine();
+				}
+			}
+		}
+	}
 }
