@@ -26,9 +26,14 @@ public class Menu {
 		Locale.setDefault(Locale.US);
 		try {
 			System.out.println();
-			System.out.println("********************************");
-			System.out.println("*** BEM VINDO AO BANCO JAVA ****");
-			System.out.println("********************************");
+			System.out.println("______  ___  _   _ _____ _____   _____ _____ _____ _____ ");
+			System.out.println("| ___ \\/ _ \\| \\ | /  __ \\  _  | /  ___|  ___|_   _|  ___|");
+			System.out.println("| |_/ / /_\\ \\  \\| | /  \\/ | | | \\ `--.| |__   | | | |__  ");
+			System.out.println("| ___ \\  _  | . ` | |   | | | |  `--. \\  __|  | | |  __| ");
+			System.out.println("| |_/ / | | | |\\  | \\__/\\ \\_/ / /\\__/ / |___  | | | |___ ");
+			System.out.println("\\____/\\_| |_|_| \\_/\\____/\\___/  \\____/\\____/  \\_/ \\____/ ");
+			System.out.println();
+			System.out.println("******** Menu Inicial **********");
 			System.out.println("[1] Login");
 			System.out.println("[2] Encerrar");
 			int opcao = sc.nextInt();

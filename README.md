@@ -1,5 +1,5 @@
 
-![Logo](https://github.com/filipe-oliv95/TrabalhoBancoPOO_Grupo7/blob/main/bancoSeteLogo.png?raw=true)
+![Logo](https://github.com/filipe-oliv95/TrabalhoBancoPOO_Grupo7/blob/main/fotos/bancoSeteLogo.png?raw=true)
 
 # O seu roxinho favorito!
 
@@ -35,4 +35,4 @@ O trabalho foi realizado em grupo, demandando habilidades de organização, comu
 
 
 #
-![Logo](https://github.com/filipe-oliv95/TrabalhoBancoPOO_Grupo7/blob/main/serratecLogo.png?raw=true)
+![Logo](https://github.com/filipe-oliv95/TrabalhoBancoPOO_Grupo7/blob/main/fotos/serratecLogo.png?raw=true)
